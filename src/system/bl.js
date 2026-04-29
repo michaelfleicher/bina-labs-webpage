@@ -62,6 +62,22 @@ export const BL = {
 
   // Radii
   r: { sm: 4, md: 8, lg: 14, pill: 999 },
+
+  // 4-pt spacing scale
+  space: { 0: 0, 1: 4, 2: 8, 3: 12, 4: 16, 5: 24, 6: 32, 7: 48, 8: 64, 9: 96 },
+
+  // Minimum tap target (Apple HIG 44, Material 48)
+  tap: 44,
+
+  // Type scale - mobile cap / desktop fluid clamp
+  type: {
+    h1:    { mobile: 56, desktop: 'clamp(72px, 9vw, 156px)' },
+    h2:    { mobile: 40, desktop: 'clamp(48px, 6vw, 96px)' },
+    h3:    { mobile: 28, desktop: 'clamp(32px, 4vw, 56px)' },
+    body:  { mobile: 15, desktop: 16 },
+    small: { mobile: 13, desktop: 14 },
+    mono:  { mobile: 12, desktop: 13 },
+  },
 };
 
 export const BREAKPOINTS = {

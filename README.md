@@ -44,6 +44,26 @@ The contact form (`#contact`) and the careers apply modal (`#about`) submit to
 
 Without the key, both forms show a graceful fallback pointing users to email.
 
+## Analytics (Google Analytics 4)
+
+Page views are sent to GA4 when `VITE_GA_ID` is configured. The site is a
+hash-routed SPA, so [src/App.jsx](src/App.jsx) calls `trackPageView` once on
+mount and again on every route change.
+
+1. Sign in at https://analytics.google.com.
+2. **Admin → Create → Account** (e.g. `Bina Labs`).
+3. **Create Property** for `bina-labs.com`, set timezone + currency.
+4. Add a **Web data stream** for `https://bina-labs.com`. Leave **Enhanced
+   measurement** on - it captures scrolls, outbound clicks, and downloads for
+   free.
+5. Copy the **Measurement ID** (format `G-XXXXXXXXXX`).
+6. Locally: paste it into `VITE_GA_ID` in `.env.local`.
+7. On the host: set `VITE_GA_ID` as an environment variable and redeploy.
+
+Without the ID, the GA script never loads (zero network/runtime cost). Custom
+events can be sent via `trackEvent(name, params)` from
+[src/system/analytics.js](src/system/analytics.js).
+
 ## Layout
 
 ```

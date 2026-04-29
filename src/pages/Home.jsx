@@ -28,7 +28,9 @@ function HomeHero({ navigate }) {
   }, []);
   return (
     <section style={{
-      padding: 'clamp(48px, 8vw, 72px) clamp(20px, 4vw, 32px) clamp(56px, 10vw, 96px)',
+      padding: isMobile
+        ? '40px 20px 48px'
+        : 'clamp(48px, 8vw, 72px) clamp(20px, 4vw, 32px) clamp(56px, 10vw, 96px)',
       position: 'relative',
       borderBottom: `1px solid ${BL.inkLine}`,
       backgroundImage: `linear-gradient(${BL.inkLine} 1px, transparent 1px),
@@ -36,18 +38,18 @@ function HomeHero({ navigate }) {
       backgroundSize: '64px 64px',
     }}>
       <div style={{
-        fontFamily: BL.mono, fontSize: 11, marginBottom: 'clamp(24px, 5vw, 48px)',
+        fontFamily: BL.mono, fontSize: 11, marginBottom: isMobile ? 24 : 'clamp(24px, 5vw, 48px)',
         display: 'flex', gap: isMobile ? 12 : 24, color: BL.inkMuted,
         flexWrap: 'wrap',
       }}>
         <span style={{ color: BL.red }}>● ONLINE</span>
         <span><span style={{ color: BL.inkText }}>{count}</span> engagements shipped this year</span>
-        <span>· Tel Aviv · Berlin · remote-first</span>
+        {!isMobile && <span>· Tel Aviv · Berlin · remote-first</span>}
       </div>
 
       <h1 className="bl-fade-up" style={{
         fontFamily: BL.sans, fontWeight: 300,
-        fontSize: 'clamp(48px, 12vw, 156px)',
+        fontSize: isMobile ? BL.type.h1.mobile : BL.type.h1.desktop,
         lineHeight: 0.94, letterSpacing: '-0.045em',
         margin: 0, color: BL.inkText, maxWidth: '15ch',
       }}>
@@ -60,16 +62,16 @@ function HomeHero({ navigate }) {
       </h1>
 
       <div style={{
-        marginTop: 'clamp(40px, 6vw, 80px)',
+        marginTop: isMobile ? 32 : 'clamp(40px, 6vw, 80px)',
         display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : isTablet ? '1fr 1fr' : '1.4fr 1fr 1fr',
-        gap: isMobile ? 16 : 24,
+        gridTemplateColumns: isMobile ? '1fr 1fr' : isTablet ? '1fr 1fr' : '1.4fr 1fr 1fr',
+        gap: isMobile ? 12 : 24,
       }}>
         <div style={{
-          fontFamily: BL.mono, fontSize: 14, lineHeight: 1.65,
-          color: BL.inkText, padding: 24,
+          fontFamily: BL.mono, fontSize: isMobile ? 13 : 14, lineHeight: 1.65,
+          color: BL.inkText, padding: isMobile ? 20 : 24,
           border: `1px solid ${BL.inkLine}`, background: 'rgba(232,241,247,0.02)',
-          gridColumn: isTablet && !isMobile ? '1 / -1' : 'auto',
+          gridColumn: (isMobile || (isTablet && !isMobile)) ? '1 / -1' : 'auto',
         }}>
           <div style={{ color: BL.inkDim, marginBottom: 8 }}>$ cat what-we-do.txt</div>
           <div><span style={{ color: BL.copper }}>→</span> A consultancy of engineers,</div>
@@ -78,11 +80,19 @@ function HomeHero({ navigate }) {
           <div><span style={{ color: BL.copper }}>→</span>   their seat at the production table.</div>
           <div style={{ color: BL.inkDim, marginTop: 8 }}>$ <span className="bl-cursor" style={{ color: BL.red }} /></div>
         </div>
-        <StatBlock n="01" label="median ship time" value="11" unit="days" />
-        <StatBlock n="02" label="repeat client rate" value="84" unit="%" accent />
+        <StatBlock n="01" label="median ship time" value="11" unit="days" isMobile={isMobile} />
+        <StatBlock n="02" label="repeat client rate" value="84" unit="%" accent isMobile={isMobile} />
       </div>
 
-      <div style={{ marginTop: 'clamp(32px, 5vw, 56px)', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+      {isMobile && (
+        <div style={{
+          marginTop: 20, fontFamily: BL.mono, fontSize: 11, color: BL.inkDim, letterSpacing: '0.04em',
+        }}>
+          Tel Aviv · Berlin · remote-first
+        </div>
+      )}
+
+      <div style={{ marginTop: isMobile ? 28 : 'clamp(32px, 5vw, 56px)', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
         <BLPillButton primary onClick={() => navigate('contact')}>Start a project →</BLPillButton>
         <BLPillButton onClick={() => navigate('work')}>See our work</BLPillButton>
       </div>
@@ -90,23 +100,23 @@ function HomeHero({ navigate }) {
   );
 }
 
-function StatBlock({ n, label, value, unit, accent }) {
+function StatBlock({ n, label, value, unit, accent, isMobile }) {
   return (
     <div style={{
-      border: `1px solid ${BL.inkLine}`, padding: 24,
+      border: `1px solid ${BL.inkLine}`, padding: isMobile ? 16 : 24,
       background: 'rgba(232,241,247,0.02)', position: 'relative',
     }}>
       <div style={{ position: 'absolute', top: 10, right: 12, fontFamily: BL.mono, fontSize: 10, color: BL.inkDim }}>[{n}]</div>
       <div style={{
-        fontFamily: BL.mono, fontSize: 11, color: BL.inkMuted,
-        textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 16,
+        fontFamily: BL.mono, fontSize: isMobile ? 10 : 11, color: BL.inkMuted,
+        textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: isMobile ? 10 : 16,
       }}>{label}</div>
       <div style={{
-        fontFamily: BL.serif, fontSize: 'clamp(56px, 9vw, 96px)', lineHeight: 1,
+        fontFamily: BL.serif, fontSize: isMobile ? 48 : 'clamp(56px, 9vw, 96px)', lineHeight: 1,
         color: accent ? BL.red : BL.inkText, fontWeight: 300,
         letterSpacing: '-0.04em',
       }}>
-        {value}<span style={{ fontSize: 'clamp(20px, 3vw, 32px)', color: BL.inkDim, marginLeft: 4 }}>{unit}</span>
+        {value}<span style={{ fontSize: isMobile ? 18 : 'clamp(20px, 3vw, 32px)', color: BL.inkDim, marginLeft: 4 }}>{unit}</span>
       </div>
     </div>
   );
@@ -129,12 +139,14 @@ function HomeMarquee() {
 function HomeManifesto({ navigate }) {
   const isMobile = useMediaQuery(MQ.mobile);
   const isTablet = useMediaQuery(MQ.tablet);
-  const tenets = [
+  const allTenets = [
     { n: '01', t: 'Deadline is holy.', d: 'When we commit to a date, we hit it. Scope flexes, quality has a floor, but the deadline does not move.' },
     { n: '03', t: 'AI assistants are tools, not authors.', d: 'We use them to move faster, not to ship code no human on our team understands. Every line is owned by an operator who can defend it.' },
     { n: '05', t: 'Honest deprecation.', d: 'When a project should die, we tell you. We refund the rest of the engagement.' },
     { n: '06', t: 'Built to leave.', d: 'Embedded engagements come with a written hand-off plan from day one.' },
   ];
+  const tenets = isMobile ? allTenets.slice(0, 3) : allTenets;
+  const hiddenCount = allTenets.length - tenets.length;
   const cols = isMobile ? 1 : isTablet ? 2 : 4;
   return (
     <section style={{
@@ -177,8 +189,9 @@ function HomeManifesto({ navigate }) {
       <a onClick={() => navigate('manifesto')} style={{
         display: 'inline-flex', alignItems: 'center', gap: 10, marginTop: 'clamp(32px, 6vw, 56px)',
         fontFamily: BL.mono, fontSize: 13, color: BL.inkText, cursor: 'pointer',
+        minHeight: BL.tap, paddingTop: 8, paddingBottom: 8,
       }} className="bl-link-hover">
-        Read the full manifesto →
+        {hiddenCount > 0 ? `+${hiddenCount} more · read the full manifesto →` : 'Read the full manifesto →'}
       </a>
     </section>
   );
@@ -220,32 +233,35 @@ function HomeWork({ navigate }) {
                 ? '60px 1fr auto'
                 : '80px 1.4fr 2fr 200px 60px',
               gridTemplateAreas: isMobile
-                ? `"num" "client" "desc" "metric"`
+                ? `"num" "client" "metric"`
                 : isTablet
                 ? `"num client metric" "desc desc desc"`
                 : undefined,
               alignItems: isMobile ? 'flex-start' : 'center',
-              padding: 'clamp(24px, 4vw, 40px) clamp(16px, 3vw, 24px)',
+              padding: isMobile ? '20px 16px' : 'clamp(24px, 4vw, 40px) clamp(16px, 3vw, 24px)',
               borderBottom: `1px solid ${BL.inkLine}`,
               background: hover === i ? 'rgba(157,255,77,0.04)' : 'transparent',
               cursor: 'pointer',
-              gap: isMobile ? 16 : isTablet ? 20 : 32,
+              gap: isMobile ? 8 : isTablet ? 20 : 32,
+              minHeight: isMobile ? BL.tap : 'auto',
               transition: 'background .15s',
             }}>
             <div style={{ gridArea: isMobile || isTablet ? 'num' : 'auto', fontFamily: BL.mono, fontSize: 12, color: BL.inkDim }}>{w.n}</div>
             <div style={{
               gridArea: isMobile || isTablet ? 'client' : 'auto',
               fontFamily: BL.sans,
-              fontSize: 'clamp(28px, 5vw, 40px)',
+              fontSize: isMobile ? 28 : 'clamp(28px, 5vw, 40px)',
               fontWeight: 400, letterSpacing: '-0.015em',
               color: hover === i ? BL.red : BL.inkText, transition: 'color .15s',
             }}>{w.client}</div>
-            <div style={{ gridArea: isMobile || isTablet ? 'desc' : 'auto' }}>
-              <div style={{ fontFamily: BL.mono, fontSize: 10, color: BL.inkMuted, marginBottom: 6, letterSpacing: '0.06em' }}>{w.tag}</div>
-              <div style={{ fontFamily: BL.serif, fontSize: 'clamp(16px, 2.5vw, 20px)', fontStyle: 'italic', color: BL.inkText, fontWeight: 400 }}>{w.desc}</div>
-            </div>
+            {!isMobile && (
+              <div style={{ gridArea: isTablet ? 'desc' : 'auto' }}>
+                <div style={{ fontFamily: BL.mono, fontSize: 10, color: BL.inkMuted, marginBottom: 6, letterSpacing: '0.06em' }}>{w.tag}</div>
+                <div style={{ fontFamily: BL.serif, fontSize: 'clamp(16px, 2.5vw, 20px)', fontStyle: 'italic', color: BL.inkText, fontWeight: 400 }}>{w.desc}</div>
+              </div>
+            )}
             <div style={{ gridArea: isMobile || isTablet ? 'metric' : 'auto', textAlign: isMobile ? 'left' : 'right' }}>
-              <div style={{ fontFamily: BL.serif, fontSize: 'clamp(36px, 6vw, 52px)', color: BL.red, lineHeight: 1, fontWeight: 300 }}>{w.metric}</div>
+              <div style={{ fontFamily: BL.serif, fontSize: isMobile ? 36 : 'clamp(36px, 6vw, 52px)', color: BL.red, lineHeight: 1, fontWeight: 300 }}>{w.metric}</div>
               <div style={{ fontFamily: BL.mono, fontSize: 10, color: BL.inkDim, textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 4 }}>{w.metricLabel}</div>
             </div>
             {!isMobile && !isTablet && (
@@ -293,7 +309,7 @@ function HomeServices({ navigate }) {
         {services.map((s) => (
           <div key={s.n} onClick={() => navigate('services')} style={{
             background: BL.ink,
-            padding: 'clamp(28px, 5vw, 44px) clamp(20px, 4vw, 36px)',
+            padding: isMobile ? '24px 20px' : 'clamp(28px, 5vw, 44px) clamp(20px, 4vw, 36px)',
             minHeight: isMobile ? 'auto' : 260, cursor: 'pointer',
             transition: 'background .2s',
           }}
@@ -301,18 +317,21 @@ function HomeServices({ navigate }) {
             onMouseLeave={(e) => e.currentTarget.style.background = BL.ink}>
             <div style={{
               display: 'flex', justifyContent: 'space-between', alignItems: 'baseline',
-              fontFamily: BL.mono, fontSize: 11, color: BL.inkMuted, marginBottom: 16,
+              fontFamily: BL.mono, fontSize: 11, color: BL.inkMuted, marginBottom: isMobile ? 10 : 16,
             }}>
               <span>{s.n}</span><span>↗</span>
             </div>
             <div style={{
               fontFamily: BL.sans,
-              fontSize: 'clamp(28px, 5vw, 44px)',
-              fontWeight: 300, letterSpacing: '-0.025em', color: BL.inkText, marginBottom: 16,
+              fontSize: isMobile ? 26 : 'clamp(28px, 5vw, 44px)',
+              fontWeight: 300, letterSpacing: '-0.025em', color: BL.inkText,
+              marginBottom: isMobile ? 12 : 16,
             }}>
               {s.name}
             </div>
-            <div style={{ fontFamily: BL.mono, fontSize: 13, color: BL.inkMuted, lineHeight: 1.55, marginBottom: 24 }}>{s.desc}</div>
+            {!isMobile && (
+              <div style={{ fontFamily: BL.mono, fontSize: 13, color: BL.inkMuted, lineHeight: 1.55, marginBottom: 24 }}>{s.desc}</div>
+            )}
             <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
               {s.tags.map((t) => (
                 <span key={t} style={{

@@ -7,6 +7,7 @@ import PageAbout from './pages/About.jsx';
 import PageManifesto from './pages/Manifesto.jsx';
 import PageWriting from './pages/Writing.jsx';
 import PageContact from './pages/Contact.jsx';
+import { initAnalytics, trackPageView } from './system/analytics.js';
 
 const PAGES = {
   home: PageHome,
@@ -26,6 +27,15 @@ export default function App() {
   const [transition, setTransition] = React.useState(0);
   const pageRef = React.useRef(page);
   React.useEffect(() => { pageRef.current = page; }, [page]);
+
+  React.useEffect(() => {
+    initAnalytics();
+    trackPageView(page);
+  }, []);
+
+  React.useEffect(() => {
+    trackPageView(page);
+  }, [page]);
 
   const navigate = React.useCallback((p) => {
     setTransition((t) => t + 1);

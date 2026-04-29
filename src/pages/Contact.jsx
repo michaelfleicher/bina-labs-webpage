@@ -89,7 +89,7 @@ function ContactBody() {
           <BLEyebrow>// contact · ./connect.sh</BLEyebrow>
           <h1 style={{
             marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
-            fontSize: 'clamp(48px, 11vw, 120px)',
+            fontSize: isMobile ? 56 : 'clamp(48px, 11vw, 120px)',
             lineHeight: 0.94, letterSpacing: '-0.045em', color: BL.inkText, maxWidth: '12ch',
           }}>
             Tell us<br />
@@ -114,7 +114,7 @@ function ContactBody() {
             </div>
             <a href="mailto:intelligence@bina-labs.com?subject=Office%20hours%20schedule" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              marginTop: 20, padding: '10px 16px',
+              marginTop: 20, padding: '12px 18px', minHeight: BL.tap,
               border: `1px solid ${BL.copper}`, color: BL.copper,
               fontFamily: BL.mono, fontSize: 11, letterSpacing: '0.08em',
               textTransform: 'uppercase', textDecoration: 'none',
@@ -138,7 +138,7 @@ function ContactBody() {
                 <span style={{ fontStyle: 'italic', color: BL.copper }}>We'll be in touch within 24h.</span>
               </div>
               <button onClick={resetForm} style={{
-                marginTop: 32, padding: '12px 18px', border: `1px solid ${BL.inkLine}`,
+                marginTop: 32, padding: '12px 18px', minHeight: BL.tap, border: `1px solid ${BL.inkLine}`,
                 background: 'transparent', color: BL.inkText, fontFamily: BL.mono, fontSize: 12,
                 alignSelf: 'flex-start', cursor: 'pointer',
               }}>send another →</button>
@@ -186,9 +186,10 @@ function ContactBody() {
               }}>
                 <span style={{ fontFamily: BL.mono, fontSize: 11, color: BL.inkDim }}>we reply within 24h</span>
                 <button type="submit" disabled={submitting} style={{
-                  padding: '14px 22px', background: BL.red, color: BL.ink,
+                  padding: '14px 22px', minHeight: BL.tap, background: BL.red, color: BL.ink,
                   border: 'none', fontFamily: BL.mono, fontSize: 13, fontWeight: 500,
                   cursor: submitting ? 'wait' : 'pointer', opacity: submitting ? 0.7 : 1,
+                  width: isMobile ? '100%' : 'auto',
                 }}>{submitting ? 'sending...' : './send_message →'}</button>
               </div>
             </form>
@@ -209,7 +210,8 @@ function Field({ label, v, onChange, placeholder, textarea }) {
         style={{
           background: BL.ink, border: `1px solid ${BL.inkLine}`,
           padding: '12px 14px', fontFamily: textarea ? BL.sans : BL.mono,
-          fontSize: textarea ? 15 : 14, color: BL.inkText, outline: 'none',
+          fontSize: 16, color: BL.inkText, outline: 'none',
+          minHeight: textarea ? undefined : BL.tap,
           resize: textarea ? 'vertical' : undefined,
           width: '100%', maxWidth: '100%', boxSizing: 'border-box',
         }}
@@ -226,7 +228,8 @@ function Select({ label, v, onChange, opts }) {
       <span style={{ fontFamily: BL.mono, fontSize: 11, color: BL.inkMuted, textTransform: 'uppercase', letterSpacing: '0.06em' }}>// {label}</span>
       <select value={v} onChange={(e) => onChange(e.target.value)} style={{
         background: BL.ink, border: `1px solid ${BL.inkLine}`,
-        padding: '12px 14px', fontFamily: BL.mono, fontSize: 14, color: BL.inkText, outline: 'none',
+        padding: '12px 14px', fontFamily: BL.mono, fontSize: 16, color: BL.inkText, outline: 'none',
+        minHeight: BL.tap,
         width: '100%', maxWidth: '100%', boxSizing: 'border-box',
       }}>
         {opts.map(([val, l]) => <option key={val} value={val}>{l}</option>)}

@@ -114,7 +114,7 @@ export function BLNav({ current, navigate }) {
               aria-label="Open menu"
               style={{
                 background: 'transparent', border: `1px solid ${BL.inkLineStrong}`,
-                color: BL.inkText, padding: '8px 12px',
+                color: BL.inkText, padding: '10px 14px', minHeight: BL.tap,
                 fontFamily: BL.mono, fontSize: 12, cursor: 'pointer', borderRadius: 0,
                 display: 'inline-flex', alignItems: 'center', gap: 8,
               }}>
@@ -146,7 +146,7 @@ export function BLNav({ current, navigate }) {
               aria-label="Close menu"
               style={{
                 background: 'transparent', border: `1px solid ${BL.inkLineStrong}`,
-                color: BL.inkText, padding: '8px 12px',
+                color: BL.inkText, padding: '10px 14px', minHeight: BL.tap,
                 fontFamily: BL.mono, fontSize: 12, cursor: 'pointer', borderRadius: 0,
               }}>close ✕</button>
           </div>
@@ -156,13 +156,14 @@ export function BLNav({ current, navigate }) {
               <a key={x.page} onClick={() => goto(x.page)} style={{ color: current === x.page ? BL.copper : BL.inkText }}>{x.label}</a>
             ))}
           </div>
-          <div style={{ marginTop: 'auto', padding: '20px', borderTop: `1px solid ${BL.inkLine}`, display: 'flex', justifyContent: 'space-between', fontFamily: BL.mono, fontSize: 11, color: BL.inkDim }}>
+          <div style={{ marginTop: 'auto', padding: '20px', borderTop: `1px solid ${BL.inkLine}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontFamily: BL.mono, fontSize: 11, color: BL.inkDim }}>
             <span>UTC {time}</span>
             <a onClick={() => goto('contact')} style={{
               color: BL.ink, background: BL.red,
-              padding: '10px 18px', cursor: 'pointer',
+              padding: '14px 22px', cursor: 'pointer',
               fontWeight: 500, letterSpacing: '0.02em',
               fontFamily: BL.mono, fontSize: 12,
+              display: 'inline-flex', alignItems: 'center', minHeight: BL.tap,
             }}>./connect.sh</a>
           </div>
         </div>
@@ -206,15 +207,15 @@ export function BLFooter({ navigate }) {
   return (
     <footer style={{
       background: BL.ink,
-      padding: 'clamp(48px, 9vw, 80px) clamp(20px, 4vw, 32px) 24px',
+      padding: isMobile ? '48px 20px 24px' : 'clamp(48px, 9vw, 80px) clamp(20px, 4vw, 32px) 24px',
       fontFamily: BL.mono, fontSize: 12, color: BL.inkMuted,
       borderTop: `1px solid ${BL.inkLine}`,
     }}>
       <h2 style={{
         fontFamily: BL.sans, fontWeight: 300,
-        fontSize: 'clamp(48px, 14vw, 132px)',
+        fontSize: isMobile ? 64 : 'clamp(48px, 14vw, 132px)',
         lineHeight: 0.92, letterSpacing: '-0.045em',
-        color: BL.inkText, marginBottom: 'clamp(32px, 6vw, 56px)', maxWidth: '12ch',
+        color: BL.inkText, marginBottom: isMobile ? 32 : 'clamp(32px, 6vw, 56px)', maxWidth: '12ch',
       }}>
         Have a real <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.red, fontWeight: 300 }}>problem</span>?<br />
         Let's build.
@@ -278,6 +279,7 @@ export function BLPillButton({ children, primary, onClick }) {
       onMouseEnter={() => setH(true)} onMouseLeave={() => setH(false)}
       style={{
         padding: 'clamp(12px, 2vw, 14px) clamp(18px, 3vw, 22px)',
+        minHeight: BL.tap,
         background: primary ? (h ? BL.bone : BL.red) : 'transparent',
         color: primary ? BL.ink : BL.inkText,
         border: primary ? 'none' : `1px solid ${BL.inkLineStrong}`,
