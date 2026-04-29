@@ -64,6 +64,27 @@ Without the ID, the GA script never loads (zero network/runtime cost). Custom
 events can be sent via `trackEvent(name, params)` from
 [src/system/analytics.js](src/system/analytics.js).
 
+## SEO / AEO
+
+Static files served from the `public/` root and copied verbatim into `dist/`:
+
+- [public/robots.txt](public/robots.txt) - explicitly allows GPTBot, ClaudeBot,
+  PerplexityBot, Google-Extended and other AI crawlers; points to the sitemap.
+- [public/sitemap.xml](public/sitemap.xml) - lists the home page plus the hash
+  routes (services, work, about, manifesto, contact, and the four featured case
+  studies).
+- [public/llms.txt](public/llms.txt) - Markdown summary read by Anthropic,
+  OpenAI, and Perplexity crawlers. Format follows
+  [llmstxt.org](https://llmstxt.org).
+- [index.html](index.html) - includes `<title>`, `<meta description>`, Open
+  Graph + Twitter Card tags, `<link rel="canonical">`, and an `Organization`
+  JSON-LD block naming Michael Fleicher as founder.
+
+Note: the site is currently a hash-routed client-side SPA. Many AI crawlers do
+not execute JavaScript, so the rendered content is invisible to them. The
+`llms.txt` summary is the primary mitigation until the site is migrated to a
+prerendered / SSG setup (Astro, Next.js, or `vite-plugin-prerender`).
+
 ## Layout
 
 ```
