@@ -78,7 +78,7 @@ function HomeHero({ navigate }) {
           <div><span style={{ color: BL.copper }}>→</span>   their seat at the production table.</div>
           <div style={{ color: BL.inkDim, marginTop: 8 }}>$ <span className="bl-cursor" style={{ color: BL.red }} /></div>
         </div>
-        <StatBlock n="01" label="median ship time" value="14" unit="days" />
+        <StatBlock n="01" label="median ship time" value="11" unit="days" />
         <StatBlock n="02" label="repeat client rate" value="84" unit="%" accent />
       </div>
 
