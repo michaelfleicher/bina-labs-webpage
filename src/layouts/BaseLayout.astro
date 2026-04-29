@@ -1,0 +1,82 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import OrganizationSchema from '../components/schema/OrganizationSchema.astro';
+import '../styles.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const SITE_URL = 'https://bina-labs.com';
+const SITE_NAME = 'Bina Labs';
+const DEFAULT_OG_IMAGE = '/og-default.png';
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = DEFAULT_OG_IMAGE,
+  ogType = 'website',
+  noindex = false,
+} = Astro.props;
+
+const canonicalPath = canonical ?? Astro.url.pathname;
+const canonicalUrl = new URL(canonicalPath, SITE_URL).toString();
+const absoluteOgImage = ogImage.startsWith('http')
+  ? ogImage
+  : new URL(ogImage, SITE_URL).toString();
+
+const robots = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content={robots} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={absoluteOgImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteOgImage} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@300;400;500&family=Geist:wght@300;400;500;600;700&display=swap"
+    />
+
+    <OrganizationSchema />
+
+    <slot name="head" />
+
+    <ClientRouter />
+
+    <script>
+      import { initAnalytics, setupRouteTracking } from '../system/analytics.js';
+      initAnalytics();
+      setupRouteTracking();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

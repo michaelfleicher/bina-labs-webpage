@@ -1,8 +1,8 @@
 import React from 'react';
-import { BL, MQ } from '../system/bl.js';
-import { useMediaQuery } from '../system/useMediaQuery.js';
-import { BLNav, BLFooter, BLEyebrow, BLPillButton } from '../components/Chrome.jsx';
-import { CASE_STUDIES } from '../data/caseStudies.js';
+import { BL, MQ } from '../../system/bl.js';
+import { useMediaQuery } from '../../system/useMediaQuery.js';
+import { BLNav, BLFooter, BLEyebrow, BLPillLink } from '../Chrome.jsx';
+import { CASE_STUDIES } from '../../data/caseStudies.js';
 
 const WORK_FILTER_MATCH = {
   all: () => true,
@@ -32,15 +32,15 @@ const WORK = [
   { n: '17', slug: 'northcell-pmo', client: 'Northcell PMO', tag: 'Data · ETL', year: '2024', metric: 'SharePoint → Power BI', desc: 'Enterprise data warehouse. Power Automate ingest, central model, exec Gantt for headcount.', sector: 'Enterprise PMO' },
 ];
 
-export default function PageWork({ navigate }) {
+export default function WorkBody() {
   const [activeFilter, setActiveFilter] = React.useState('all');
   return (
     <div className="bl-page" style={{ background: BL.ink, color: BL.inkText, fontFamily: BL.sans, minHeight: '100vh' }}>
-      <BLNav current="work" navigate={navigate} />
+      <BLNav current="work" />
       <WorkHero />
       <WorkFilter active={activeFilter} setActive={setActiveFilter} />
-      <WorkList navigate={navigate} activeFilter={activeFilter} />
-      <BLFooter navigate={navigate} />
+      <WorkList activeFilter={activeFilter} />
+      <BLFooter />
     </div>
   );
 }
@@ -104,7 +104,7 @@ function WorkFilter({ active, setActive }) {
   );
 }
 
-function WorkList({ navigate, activeFilter = 'all' }) {
+function WorkList({ activeFilter = 'all' }) {
   const matcher = WORK_FILTER_MATCH[activeFilter] || WORK_FILTER_MATCH.all;
   const hasCS = (w) => !!CASE_STUDIES[w.slug];
   const sorted = [...WORK].sort((a, b) => Number(hasCS(b)) - Number(hasCS(a)));
@@ -117,22 +117,22 @@ function WorkList({ navigate, activeFilter = 'all' }) {
             // no case studies match this filter
           </div>
         ) : (
-          filtered.map((w) => <WorkRow key={w.n} {...w} onClick={() => navigate(`case-study/${w.slug}`)} />)
+          filtered.map((w) => <WorkRow key={w.n} {...w} href={`/work/${w.slug}`} />)
         )}
       </div>
       <div style={{ padding: 'clamp(40px, 8vw, 64px) clamp(20px, 4vw, 32px)', textAlign: 'center', borderBottom: `1px solid ${BL.inkLine}` }}>
-        <BLPillButton onClick={() => navigate('contact')}>Request the private list →</BLPillButton>
+        <BLPillLink href="/contact">Request the private list →</BLPillLink>
       </div>
     </section>
   );
 }
 
-function WorkRow({ n, client, tag, year, metric, desc, sector, onClick }) {
+function WorkRow({ n, client, tag, year, metric, desc, sector, href }) {
   const [h, setH] = React.useState(false);
   const isMobile = useMediaQuery(MQ.mobile);
   const isTablet = useMediaQuery(MQ.tablet);
   return (
-    <div onClick={onClick}
+    <a href={href}
       onMouseEnter={() => setH(true)} onMouseLeave={() => setH(false)}
       style={{
         display: 'grid',
@@ -153,6 +153,7 @@ function WorkRow({ n, client, tag, year, metric, desc, sector, onClick }) {
         cursor: 'pointer',
         gap: isMobile ? 12 : isTablet ? 18 : 24,
         transition: 'background .15s',
+        textDecoration: 'none', color: 'inherit',
       }}>
       <div style={{ gridArea: isMobile || isTablet ? 'num' : 'auto', fontFamily: BL.mono, fontSize: 12, color: BL.inkDim }}>/{n}</div>
       <div style={{
@@ -175,6 +176,6 @@ function WorkRow({ n, client, tag, year, metric, desc, sector, onClick }) {
           transform: h ? 'translateX(8px)' : 'none', transition: 'transform .15s',
         }}>→</div>
       )}
-    </div>
+    </a>
   );
 }

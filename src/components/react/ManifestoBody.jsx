@@ -1,7 +1,8 @@
 import React from 'react';
-import { BL, MQ } from '../system/bl.js';
-import { useMediaQuery } from '../system/useMediaQuery.js';
-import { BLNav, BLFooter, BLEyebrow, BLPillButton } from '../components/Chrome.jsx';
+import { BL, MQ } from '../../system/bl.js';
+import { useMediaQuery } from '../../system/useMediaQuery.js';
+import { BLNav, BLFooter, BLEyebrow, BLPillLink } from '../Chrome.jsx';
+import FAQSection from './FAQSection.jsx';
 
 const TENETS = [
   {
@@ -41,17 +42,18 @@ const TENETS = [
   },
 ];
 
-export default function PageManifesto({ navigate }) {
+export default function ManifestoBody({ faqs }) {
   return (
     <div className="bl-page" style={{ background: BL.ink, color: BL.inkText, fontFamily: BL.sans, minHeight: '100vh' }}>
-      <BLNav current="manifesto" navigate={navigate} />
-      <ManifestoBody navigate={navigate} />
-      <BLFooter navigate={navigate} />
+      <BLNav current="manifesto" />
+      <ManifestoSection />
+      <FAQSection faqs={faqs} eyebrow="// faq · manifesto" headline="On the record, no spin" headlineAccent="no spin" />
+      <BLFooter />
     </div>
   );
 }
 
-function ManifestoBody({ navigate }) {
+function ManifestoSection() {
   const isMobile = useMediaQuery(MQ.mobile);
   const isTablet = useMediaQuery(MQ.tablet);
   return (
@@ -121,7 +123,7 @@ function ManifestoBody({ navigate }) {
         fontFamily: BL.mono, fontSize: 13, color: BL.inkMuted,
       }}>
         <div>Signed by Michael Fleicher · 2025</div>
-        <BLPillButton primary onClick={() => navigate('contact')}>Hold us to it →</BLPillButton>
+        <BLPillLink primary href="/contact">Hold us to it →</BLPillLink>
       </div>
     </section>
   );

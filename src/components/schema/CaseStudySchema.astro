@@ -1,0 +1,85 @@
+---
+interface CaseStudyMeta {
+  l: string;
+  v: string;
+}
+
+interface CaseStudyOutcome {
+  v: string;
+  l: string;
+}
+
+interface CaseStudyTeam {
+  lead?: string;
+  role?: string;
+  members?: string[];
+}
+
+interface CaseStudy {
+  slug: string;
+  client: string;
+  title: string;
+  tagline: string;
+  eyebrow?: string;
+  meta?: CaseStudyMeta[];
+  outcomes?: CaseStudyOutcome[];
+  team?: CaseStudyTeam;
+  datePublished?: string;
+}
+
+interface Props {
+  cs: CaseStudy;
+}
+
+const { cs } = Astro.props;
+const SITE = 'https://bina-labs.com';
+const url = `${SITE}/work/${cs.slug}`;
+
+const sectorMeta = cs.meta?.find((m) => /sector/i.test(m.l));
+const durationMeta = cs.meta?.find((m) => /duration/i.test(m.l));
+
+const schema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  '@id': url,
+  url,
+  name: `${cs.client} - Bina Labs case study`,
+  headline: cs.title,
+  description: cs.tagline,
+  inLanguage: 'en',
+  isAccessibleForFree: true,
+  about: cs.client,
+  author: {
+    '@type': 'Person',
+    '@id': `${SITE}/about#michael`,
+    name: cs.team?.lead ?? 'Michael Fleicher',
+    jobTitle: cs.team?.role ?? 'Principal',
+    url: `${SITE}/about`,
+    sameAs: ['https://www.linkedin.com/in/michaelfleicher'],
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Bina Labs',
+    url: SITE,
+  },
+  creator: {
+    '@type': 'Organization',
+    name: 'Bina Labs',
+    url: SITE,
+  },
+};
+
+if (cs.datePublished) schema.datePublished = cs.datePublished;
+if (sectorMeta) schema.genre = sectorMeta.v;
+if (durationMeta) schema.timeRequired = durationMeta.v;
+if (cs.outcomes?.length) {
+  schema.mentions = cs.outcomes.map((o) => `${o.v} ${o.l}`);
+}
+if (cs.team?.members?.length) {
+  schema.contributor = cs.team.members.map((m) => ({
+    '@type': /\bteam\b|squad/i.test(m) ? 'Organization' : 'Person',
+    name: m,
+  }));
+}
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

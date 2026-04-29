@@ -1,0 +1,37 @@
+---
+interface ListItem {
+  slug: string;
+  client: string;
+  tagline?: string;
+}
+
+interface Props {
+  items: ListItem[];
+}
+
+const { items } = Astro.props;
+const SITE = 'https://bina-labs.com';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Bina Labs - selected case studies',
+  description:
+    'Selected production AI engagements shipped by Bina Labs across vision, agents, data, and strategy.',
+  numberOfItems: items.length,
+  itemListOrder: 'https://schema.org/ItemListUnordered',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    url: `${SITE}/work/${item.slug}`,
+    item: {
+      '@type': 'CreativeWork',
+      '@id': `${SITE}/work/${item.slug}`,
+      url: `${SITE}/work/${item.slug}`,
+      name: `${item.client} - Bina Labs case study`,
+      ...(item.tagline ? { description: item.tagline } : {}),
+    },
+  })),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

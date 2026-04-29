@@ -1,0 +1,48 @@
+---
+const SITE = 'https://bina-labs.com';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${SITE}/#localbusiness`,
+  name: 'Bina Labs',
+  url: SITE,
+  email: 'intelligence@bina-labs.com',
+  description:
+    'Senior-by-default AI consultancy. Production AI systems, agentic copilots, evals, on-prem inference. 4-week pilots, embedded squads, fractional CTO.',
+  priceRange: '$$$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Tel Aviv',
+    addressCountry: 'IL',
+  },
+  areaServed: [
+    { '@type': 'Place', name: 'Tel Aviv' },
+    { '@type': 'Place', name: 'Berlin' },
+    { '@type': 'Place', name: 'Worldwide' },
+  ],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      description: 'Office hours for direct conversations',
+      dayOfWeek: ['Thursday'],
+      opens: '14:00',
+      closes: '16:00',
+    },
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'intelligence@bina-labs.com',
+    contactType: 'sales',
+    availableLanguage: ['English', 'Hebrew'],
+    areaServed: 'Worldwide',
+  },
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,17 +1,19 @@
 import React from 'react';
-import { BL, MQ } from '../system/bl.js';
-import { useMediaQuery } from '../system/useMediaQuery.js';
-import { BLNav, BLFooter, BLEyebrow, BLPillButton } from '../components/Chrome.jsx';
+import { BL, MQ } from '../../system/bl.js';
+import { useMediaQuery } from '../../system/useMediaQuery.js';
+import { BLNav, BLFooter, BLEyebrow, BLPillLink } from '../Chrome.jsx';
+import FAQSection from './FAQSection.jsx';
 
-export default function PageServices({ navigate }) {
+export default function ServicesBody({ faqs }) {
   return (
     <div className="bl-page" style={{ background: BL.ink, color: BL.inkText, fontFamily: BL.sans, minHeight: '100vh' }}>
-      <BLNav current="services" navigate={navigate} />
+      <BLNav current="services" />
       <ServicesHero />
       <ServicesDetail />
       <ServicesProcess />
-      <ServicesEngagementModels navigate={navigate} />
-      <BLFooter navigate={navigate} />
+      <ServicesEngagementModels />
+      <FAQSection faqs={faqs} eyebrow="// faq · what clients ask" headline="The questions, on the record" headlineAccent="on the record" />
+      <BLFooter />
     </div>
   );
 }
@@ -198,7 +200,7 @@ function ServicesProcess() {
   );
 }
 
-function ServicesEngagementModels({ navigate }) {
+function ServicesEngagementModels() {
   const models = [
     { name: 'Fixed-scope sprint', d: '2–6 weeks. Single deliverable, fixed price.', from: '$60k' },
     { name: 'Embedded squad', d: '3–12 months. Full-time team inside yours.', from: '$140k/mo' },
@@ -244,8 +246,8 @@ function ServicesEngagementModels({ navigate }) {
         ))}
       </div>
       <div style={{ marginTop: 'clamp(32px, 6vw, 56px)', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-        <BLPillButton primary onClick={() => navigate('contact')}>Start a conversation →</BLPillButton>
-        <BLPillButton onClick={() => navigate('work')}>See past engagements</BLPillButton>
+        <BLPillLink primary href="/contact">Start a conversation →</BLPillLink>
+        <BLPillLink href="/work">See past engagements</BLPillLink>
       </div>
     </section>
   );

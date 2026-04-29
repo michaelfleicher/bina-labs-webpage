@@ -1,0 +1,73 @@
+---
+interface Props {
+  fullBio?: boolean;
+}
+
+const { fullBio = false } = Astro.props;
+
+const SITE = 'https://bina-labs.com';
+
+const schema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${SITE}/about#michael`,
+  name: 'Michael Fleicher',
+  givenName: 'Michael',
+  familyName: 'Fleicher',
+  jobTitle: 'Principal & Founder',
+  url: `${SITE}/about`,
+  email: 'michael@bina-labs.com',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Bina Labs',
+    url: SITE,
+  },
+  sameAs: ['https://www.linkedin.com/in/michaelfleicher'],
+  knowsAbout: [
+    'Artificial Intelligence',
+    'Applied Machine Learning',
+    'Agentic Systems',
+    'Retrieval-Augmented Generation',
+    'Computer Vision',
+    'Vision-Language Models',
+    'Production AI Engineering',
+    'Evals and AI Quality',
+    'Data Science',
+    'Engineering Leadership',
+    'Fractional CTO',
+  ],
+  description:
+    'Engineer, data scientist, founder, two-time CTO. Background spans MedTech, insurance, semiconductors, and entertainment. Building agentic systems and automations since 2017.',
+};
+
+if (fullBio) {
+  schema.alumniOf = [
+    {
+      '@type': 'Organization',
+      name: 'Storywise',
+      description: 'Founder',
+    },
+  ];
+  schema.hasOccupation = [
+    {
+      '@type': 'Occupation',
+      name: 'Principal & Founder, Bina Labs',
+      occupationLocation: {
+        '@type': 'City',
+        name: 'Tel Aviv',
+      },
+    },
+    {
+      '@type': 'Occupation',
+      name: 'Two-time Chief Technology Officer',
+      description: 'CTO roles in regulated industries (MedTech, insurance, AI SaaS).',
+    },
+  ];
+  schema.address = {
+    '@type': 'PostalAddress',
+    addressLocality: 'Tel Aviv',
+    addressCountry: 'IL',
+  };
+}
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

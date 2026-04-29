@@ -1,0 +1,80 @@
+---
+const SITE = 'https://bina-labs.com';
+
+const provider = {
+  '@type': 'Organization',
+  name: 'Bina Labs',
+  url: SITE,
+};
+
+const areaServed = [
+  { '@type': 'Place', name: 'Tel Aviv' },
+  { '@type': 'Place', name: 'Berlin' },
+  { '@type': 'Place', name: 'Worldwide' },
+];
+
+const services = [
+  {
+    name: 'AI Strategy',
+    description:
+      'A short, opinionated 4-week intensive that ends in a written thesis on what to build, what to buy, what to kill. Capability audit, build/buy/kill matrix, evals harness v0, 12-month roadmap, hiring plan.',
+    serviceType: 'AI Strategy Consulting',
+    priceFrom: 60000,
+    priceUnit: 'engagement',
+  },
+  {
+    name: 'AI / Software Engineering',
+    description:
+      'Full-stack senior squads that embed inside your team, ship production code from day one, and leave behind a system your engineers can own. Product features, retrieval and agent runtime, evals, on-prem inference, hand-off runbook.',
+    serviceType: 'Custom Software Engineering',
+    priceFrom: 140000,
+    priceUnit: 'month',
+  },
+  {
+    name: 'Lectures & Workshops',
+    description:
+      'Tailored sessions for R&D teams, executive offsites, and boards. Hands-on labs for engineers and sharp briefings for C-levels. Custom curriculum from your stack, live evals on your data, written takeaway memo.',
+    serviceType: 'Technical Education',
+    priceFrom: 24000,
+    priceUnit: 'engagement',
+  },
+  {
+    name: 'Research',
+    description:
+      'Applied research engagements with frontier labs, universities, and AI companies. Literature reviews, reproductions, prototypes and writeups, joint authorship where appropriate. A thesis we are willing to defend in public.',
+    serviceType: 'Applied Research',
+    priceFrom: null,
+    priceUnit: 'custom',
+  },
+];
+
+const schemas = services.map((s) => {
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: s.name,
+    description: s.description,
+    serviceType: s.serviceType,
+    provider,
+    areaServed,
+    url: `${SITE}/services`,
+  };
+  if (s.priceFrom !== null) {
+    schema.offers = {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        price: s.priceFrom,
+        priceCurrency: 'USD',
+        unitText: s.priceUnit,
+        valueAddedTaxIncluded: false,
+      },
+    };
+  }
+  return schema;
+});
+---
+{schemas.map((s) => (
+  <script type="application/ld+json" set:html={JSON.stringify(s)} />
+))}

@@ -1,23 +1,25 @@
 import React from 'react';
-import { BL, MQ } from '../system/bl.js';
-import { useMediaQuery } from '../system/useMediaQuery.js';
-import { BLNav, BLFooter, BLEyebrow, BLPillButton, BLMarquee } from '../components/Chrome.jsx';
+import { BL, MQ } from '../../system/bl.js';
+import { useMediaQuery } from '../../system/useMediaQuery.js';
+import { BLNav, BLFooter, BLEyebrow, BLPillLink, BLMarquee } from '../Chrome.jsx';
+import FAQSection from './FAQSection.jsx';
 
-export default function PageHome({ navigate }) {
+export default function HomeBody({ faqs }) {
   return (
     <div className="bl-page" style={{ background: BL.ink, color: BL.inkText, fontFamily: BL.sans, minHeight: '100vh' }}>
-      <BLNav current="home" navigate={navigate} />
-      <HomeHero navigate={navigate} />
+      <BLNav current="home" />
+      <HomeHero />
       <HomeMarquee />
-      <HomeManifesto navigate={navigate} />
-      <HomeWork navigate={navigate} />
-      <HomeServices navigate={navigate} />
-      <BLFooter navigate={navigate} />
+      <HomeManifesto />
+      <HomeWork />
+      <HomeServices />
+      <FAQSection faqs={faqs} eyebrow="// 05_faq" headline="Questions, answered" headlineAccent="answered" />
+      <BLFooter />
     </div>
   );
 }
 
-function HomeHero({ navigate }) {
+function HomeHero() {
   const [count, setCount] = React.useState(0);
   const isMobile = useMediaQuery(MQ.mobile);
   const isTablet = useMediaQuery(MQ.tablet);
@@ -93,8 +95,8 @@ function HomeHero({ navigate }) {
       )}
 
       <div style={{ marginTop: isMobile ? 28 : 'clamp(32px, 5vw, 56px)', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-        <BLPillButton primary onClick={() => navigate('contact')}>Start a project →</BLPillButton>
-        <BLPillButton onClick={() => navigate('work')}>See our work</BLPillButton>
+        <BLPillLink primary href="/contact">Start a project →</BLPillLink>
+        <BLPillLink href="/work">See our work</BLPillLink>
       </div>
     </section>
   );
@@ -137,7 +139,7 @@ function HomeMarquee() {
   return <BLMarquee items={items} />;
 }
 
-function HomeManifesto({ navigate }) {
+function HomeManifesto() {
   const isMobile = useMediaQuery(MQ.mobile);
   const isTablet = useMediaQuery(MQ.tablet);
   const allTenets = [
@@ -187,10 +189,10 @@ function HomeManifesto({ navigate }) {
           );
         })}
       </div>
-      <a onClick={() => navigate('manifesto')} style={{
+      <a href="/manifesto" style={{
         display: 'inline-flex', alignItems: 'center', gap: 10, marginTop: 'clamp(32px, 6vw, 56px)',
         fontFamily: BL.mono, fontSize: 13, color: BL.inkText, cursor: 'pointer',
-        minHeight: BL.tap, paddingTop: 8, paddingBottom: 8,
+        minHeight: BL.tap, paddingTop: 8, paddingBottom: 8, textDecoration: 'none',
       }} className="bl-link-hover">
         {hiddenCount > 0 ? `+${hiddenCount} more · read the full manifesto →` : 'Read the full manifesto →'}
       </a>
@@ -198,7 +200,7 @@ function HomeManifesto({ navigate }) {
   );
 }
 
-function HomeWork({ navigate }) {
+function HomeWork() {
   const work = [
     { n: '/01', slug: 'match-cuts', client: 'MATCH CUTS', tag: 'VISION · VLM · 6MO', metric: '90→33', metricLabel: 'min, per player', desc: 'Auto-edited highlight reels from full football matches.' },
     { n: '/02', slug: 'auto-qto', client: 'AUTO-QTO', tag: 'VISION · VLM · 8MO', metric: '92%', metricLabel: 'symbol recall', desc: 'Hybrid VLM extracting BOMs from dense construction drawings.' },
@@ -219,12 +221,12 @@ function HomeWork({ navigate }) {
         marginBottom: 'clamp(32px, 6vw, 56px)', fontFamily: BL.mono, fontSize: 11, color: BL.inkMuted,
       }}>
         <BLEyebrow>// 03_selected_work</BLEyebrow>
-        <a onClick={() => navigate('work')} style={{ cursor: 'pointer', color: BL.inkText }} className="bl-link-hover">all 17 →</a>
+        <a href="/work" style={{ cursor: 'pointer', color: BL.inkText, textDecoration: 'none' }} className="bl-link-hover">all 17 →</a>
       </div>
       <div style={{ borderTop: `1px solid ${BL.inkLine}` }}>
         {work.map((w, i) => (
-          <div key={w.n}
-            onClick={() => navigate(`case-study/${w.slug}`)}
+          <a key={w.n}
+            href={`/work/${w.slug}`}
             onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(null)}
             style={{
               display: 'grid',
@@ -246,6 +248,7 @@ function HomeWork({ navigate }) {
               gap: isMobile ? 8 : isTablet ? 20 : 32,
               minHeight: isMobile ? BL.tap : 'auto',
               transition: 'background .15s',
+              textDecoration: 'none', color: 'inherit',
             }}>
             <div style={{ gridArea: isMobile || isTablet ? 'num' : 'auto', fontFamily: BL.mono, fontSize: 12, color: BL.inkDim }}>{w.n}</div>
             <div style={{
@@ -271,14 +274,14 @@ function HomeWork({ navigate }) {
                 transform: hover === i ? 'translateX(8px)' : 'none', transition: 'transform .15s',
               }}>→</div>
             )}
-          </div>
+          </a>
         ))}
       </div>
     </section>
   );
 }
 
-function HomeServices({ navigate }) {
+function HomeServices() {
   const services = [
     { n: 'svc.01', name: 'AI Strategy', tags: ['roadmap', 'evals', 'org-design'], desc: '4-week intensives. Where to bet, where to wait, what to ignore.' },
     { n: 'svc.02', name: 'AI / Software Engineering', tags: ['full-stack', 'rag', 'agents', 'on-prem'], desc: 'Embedded squads that ship product and the AI plumbing underneath it.' },
@@ -308,11 +311,12 @@ function HomeServices({ navigate }) {
         gap: 1, background: BL.inkLine,
       }}>
         {services.map((s) => (
-          <div key={s.n} onClick={() => navigate('services')} style={{
+          <a key={s.n} href="/services" style={{
             background: BL.ink,
             padding: isMobile ? '24px 20px' : 'clamp(28px, 5vw, 44px) clamp(20px, 4vw, 36px)',
             minHeight: isMobile ? 'auto' : 260, cursor: 'pointer',
-            transition: 'background .2s',
+            transition: 'background .2s', textDecoration: 'none', color: 'inherit',
+            display: 'block',
           }}
             onMouseEnter={(e) => e.currentTarget.style.background = '#0e1c30'}
             onMouseLeave={(e) => e.currentTarget.style.background = BL.ink}>
@@ -341,7 +345,7 @@ function HomeServices({ navigate }) {
                 }}>{t}</span>
               ))}
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

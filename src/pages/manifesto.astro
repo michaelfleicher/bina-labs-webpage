@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ManifestoBody from '../components/react/ManifestoBody.jsx';
+import PersonSchema from '../components/schema/PersonSchema.astro';
+import FAQSchema from '../components/schema/FAQSchema.astro';
+import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import { MANIFESTO_FAQS } from '../data/faqs.js';
+
+const title = 'Manifesto - Bina Labs';
+const description =
+  'Seven operating constraints we will close a deal over: deadline is holy, decks do not run in production, AI assistants are tools not authors, prototype before contract, honest deprecation, built to leave, evals are 80% of the job.';
+
+const SITE = 'https://bina-labs.com';
+
+const manifestoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  '@id': `${SITE}/manifesto`,
+  url: `${SITE}/manifesto`,
+  name: 'The Bina Labs Manifesto',
+  headline: 'Seven things we refuse to compromise on',
+  description,
+  inLanguage: 'en',
+  isAccessibleForFree: true,
+  datePublished: '2025-01-01',
+  dateModified: '2026-04-12',
+  author: {
+    '@type': 'Person',
+    '@id': `${SITE}/about#michael`,
+    name: 'Michael Fleicher',
+    jobTitle: 'Principal',
+    url: `${SITE}/about`,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Bina Labs',
+    url: SITE,
+  },
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Manifesto', url: '/manifesto' },
+];
+---
+<BaseLayout title={title} description={description} canonical="/manifesto" ogType="article">
+  <PersonSchema slot="head" />
+  <FAQSchema slot="head" faqs={MANIFESTO_FAQS} />
+  <BreadcrumbSchema slot="head" items={breadcrumbs} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(manifestoSchema)} />
+  <ManifestoBody client:load faqs={MANIFESTO_FAQS} />
+</BaseLayout>

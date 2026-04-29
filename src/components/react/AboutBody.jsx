@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BL, MQ } from '../system/bl.js';
-import { useMediaQuery } from '../system/useMediaQuery.js';
-import { BLNav, BLFooter, BLEyebrow } from '../components/Chrome.jsx';
-import michaelImg from '../assets/michael.png';
+import { BL, MQ } from '../../system/bl.js';
+import { useMediaQuery } from '../../system/useMediaQuery.js';
+import { BLNav, BLFooter, BLEyebrow } from '../Chrome.jsx';
+import FAQSection from './FAQSection.jsx';
+import michaelImg from '../../assets/michael.png';
 
 const RECEIPTS = [
   { y: '2× ex-CTO', d: 'MedTech · Insurance · AI SaaS', tag: 'leadership' },
@@ -26,16 +27,17 @@ const ROLES = [
   { t: 'Full-Stack Engineer', loc: 'Remote · contract', notes: 'TS, Python, infra' },
 ];
 
-export default function PageAbout({ navigate }) {
+export default function AboutBody({ faqs }) {
   return (
     <div className="bl-page" style={{ background: BL.ink, color: BL.inkText, fontFamily: BL.sans, minHeight: '100vh' }}>
-      <BLNav current="about" navigate={navigate} />
+      <BLNav current="about" />
       <OperatorHero />
       <OperatorReceipts />
       <OperatorHowWeWork />
-      <OperatorHiring navigate={navigate} />
+      <OperatorHiring />
       <OperatorPrinciples />
-      <BLFooter navigate={navigate} />
+      <FAQSection faqs={faqs} eyebrow="// faq · about" headline="More about Michael, more about us" headlineAccent="more about us" />
+      <BLFooter />
     </div>
   );
 }
@@ -53,9 +55,10 @@ function BenchBlurb() {
 function OperatorHero() {
   const isTablet = useMediaQuery(MQ.tablet);
   return (
-    <section style={{
+    <section id="michael" style={{
       padding: 'clamp(56px, 9vw, 88px) clamp(20px, 4vw, 32px) clamp(48px, 8vw, 72px)',
       borderBottom: `1px solid ${BL.inkLine}`,
+      scrollMarginTop: 'var(--bl-nav-h, 0px)',
     }}>
       <BLEyebrow>// about · the operator</BLEyebrow>
       <div style={{
@@ -107,7 +110,9 @@ function PortraitFrame({ label }) {
     }}>
       <img
         src={michaelImg}
-        alt="Michael Fleicher"
+        alt="Michael Fleicher, principal and founder of Bina Labs - portrait"
+        loading="lazy"
+        decoding="async"
         style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%',
           objectFit: 'cover', objectPosition: 'center 18%',
@@ -250,7 +255,7 @@ function OperatorHowWeWork() {
   );
 }
 
-function OperatorHiring({ navigate }) {
+function OperatorHiring() {
   const [openRole, setOpenRole] = React.useState(null);
   const isMobile = useMediaQuery(MQ.mobile);
   const isTablet = useMediaQuery(MQ.tablet);
@@ -329,8 +334,10 @@ function ApplyModal({ role, onClose }) {
   const [submitting, setSubmitting] = React.useState(false);
   const [errors, setErrors] = React.useState({});
   const [submitError, setSubmitError] = React.useState(null);
+  const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
+    setMounted(true);
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
     const prev = document.body.style.overflow;
@@ -538,6 +545,7 @@ function ApplyModal({ role, onClose }) {
     </div>
   );
 
+  if (!mounted || typeof document === 'undefined') return null;
   return ReactDOM.createPortal(modal, document.body);
 }
 

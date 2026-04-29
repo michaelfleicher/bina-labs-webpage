@@ -1,59 +1,48 @@
 import React from 'react';
-import { BL, MQ } from '../system/bl.js';
-import { useMediaQuery } from '../system/useMediaQuery.js';
-import { BLNav, BLFooter, BLEyebrow, BLPillButton } from '../components/Chrome.jsx';
-import { CASE_STUDIES, CASE_STUDY_DEFAULT_SLUG } from '../data/caseStudies.js';
+import { BL, MQ } from '../../system/bl.js';
+import { useMediaQuery } from '../../system/useMediaQuery.js';
+import { BLNav, BLFooter, BLEyebrow } from '../Chrome.jsx';
+import { CASE_STUDIES } from '../../data/caseStudies.js';
+import FAQSection from './FAQSection.jsx';
 
-const getSlug = () => {
-  const h = window.location.hash.slice(1);
-  const parts = h.split('/');
-  return parts[1] || CASE_STUDY_DEFAULT_SLUG;
-};
-
-export default function PageCaseStudy({ navigate }) {
-  const [slug, setSlug] = React.useState(getSlug);
-  React.useEffect(() => {
-    const onHash = () => setSlug(getSlug());
-    window.addEventListener('hashchange', onHash);
-    return () => window.removeEventListener('hashchange', onHash);
-  }, []);
-
-  const data = CASE_STUDIES[slug];
-
-  if (!data) {
-    return (
-      <div className="bl-page" style={{ background: BL.ink, color: BL.inkText, fontFamily: BL.sans, minHeight: '100vh' }}>
-        <BLNav current={`work / ${slug}`} navigate={navigate} />
-        <CSComingSoon slug={slug} navigate={navigate} />
-        <BLFooter navigate={navigate} />
-      </div>
-    );
-  }
-
+export default function CaseStudyBody({ caseStudy, faqs }) {
+  const data = caseStudy;
   return (
     <div className="bl-page" style={{ background: BL.ink, color: BL.inkText, fontFamily: BL.sans, minHeight: '100vh' }}>
-      <BLNav current={`work / ${data.slug}`} navigate={navigate} />
+      <BLNav current={`work / ${data.slug}`} />
       <CSHero data={data} />
       <CSMeta data={data} />
       <CSBrief data={data} />
       <CSStack data={data} />
       <CSOutcomes data={data} />
       <CSQuote data={data} />
-      <CSRelated navigate={navigate} currentSlug={data.slug} />
-      <BLFooter navigate={navigate} />
+      <FAQSection
+        faqs={faqs}
+        eyebrow={`// faq · ${data.client.toLowerCase()}`}
+        headline={`What clients ask about ${data.client}`}
+        headlineAccent={data.client}
+      />
+      <CSRelated currentSlug={data.slug} />
+      <BLFooter />
     </div>
   );
 }
 
 function CSHero({ data }) {
+  const goBack = (e) => {
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      e.preventDefault();
+      window.history.back();
+    }
+  };
   return (
     <section style={{
       padding: 'clamp(40px, 7vw, 64px) clamp(20px, 4vw, 32px) clamp(32px, 5vw, 48px)',
       borderBottom: `1px solid ${BL.inkLine}`,
     }}>
-      <div onClick={() => history.back()} style={{ fontFamily: BL.mono, fontSize: 12, color: BL.inkMuted, cursor: 'pointer', marginBottom: 32 }} className="bl-link-hover">
+      <a href="/work" onClick={goBack} style={{ fontFamily: BL.mono, fontSize: 12, color: BL.inkMuted, cursor: 'pointer', marginBottom: 32, textDecoration: 'none', display: 'inline-block' }} className="bl-link-hover">
         ← back to work
-      </div>
+      </a>
       <BLEyebrow>{data.eyebrow}</BLEyebrow>
       <h1 style={{
         marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
@@ -68,7 +57,45 @@ function CSHero({ data }) {
       }}>
         {data.tagline}
       </p>
+      <CSByline team={data.team} />
     </section>
+  );
+}
+
+function CSByline({ team }) {
+  if (!team) return null;
+  const lead = team.lead ?? 'Michael Fleicher';
+  const role = team.role ?? 'Principal';
+  const members = (team.members ?? []).filter((m) => m && m !== lead);
+  return (
+    <div
+      itemScope
+      itemType="https://schema.org/Person"
+      style={{
+        marginTop: 32,
+        fontFamily: BL.mono,
+        fontSize: 12,
+        color: BL.inkMuted,
+        letterSpacing: '0.04em',
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 16,
+      }}>
+      <span>
+        By <a
+          href="/about#michael"
+          itemProp="url"
+          className="bl-link-hover"
+          style={{ color: BL.red, textDecoration: 'none' }}>
+          <span itemProp="name">{lead}</span>
+        </a> · <span itemProp="jobTitle">{role}</span>
+      </span>
+      {members.length > 0 && (
+        <span style={{ color: BL.inkDim }}>
+          led with {members.join(' · ')}
+        </span>
+      )}
+    </div>
   );
 }
 
@@ -224,7 +251,7 @@ function CSQuote({ data }) {
   );
 }
 
-function CSRelated({ navigate, currentSlug }) {
+function CSRelated({ currentSlug }) {
   const all = Object.values(CASE_STUDIES).filter(c => c.slug !== currentSlug);
   const rel = all.slice(0, 3).map(c => ({
     slug: c.slug,
@@ -246,52 +273,20 @@ function CSRelated({ navigate, currentSlug }) {
         gap: 16, marginTop: 32,
       }}>
         {rel.map(r => (
-          <div key={r.slug} onClick={() => navigate(`case-study/${r.slug}`)} style={{
+          <a key={r.slug} href={`/work/${r.slug}`} style={{
             border: `1px solid ${BL.inkLine}`, padding: 'clamp(24px, 4vw, 32px)', cursor: 'pointer',
             background: 'rgba(232,241,247,0.02)',
             minHeight: isMobile ? 'auto' : 220,
             display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
-            gap: 24,
+            gap: 24, textDecoration: 'none', color: 'inherit',
           }}>
             <div style={{ fontFamily: BL.mono, fontSize: 11, color: BL.inkMuted }}>{r.tag}</div>
             <div>
               <div style={{ fontFamily: BL.sans, fontSize: 'clamp(26px, 4.5vw, 36px)', fontWeight: 300, letterSpacing: '-0.02em', color: BL.inkText, marginBottom: 8 }}>{r.client}</div>
               <div style={{ fontFamily: BL.serif, fontSize: 'clamp(18px, 3vw, 22px)', color: BL.red, fontWeight: 300 }}>{r.metric}</div>
             </div>
-          </div>
+          </a>
         ))}
-      </div>
-    </section>
-  );
-}
-
-function CSComingSoon({ slug, navigate }) {
-  const pretty = slug.split('-').map(s => s[0].toUpperCase() + s.slice(1)).join(' ');
-  return (
-    <section style={{
-      padding: 'clamp(56px, 10vw, 120px) clamp(20px, 4vw, 32px) clamp(80px, 14vw, 160px)',
-      borderBottom: `1px solid ${BL.inkLine}`, minHeight: '70vh',
-    }}>
-      <div onClick={() => navigate('work')} style={{ fontFamily: BL.mono, fontSize: 12, color: BL.inkMuted, cursor: 'pointer', marginBottom: 32 }} className="bl-link-hover">
-        ← back to work
-      </div>
-      <BLEyebrow>// case_study · {slug} · write-up in progress</BLEyebrow>
-      <h1 style={{
-        marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
-        fontSize: 'clamp(48px, 13vw, 144px)',
-        lineHeight: 0.94, letterSpacing: '-0.045em', color: BL.inkText, maxWidth: '14ch',
-      }}>
-        {pretty}<span style={{ color: BL.red }}>.</span>
-      </h1>
-      <p style={{
-        marginTop: 32, fontFamily: BL.serif, fontSize: 'clamp(20px, 3vw, 28px)', lineHeight: 1.4,
-        color: BL.inkText, maxWidth: '52ch', fontWeight: 300, fontStyle: 'italic',
-      }}>
-        The full write-up for this engagement is still under client review. We can walk you through the build, the metrics, and the trade-offs on a call.
-      </p>
-      <div style={{ marginTop: 'clamp(32px, 6vw, 56px)', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-        <BLPillButton primary onClick={() => navigate('contact')}>Request a walkthrough →</BLPillButton>
-        <BLPillButton onClick={() => navigate('work')}>Back to all work</BLPillButton>
       </div>
     </section>
   );

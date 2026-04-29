@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudyBody from '../../components/react/CaseStudyBody.jsx';
+import CaseStudySchema from '../../components/schema/CaseStudySchema.astro';
+import BreadcrumbSchema from '../../components/schema/BreadcrumbSchema.astro';
+import FAQSchema from '../../components/schema/FAQSchema.astro';
+import PersonSchema from '../../components/schema/PersonSchema.astro';
+import { CASE_STUDIES } from '../../data/caseStudies.js';
+import { CASE_STUDY_FAQS } from '../../data/faqs.js';
+
+export function getStaticPaths() {
+  return Object.values(CASE_STUDIES).map((cs) => ({
+    params: { slug: cs.slug },
+    props: { caseStudy: cs },
+  }));
+}
+
+const { caseStudy } = Astro.props;
+const title = `${caseStudy.client} - Bina Labs case study`;
+const description = caseStudy.tagline;
+const canonical = `/work/${caseStudy.slug}`;
+
+const faqs = CASE_STUDY_FAQS[caseStudy.slug] ?? [];
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Work', url: '/work' },
+  { name: caseStudy.client, url: canonical },
+];
+---
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article">
+  <CaseStudySchema slot="head" cs={caseStudy} />
+  <BreadcrumbSchema slot="head" items={breadcrumbs} />
+  <PersonSchema slot="head" />
+  {faqs.length > 0 && <FAQSchema slot="head" faqs={faqs} />}
+  <CaseStudyBody caseStudy={caseStudy} faqs={faqs} client:load />
+</BaseLayout>

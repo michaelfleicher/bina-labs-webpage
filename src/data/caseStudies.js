@@ -40,6 +40,12 @@ export const CASE_STUDIES = {
       text: 'They wrote production code in week one and refused to write a slide for six months. The first time we saw the system render a real reel, my co-founder cried.',
       attr: '— founder, Match Cuts',
     },
+    team: {
+      lead: 'Michael Fleicher',
+      role: 'Principal',
+      members: ['Michael Fleicher', 'Vision team'],
+    },
+    datePublished: '2025-08-01',
   },
 
   'auto-qto': {
@@ -81,6 +87,12 @@ export const CASE_STUDIES = {
       text: 'Everyone in the category showed me a demo. Bina shipped a system my estimators actually trust on real plan sets. That is a different conversation.',
       attr: '— founder, Auto-QTO',
     },
+    team: {
+      lead: 'Michael Fleicher',
+      role: 'Principal',
+      members: ['Michael Fleicher', 'CV + VLM team'],
+    },
+    datePublished: '2025-09-15',
   },
 
   'lloyd-score': {
@@ -122,6 +134,12 @@ export const CASE_STUDIES = {
       text: "We bought spatial-AI vendors before. This is the first one that admitted what they don't see and modelled around it.",
       attr: '— head of underwriting, Lloyd Score pilot',
     },
+    team: {
+      lead: 'Michael Fleicher',
+      role: 'Principal',
+      members: ['Michael Fleicher', 'Spatial-AI team'],
+    },
+    datePublished: '2025-10-30',
   },
 
   'caseworker': {
@@ -163,6 +181,12 @@ export const CASE_STUDIES = {
       text: "The reps stopped asking IT to remove it after week two. That's the metric I actually cared about.",
       attr: '— ops director, Caseworker pilot',
     },
+    team: {
+      lead: 'Michael Fleicher',
+      role: 'Principal',
+      members: ['Michael Fleicher', 'Embedded team'],
+    },
+    datePublished: '2025-11-20',
   },
 };
 

@@ -1,19 +1,19 @@
 import React from 'react';
-import { BL, MQ } from '../system/bl.js';
-import { useMediaQuery } from '../system/useMediaQuery.js';
-import { BLNav, BLFooter, BLEyebrow, BLPillButton } from '../components/Chrome.jsx';
+import { BL, MQ } from '../../system/bl.js';
+import { useMediaQuery } from '../../system/useMediaQuery.js';
+import { BLNav, BLFooter, BLEyebrow, BLPillLink } from '../Chrome.jsx';
 
-export default function PageWriting({ navigate }) {
+export default function WritingBody() {
   return (
     <div className="bl-page" style={{ background: BL.ink, color: BL.inkText, fontFamily: BL.sans, minHeight: '100vh' }}>
-      <BLNav current="writing" navigate={navigate} />
-      <WritingComingSoon navigate={navigate} />
-      <BLFooter navigate={navigate} />
+      <BLNav current="writing" />
+      <WritingComingSoon />
+      <BLFooter />
     </div>
   );
 }
 
-function WritingComingSoon({ navigate }) {
+function WritingComingSoon() {
   const isMobile = useMediaQuery(MQ.mobile);
   const isTablet = useMediaQuery(MQ.tablet);
   return (
@@ -80,8 +80,8 @@ function WritingComingSoon({ navigate }) {
         gap: 12, flexWrap: 'wrap',
         alignItems: isMobile ? 'stretch' : 'center',
       }}>
-        <BLPillButton primary onClick={() => navigate('contact')}>Get notified →</BLPillButton>
-        <BLPillButton onClick={() => navigate('work')}>See our work instead</BLPillButton>
+        <BLPillLink primary href="/contact">Get notified →</BLPillLink>
+        <BLPillLink href="/work">See our work instead</BLPillLink>
       </div>
     </section>
   );

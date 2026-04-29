@@ -1,14 +1,16 @@
 import React from 'react';
-import { BL, MQ } from '../system/bl.js';
-import { useMediaQuery } from '../system/useMediaQuery.js';
-import { BLNav, BLFooter, BLEyebrow } from '../components/Chrome.jsx';
+import { BL, MQ } from '../../system/bl.js';
+import { useMediaQuery } from '../../system/useMediaQuery.js';
+import { BLNav, BLFooter, BLEyebrow } from '../Chrome.jsx';
+import FAQSection from './FAQSection.jsx';
 
-export default function PageContact({ navigate }) {
+export default function ContactBody({ faqs }) {
   return (
     <div className="bl-page" style={{ background: BL.ink, color: BL.inkText, fontFamily: BL.sans, minHeight: '100vh' }}>
-      <BLNav current="contact" navigate={navigate} />
-      <ContactBody />
-      <BLFooter navigate={navigate} />
+      <BLNav current="contact" />
+      <ContactSection />
+      <FAQSection faqs={faqs} eyebrow="// faq · before you write" headline="Before you write us" headlineAccent="write us" />
+      <BLFooter />
     </div>
   );
 }
@@ -20,7 +22,7 @@ const INITIAL_FORM = {
 
 const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 
-function ContactBody() {
+function ContactSection() {
   const [form, setForm] = React.useState(INITIAL_FORM);
   const [sent, setSent] = React.useState(false);
   const [submitting, setSubmitting] = React.useState(false);

@@ -2,7 +2,15 @@ import React from 'react';
 import { BL, MQ } from '../system/bl.js';
 import { useMediaQuery } from '../system/useMediaQuery.js';
 
-export function BLNav({ current, navigate }) {
+const NAV_ITEMS = [
+  { label: '~/work', page: 'work', href: '/work' },
+  { label: '~/services', page: 'services', href: '/services' },
+  { label: '~/manifesto', page: 'manifesto', href: '/manifesto' },
+  { label: '~/writing', page: 'writing', href: '/writing' },
+  { label: '~/about', page: 'about', href: '/about' },
+];
+
+export function BLNav({ current }) {
   const [t, setT] = React.useState(new Date());
   const [open, setOpen] = React.useState(false);
   const isTablet = useMediaQuery(MQ.tablet);
@@ -33,14 +41,6 @@ export function BLNav({ current, navigate }) {
 
   const time = t.toISOString().split('T')[1].slice(0, 8);
 
-  const items = [
-    { label: '~/work', page: 'work' },
-    { label: '~/services', page: 'services' },
-    { label: '~/manifesto', page: 'manifesto' },
-    { label: '~/writing', page: 'writing' },
-    { label: '~/about', page: 'about' },
-  ];
-
   React.useEffect(() => {
     if (!open) return;
     const onKey = (e) => { if (e.key === 'Escape') setOpen(false); };
@@ -52,7 +52,7 @@ export function BLNav({ current, navigate }) {
     };
   }, [open]);
 
-  const goto = (page) => { setOpen(false); navigate(page); };
+  const closeDrawer = () => setOpen(false);
 
   return (
     <>
@@ -68,7 +68,7 @@ export function BLNav({ current, navigate }) {
         gap: 12,
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 8 : 12, minWidth: 0 }}>
-          <a onClick={() => navigate('home')} style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 8 : 12, cursor: 'pointer', minWidth: 0 }}>
+          <a href="/" style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 8 : 12, cursor: 'pointer', minWidth: 0, textDecoration: 'none', color: 'inherit' }}>
             <span style={{
               width: 10, height: 10, background: BL.red,
               boxShadow: `0 0 14px ${BL.red}aa`, display: 'inline-block', flexShrink: 0,
@@ -81,14 +81,14 @@ export function BLNav({ current, navigate }) {
 
         {!isTablet && (
           <div style={{ display: 'flex', gap: 4 }}>
-            {items.map((x) => (
+            {NAV_ITEMS.map((x) => (
               <a key={x.page}
-                onClick={() => navigate(x.page)}
+                href={x.href}
                 style={{
                   color: current === x.page ? BL.inkText : BL.inkMuted,
                   padding: '6px 12px', borderRadius: 4, cursor: 'pointer',
                   background: current === x.page ? 'rgba(232,241,247,0.05)' : 'transparent',
-                  transition: 'all .15s',
+                  transition: 'all .15s', textDecoration: 'none',
                 }}
                 onMouseEnter={(e) => { if (current !== x.page) { e.currentTarget.style.color = BL.inkText; e.currentTarget.style.background = 'rgba(232,241,247,0.04)'; } }}
                 onMouseLeave={(e) => { if (current !== x.page) { e.currentTarget.style.color = BL.inkMuted; e.currentTarget.style.background = 'transparent'; } }}>
@@ -101,11 +101,11 @@ export function BLNav({ current, navigate }) {
         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: isMobile ? 10 : 16, alignItems: 'center' }}>
           {!isTablet && <span style={{ color: BL.inkDim }}>UTC {time}</span>}
           {!isTablet && (
-            <a onClick={() => navigate('contact')} style={{
+            <a href="/contact" style={{
               color: BL.ink, background: BL.red,
               padding: '8px 16px', cursor: 'pointer',
               fontWeight: 500, letterSpacing: '0.02em', borderRadius: 0,
-              fontFamily: BL.mono, fontSize: 12,
+              fontFamily: BL.mono, fontSize: 12, textDecoration: 'none',
             }}>./connect.sh</a>
           )}
           {isTablet && (
@@ -151,19 +151,20 @@ export function BLNav({ current, navigate }) {
               }}>close ✕</button>
           </div>
           <div className="bl-mobile-drawer-list">
-            <a onClick={() => goto('home')} style={{ color: current === 'home' ? BL.copper : BL.inkText }}>~/home</a>
-            {items.map((x) => (
-              <a key={x.page} onClick={() => goto(x.page)} style={{ color: current === x.page ? BL.copper : BL.inkText }}>{x.label}</a>
+            <a href="/" onClick={closeDrawer} style={{ color: current === 'home' ? BL.copper : BL.inkText, textDecoration: 'none' }}>~/home</a>
+            {NAV_ITEMS.map((x) => (
+              <a key={x.page} href={x.href} onClick={closeDrawer} style={{ color: current === x.page ? BL.copper : BL.inkText, textDecoration: 'none' }}>{x.label}</a>
             ))}
           </div>
           <div style={{ marginTop: 'auto', padding: '20px', borderTop: `1px solid ${BL.inkLine}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontFamily: BL.mono, fontSize: 11, color: BL.inkDim }}>
             <span>UTC {time}</span>
-            <a onClick={() => goto('contact')} style={{
+            <a href="/contact" onClick={closeDrawer} style={{
               color: BL.ink, background: BL.red,
               padding: '14px 22px', cursor: 'pointer',
               fontWeight: 500, letterSpacing: '0.02em',
               fontFamily: BL.mono, fontSize: 12,
               display: 'inline-flex', alignItems: 'center', minHeight: BL.tap,
+              textDecoration: 'none',
             }}>./connect.sh</a>
           </div>
         </div>
@@ -172,7 +173,7 @@ export function BLNav({ current, navigate }) {
   );
 }
 
-export function BLFooter({ navigate }) {
+export function BLFooter() {
   const isMobile = useMediaQuery(MQ.mobile);
   const isTablet = useMediaQuery(MQ.tablet);
 
@@ -180,26 +181,26 @@ export function BLFooter({ navigate }) {
     {
       h: '// pages',
       l: [
-        { t: 'work', p: 'work' },
-        { t: 'services', p: 'services' },
-        { t: 'manifesto', p: 'manifesto' },
-        { t: 'writing', p: 'writing' },
+        { t: 'work', href: '/work' },
+        { t: 'services', href: '/services' },
+        { t: 'manifesto', href: '/manifesto' },
+        { t: 'writing', href: '/writing' },
       ],
     },
     {
       h: '// social',
       l: [
-        { t: 'github', href: 'https://github.com/michaelfleicher' },
-        { t: 'linkedin', href: 'https://www.linkedin.com/in/michaelfleicher' },
+        { t: 'github', href: 'https://github.com/michaelfleicher', external: true },
+        { t: 'linkedin', href: 'https://www.linkedin.com/in/michaelfleicher', external: true },
       ],
     },
     {
       h: '// company',
       l: [
-        { t: 'about', p: 'about' },
-        { t: 'careers (4)', p: 'about' },
-        { t: 'press', href: 'mailto:intelligence@bina-labs.com?subject=Press%20inquiry' },
-        { t: 'contact', p: 'contact' },
+        { t: 'about', href: '/about' },
+        { t: 'careers (4)', href: '/about' },
+        { t: 'press', href: 'mailto:intelligence@bina-labs.com?subject=Press%20inquiry', external: true },
+        { t: 'contact', href: '/contact' },
       ],
     },
   ];
@@ -237,13 +238,12 @@ export function BLFooter({ navigate }) {
         {columns.map((c) => (
           <div key={c.h}>
             <div style={{ marginBottom: 16, color: BL.inkDim }}>{c.h}</div>
-            {c.l.map((x) => x.href ? (
-              <a key={x.t} href={x.href} target="_blank" rel="noopener noreferrer"
-                style={{ color: BL.inkText, marginBottom: 8, cursor: 'pointer', display: 'block', textDecoration: 'none' }} className="bl-link-hover">{x.t}</a>
-            ) : (
-              <div key={x.t}
-                onClick={() => x.p && navigate(x.p)}
-                style={{ color: BL.inkText, marginBottom: 8, cursor: x.p ? 'pointer' : 'default' }} className="bl-link-hover">{x.t}</div>
+            {c.l.map((x) => (
+              <a key={x.t}
+                href={x.href}
+                {...(x.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                style={{ color: BL.inkText, marginBottom: 8, cursor: 'pointer', display: 'block', textDecoration: 'none' }}
+                className="bl-link-hover">{x.t}</a>
             ))}
           </div>
         ))}
@@ -271,10 +271,11 @@ export function BLEyebrow({ children, color }) {
   );
 }
 
-export function BLPillButton({ children, primary, onClick }) {
+export function BLPillButton({ children, primary, onClick, type }) {
   const [h, setH] = React.useState(false);
   return (
     <button
+      type={type}
       onClick={onClick}
       onMouseEnter={() => setH(true)} onMouseLeave={() => setH(false)}
       style={{
@@ -289,6 +290,32 @@ export function BLPillButton({ children, primary, onClick }) {
       }}>
       {children}
     </button>
+  );
+}
+
+export function BLPillLink({ children, primary, href, onClick, external }) {
+  const [h, setH] = React.useState(false);
+  const externalProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      {...externalProps}
+      onMouseEnter={() => setH(true)} onMouseLeave={() => setH(false)}
+      style={{
+        padding: 'clamp(12px, 2vw, 14px) clamp(18px, 3vw, 22px)',
+        minHeight: BL.tap,
+        background: primary ? (h ? BL.bone : BL.red) : 'transparent',
+        color: primary ? BL.ink : BL.inkText,
+        border: primary ? 'none' : `1px solid ${BL.inkLineStrong}`,
+        fontFamily: BL.mono, fontSize: 13, fontWeight: 500,
+        letterSpacing: '0.02em', transition: 'all .2s',
+        display: 'inline-flex', alignItems: 'center', gap: 10,
+        textDecoration: 'none', cursor: 'pointer',
+        boxSizing: 'border-box',
+      }}>
+      {children}
+    </a>
   );
 }
 

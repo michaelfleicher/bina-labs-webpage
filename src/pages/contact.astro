@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactBody from '../components/react/ContactBody.jsx';
+import LocalBusinessSchema from '../components/schema/LocalBusinessSchema.astro';
+import FAQSchema from '../components/schema/FAQSchema.astro';
+import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import { CONTACT_FAQS } from '../data/faqs.js';
+
+const title = 'Contact - Bina Labs';
+const description =
+  'Tell us the shape of it. 30-minute first call, no NDA, reply within one business day. Office hours Thursdays 14-16 IST. intelligence@bina-labs.com.';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Contact', url: '/contact' },
+];
+---
+<BaseLayout title={title} description={description} canonical="/contact">
+  <LocalBusinessSchema slot="head" />
+  <FAQSchema slot="head" faqs={CONTACT_FAQS} />
+  <BreadcrumbSchema slot="head" items={breadcrumbs} />
+  <ContactBody client:load faqs={CONTACT_FAQS} />
+</BaseLayout>

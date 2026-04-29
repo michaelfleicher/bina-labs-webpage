@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeBody from '../components/react/HomeBody.jsx';
+import PersonSchema from '../components/schema/PersonSchema.astro';
+import FAQSchema from '../components/schema/FAQSchema.astro';
+import { HOME_FAQS } from '../data/faqs.js';
+
+const title = 'Bina Labs - Architectural Intelligence of Tomorrow';
+const description =
+  'Bina Labs is a consultancy of engineers, researchers, and strategists building AI systems that earn their seat at the production table. Tel Aviv, Berlin, remote-first.';
+---
+<BaseLayout title={title} description={description} canonical="/">
+  <PersonSchema slot="head" />
+  <FAQSchema slot="head" faqs={HOME_FAQS} />
+  <HomeBody client:load faqs={HOME_FAQS} />
+</BaseLayout>
