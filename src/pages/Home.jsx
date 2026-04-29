@@ -110,6 +110,7 @@ function StatBlock({ n, label, value, unit, accent, isMobile }) {
       <div style={{
         fontFamily: BL.mono, fontSize: isMobile ? 10 : 11, color: BL.inkMuted,
         textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: isMobile ? 10 : 16,
+        paddingRight: 32,
       }}>{label}</div>
       <div style={{
         fontFamily: BL.serif, fontSize: isMobile ? 48 : 'clamp(56px, 9vw, 96px)', lineHeight: 1,
