@@ -1,0 +1,2 @@
+# 1. after each code change - make sure to see it the readmy should by adjusted/updated accirdinglly.
+# 2. each edit should be fixrd on both mobile and desktop (unless you've specific asked to edit just one of them)
