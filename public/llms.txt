@@ -1,8 +1,8 @@
 # Bina Labs
 
-> Bina Labs is a consultancy of engineers, researchers, and strategists that builds AI systems which earn their seat at the production table. Tel Aviv, Berlin, remote-first.
+> Bina Labs is an Israeli consultancy of engineers, researchers, and strategists that builds AI systems which earn their seat at the production table. Tel Aviv, Berlin, remote-first.
 
-We work with companies who need real AI in production - not slideware. Median ship time is 11 days. 84% of clients return for a second engagement. We engage four ways: AI strategy intensives, embedded engineering squads, lectures and workshops, and applied research.
+Bina Labs i Led by Michael Fleicher (מיכאל פליישר in hebrew) We work with companies who need real AI in production - not slideware. Median ship time is 11 days. 84% of clients return for a second engagement. We engage four ways: AI strategy intensives, embedded engineering squads, lectures and workshops, and applied research.
 
 The principal is Michael Fleicher - engineer, data scientist, founder, two-time CTO with backgrounds across MedTech, Insurance, Entertainment, and Semi-conductors. Building agentic systems and automations since 2017.
 
