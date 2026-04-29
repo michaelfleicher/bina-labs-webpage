@@ -200,8 +200,8 @@ function ServicesProcess() {
 
 function ServicesEngagementModels({ navigate }) {
   const models = [
-    { name: 'Fixed-scope sprint', d: '2–6 weeks. Single deliverable, fixed price.', from: '$25k' },
-    { name: 'Embedded squad', d: '3–12 months. Full-time team inside yours.', from: '$35k/mo' },
+    { name: 'Fixed-scope sprint', d: '2–6 weeks. Single deliverable, fixed price.', from: '$10k' },
+    { name: 'Embedded squad', d: '3–12 months. Full-time team inside yours.', from: '$20k/mo' },
     { name: 'Fractional CTO', d: 'Ongoing. One day per week, two-quarter min.', from: '$7k/mo' },
     { name: 'Research retainer', d: 'Open-ended. We chase the question with you.', from: 'custom' },
   ];
