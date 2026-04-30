@@ -37,7 +37,7 @@ export const CASE_STUDIES = {
       { v: '0', l: 'human editors in the loop' },
     ],
     quote: {
-      text: 'They wrote production code in week one and refused to write a slide for six months. The first time we saw the system render a real reel, i felt so proud.',
+      text: 'They wrote production code in week 4 and refused to write a slide for six months. The first time we saw the system render a real reel, i felt so proud.',
       attr: 'Guy — founder, Match Cuts',
     },
   },
