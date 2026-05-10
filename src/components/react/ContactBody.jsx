@@ -17,7 +17,7 @@ export default function ContactBody({ faqs }) {
 
 const INITIAL_FORM = {
   name: '', email: '', org: '', shape: 'strategy', stage: 'series-a', timeline: '6-weeks',
-  budget: '$80k–$240k', message: '',
+  budget: '$25k–$100k', message: '',
 };
 
 const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
@@ -168,7 +168,7 @@ function ContactSection() {
                   opts={[['urgent', 'Urgent (this month)'], ['6-weeks', 'Within 6 weeks'], ['quarter', 'This quarter'], ['exploratory', 'Exploring']]} />
               </div>
               <Select label="budget" v={form.budget} onChange={(v) => upd('budget', v)}
-                opts={[['up-to-60k', 'Up to $60k'], ['$60k–$80k', '$60k–$80k'], ['$80k–$240k', '$80k–$240k'], ['$240k–$1M', '$240k–$1M'], ['$1M+', '$1M+'], ['unsure', 'Not sure']]} />
+                opts={[['up-to-10k', 'Up to $10k'], ['$10k–$25k', '$10k–$25k'], ['$25k–$100k', '$25k–$100k'], ['$100k–$300k', '$100k–$300k'], ['$300k+', '$300k+'], ['unsure', 'Not sure']]} />
               <Field label="the shape of it" v={form.message} onChange={(v) => upd('message', v)}
                 placeholder="In a paragraph: what are you trying to build, and why now?" textarea />
               {error && (

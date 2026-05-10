@@ -34,4 +34,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://bina-labs.com/sitemap.xml
+Sitemap: https://bina-labs.com/sitemap-index.xml
