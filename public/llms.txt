@@ -34,4 +34,6 @@ Operating principles: deadlines are holy; AI assistants are tools, not authors; 
 
 ## Optional
 
-- [Writing](https://bina-labs.com/writing): Long-form essays and field notes (coming soon)
+- [Writing](https://bina-labs.com/writing): Long-form essays and field notes from production
+- [Salesforce promised 1B AI agents and shipped ~3,000 - the 99.9% gap is organizational, not technical](https://bina-labs.com/writing/salesforce-ai-agents-99-percent-gap-organizational-readiness): Why Agentforce (and Microsoft Copilot Studio, Google Gemini agents, ServiceNow Now Assist) stalled. AI agents are digital coworkers, not software you install. The winning formula combines technical capability (tool use, retrieval, evals, guardrails, observability) with cultural readiness (named human owner, written role description, permission scope, KPI baseline, escalation rules). Three buyer-side filters: name the human owner before signing, write the job description before the prompt, demand a four-week pilot with a real KPI
+- [GladBites and the B2B AI mirror](https://bina-labs.com/writing/gladbites-ai-content-machine-and-the-b2b-mirror): A TikTok cookbook funnel pulled $1.6M in 90 days with no kitchen. The same generative arbitrage is being run, right now, on enterprise AI buyers - here is the playbook and three buyer-side filters that defeat it

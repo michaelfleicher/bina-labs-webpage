@@ -1,0 +1,70 @@
+---
+interface PostAuthor {
+  name?: string;
+  role?: string;
+}
+
+interface PostCover {
+  src?: string;
+  alt?: string;
+}
+
+interface BlogPost {
+  slug: string;
+  title: string;
+  description?: string;
+  tagline?: string;
+  datePublished?: string;
+  tags?: string[];
+  author?: PostAuthor;
+  cover?: PostCover;
+  ogImage?: string;
+}
+
+interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+const SITE = 'https://bina-labs.com';
+const url = `${SITE}/writing/${post.slug}`;
+const image = post.ogImage ?? post.cover?.src ?? '/og-default.png';
+const absoluteImage = image.startsWith('http') ? image : `${SITE}${image}`;
+
+const schema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  '@id': url,
+  url,
+  mainEntityOfPage: url,
+  headline: post.title,
+  description: post.description ?? post.tagline ?? '',
+  image: absoluteImage,
+  inLanguage: 'en',
+  isAccessibleForFree: true,
+  author: {
+    '@type': 'Person',
+    '@id': `${SITE}/about#michael`,
+    name: post.author?.name ?? 'Michael Fleicher',
+    jobTitle: post.author?.role ?? 'Principal',
+    url: `${SITE}/about`,
+    sameAs: ['https://www.linkedin.com/in/michaelfleicher'],
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Bina Labs',
+    url: SITE,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE}/og-default.png`,
+    },
+  },
+};
+
+if (post.datePublished) {
+  schema.datePublished = post.datePublished;
+  schema.dateModified = post.datePublished;
+}
+if (post.tags?.length) schema.keywords = post.tags.join(', ');
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

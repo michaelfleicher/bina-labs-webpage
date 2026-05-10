@@ -2,17 +2,51 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WritingBody from '../components/react/WritingBody.jsx';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
+import { WRITING_LIST } from '../data/writings.js';
 
 const title = 'Writing - Bina Labs';
 const description =
-  'Notes from production - written by the people who shipped the thing. Eval-first AI engineering, on-prem inference economics, honest deprecation, long-context retrieval. Coming soon.';
+  'Notes from production - written by the people who shipped the thing. Eval-first AI engineering, on-prem inference economics, honest deprecation, long-context retrieval.';
 
 const breadcrumbs = [
   { name: 'Home', url: '/' },
   { name: 'Writing', url: '/writing' },
 ];
+
+const SITE = 'https://bina-labs.com';
+const blogSchema =
+  WRITING_LIST.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Blog',
+        '@id': `${SITE}/writing`,
+        url: `${SITE}/writing`,
+        name: 'Bina Labs - Writing',
+        description,
+        publisher: {
+          '@type': 'Organization',
+          name: 'Bina Labs',
+          url: SITE,
+        },
+        blogPost: WRITING_LIST.map((p) => ({
+          '@type': 'BlogPosting',
+          '@id': `${SITE}/writing/${p.slug}`,
+          url: `${SITE}/writing/${p.slug}`,
+          headline: p.title,
+          description: p.description ?? p.tagline ?? '',
+          datePublished: p.datePublished,
+          author: {
+            '@type': 'Person',
+            name: p.author?.name ?? 'Michael Fleicher',
+          },
+        })),
+      }
+    : null;
 ---
 <BaseLayout title={title} description={description} canonical="/writing">
   <BreadcrumbSchema slot="head" items={breadcrumbs} />
+  {blogSchema && (
+    <script slot="head" type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
+  )}
   <WritingBody client:load />
 </BaseLayout>

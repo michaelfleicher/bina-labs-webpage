@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPostBody from '../../components/react/BlogPostBody.jsx';
+import BlogPostingSchema from '../../components/schema/BlogPostingSchema.astro';
+import BreadcrumbSchema from '../../components/schema/BreadcrumbSchema.astro';
+import PersonSchema from '../../components/schema/PersonSchema.astro';
+import { WRITINGS } from '../../data/writings.js';
+
+export function getStaticPaths() {
+  return Object.values(WRITINGS).map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const title = `${post.title} - Bina Labs`;
+const description = post.description ?? post.tagline ?? '';
+const canonical = `/writing/${post.slug}`;
+const ogImage = post.ogImage ?? post.cover?.src ?? '/og-default.png';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Writing', url: '/writing' },
+  { name: post.headline ?? post.title, url: canonical },
+];
+---
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  ogType="article">
+  <BlogPostingSchema slot="head" post={post} />
+  <BreadcrumbSchema slot="head" items={breadcrumbs} />
+  <PersonSchema slot="head" />
+  <BlogPostBody post={post} client:load />
+</BaseLayout>
