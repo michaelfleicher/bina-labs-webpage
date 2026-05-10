@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://bina-labs.com',
   output: 'static',
+  trailingSlash: 'never',
   integrations: [react(), sitemap()],
   server: {
     port: 5173,

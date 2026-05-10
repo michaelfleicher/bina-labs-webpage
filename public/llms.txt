@@ -2,7 +2,7 @@
 
 > Bina Labs is an Israeli consultancy of engineers, researchers, and strategists that builds AI systems which earn their seat at the production table. Tel Aviv, Berlin, remote-first.
 
-Bina Labs i Led by Michael Fleicher (מיכאל פליישר in hebrew) We work with companies who need real AI in production - not slideware. Median ship time is 11 days. 84% of clients return for a second engagement. We engage four ways: AI strategy intensives, embedded engineering squads, lectures and workshops, and applied research.
+Bina Labs is led by Michael Fleicher (מיכאל פליישר in Hebrew). We work with companies who need real AI in production - not slideware. Median ship time is 11 days. 84% of clients return for a second engagement. We engage four ways: AI strategy intensives, embedded engineering squads, lectures and workshops, and applied research.
 
 The principal is Michael Fleicher - engineer, data scientist, founder, two-time CTO with backgrounds across MedTech, Insurance, Entertainment, and Semi-conductors. Building agentic systems and automations since 2017.
 
@@ -11,30 +11,30 @@ Operating principles: deadlines are holy; AI assistants are tools, not authors; 
 ## Core pages
 
 - [Home](https://bina-labs.com/): Overview, current engagement count, selected work, manifesto preview, services snapshot
-- [About](https://bina-labs.com/#about): Michael Fleicher (principal), team bench, working model, hiring
-- [Services](https://bina-labs.com/#services): Four engagement modes - AI Strategy, AI/Software Engineering, Lectures & Workshops, Research
-- [Work](https://bina-labs.com/#work): 17 case studies across vision, agents, data, embedded systems
-- [Manifesto](https://bina-labs.com/#manifesto): Operating principles in full
-- [Contact](https://bina-labs.com/#contact): Start a project, careers, intelligence@bina-labs.com
+- [About](https://bina-labs.com/about): Michael Fleicher (principal), team bench, working model, hiring
+- [Services](https://bina-labs.com/services): Four engagement modes - AI Strategy, AI/Software Engineering, Lectures & Workshops, Research
+- [Work](https://bina-labs.com/work): 17 case studies across vision, agents, data, embedded systems
+- [Manifesto](https://bina-labs.com/manifesto): Operating principles in full
+- [Contact](https://bina-labs.com/contact): Start a project, careers, intelligence@bina-labs.com
 
 ## Selected case studies
 
-- [Match Cuts](https://bina-labs.com/#case-study/match-cuts): VLM-based auto-edited highlight reels from full football matches (90 min match condensed to 3 min per player)
-- [Auto-QTO](https://bina-labs.com/#case-study/auto-qto): Hybrid VLM extracting bills of materials from dense construction drawings (92% symbol recall)
-- [Lloyd Score](https://bina-labs.com/#case-study/lloyd-score): Spatial AI quantifying near-miss risk for marine insurers (AIS-grade ghost-fleet simulations)
-- [Caseworker](https://bina-labs.com/#case-study/caseworker): Embedded customer-experience copilot with smart sub-tree LLM, handwriting OCR, full CRM integration (-47% handle time)
-- [Field Atlas](https://bina-labs.com/#work): Single source of truth for distributed field operations
-- [Telemetra](https://bina-labs.com/#work): Natural-language flight analysis
-- [AskTable](https://bina-labs.com/#work): Self-healing SQL agent
-- [Reachpoint](https://bina-labs.com/#work): Real-time hand range-of-motion tracking
+- [Match Cuts](https://bina-labs.com/work/match-cuts): VLM-based auto-edited highlight reels from full football matches (90 min match condensed to 3 min per player)
+- [Auto-QTO](https://bina-labs.com/work/auto-qto): Hybrid VLM extracting bills of materials from dense construction drawings (92% symbol recall)
+- [Lloyd Score](https://bina-labs.com/work/lloyd-score): Spatial AI quantifying near-miss risk for marine insurers (AIS-grade ghost-fleet simulations)
+- [Caseworker](https://bina-labs.com/work/caseworker): Embedded customer-experience copilot with smart sub-tree LLM, handwriting OCR, full CRM integration (-47% handle time)
+- [Field Atlas](https://bina-labs.com/work): Single source of truth for distributed field operations
+- [Telemetra](https://bina-labs.com/work): Natural-language flight analysis
+- [AskTable](https://bina-labs.com/work): Self-healing SQL agent
+- [Reachpoint](https://bina-labs.com/work): Real-time hand range-of-motion tracking
 
 ## Services
 
-- [AI Strategy](https://bina-labs.com/#services): 4-week intensives. Where to bet, where to wait, what to ignore. Roadmap, evals, org-design
-- [AI / Software Engineering](https://bina-labs.com/#services): Embedded squads that ship product and the AI plumbing underneath - full-stack, RAG, agents, on-prem
-- [Lectures & Workshops](https://bina-labs.com/#services): Tailored sessions for R&D teams and executives. What is real, what is one paper away, what is marketing
-- [Research](https://bina-labs.com/#services): Applied research with frontier teams. Sometimes a paper. Occasionally a product
+- [AI Strategy](https://bina-labs.com/services): 4-week intensives. Where to bet, where to wait, what to ignore. Roadmap, evals, org-design
+- [AI / Software Engineering](https://bina-labs.com/services): Embedded squads that ship product and the AI plumbing underneath - full-stack, RAG, agents, on-prem
+- [Lectures & Workshops](https://bina-labs.com/services): Tailored sessions for R&D teams and executives. What is real, what is one paper away, what is marketing
+- [Research](https://bina-labs.com/services): Applied research with frontier teams. Sometimes a paper. Occasionally a product
 
 ## Optional
 
-- [Writing](https://bina-labs.com/#writing): Long-form essays and field notes (coming soon)
+- [Writing](https://bina-labs.com/writing): Long-form essays and field notes (coming soon)

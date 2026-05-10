@@ -4,7 +4,7 @@ import { BL, MQ } from '../../system/bl.js';
 import { useMediaQuery } from '../../system/useMediaQuery.js';
 import { BLNav, BLFooter, BLEyebrow } from '../Chrome.jsx';
 import FAQSection from './FAQSection.jsx';
-import michaelImg from '../../assets/michael.png';
+import michaelImg from '../../assets/michael.png?url';
 
 const RECEIPTS = [
   { y: '2× ex-CTO', d: 'MedTech · Insurance · AI SaaS', tag: 'leadership' },
