@@ -21,7 +21,7 @@ export const HOME_FAQS = [
   },
   {
     q: 'How much does production AI cost?',
-    a: 'Fixed-scope sprints start at $60k. Embedded squads run $140k per month. Fractional CTO from $32k per month with a two-quarter minimum. We size on-prem and inference budgets up front, in writing, before the contract.',
+    a: 'Fixed-scope sprints start at $10k. Embedded squads run $20k per month. Fractional CTO from $7k per month with a two-quarter minimum. We size on-prem and inference budgets up front, in writing, before the contract.',
   },
   {
     q: 'Where are you based?',
@@ -44,7 +44,7 @@ export const HOME_FAQS = [
 export const SERVICES_FAQS = [
   {
     q: 'How do you price engagements?',
-    a: 'Fixed-scope sprints from $60k. Embedded squads $140k per month, all-in. Fractional CTO from $32k per month, two-quarter minimum. Research retainers are custom. Every quote is a single number, not a rate card.',
+    a: 'Fixed-scope sprints from $10k. Embedded squads $20k per month, all-in. Fractional CTO from $7k per month, two-quarter minimum. Research retainers are custom. Every quote is a single number, not a rate card.',
   },
   {
     q: 'What scopes do you take on?',
@@ -79,7 +79,7 @@ export const ABOUT_FAQS = [
   },
   {
     q: 'Do you take fractional CTO engagements?',
-    a: 'Yes. One day per week, two-quarter minimum, $32k per month. We work directly with the CEO and the engineering lead, set the technical direction, run hiring loops, and own architecture decisions.',
+    a: 'Yes. One day per week, two-quarter minimum, $7k per month. We work directly with the CEO and the engineering lead, set the technical direction, run hiring loops, and own architecture decisions.',
   },
   {
     q: 'Are you hiring?',
@@ -125,7 +125,7 @@ export const CONTACT_FAQS = [
   },
   {
     q: 'What is a typical engagement size?',
-    a: 'Fixed-scope sprints from $60k to $240k. Embedded squads from $140k per month, typically running 3 to 12 months. Fractional CTO from $32k per month. Research retainers are custom.',
+    a: 'Fixed-scope sprints from $10k. Embedded squads from $20k per month, typically running 3 to 12 months. Fractional CTO from $7k per month. Research retainers are custom.',
   },
   {
     q: 'Do you work with non-technical founders?',

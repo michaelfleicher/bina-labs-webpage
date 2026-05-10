@@ -37,8 +37,8 @@ export const CASE_STUDIES = {
       { v: '0', l: 'human editors in the loop' },
     ],
     quote: {
-      text: 'They wrote production code in week one and refused to write a slide for six months. The first time we saw the system render a real reel, my co-founder cried.',
-      attr: '— founder, Match Cuts',
+      text: 'They wrote production code in week 4 and refused to write a slide for six months. The first time we saw the system render a real reel, i felt so proud.',
+      attr: 'Guy — founder, Match Cuts',
     },
     team: {
       lead: 'Michael Fleicher',
@@ -85,7 +85,7 @@ export const CASE_STUDIES = {
     ],
     quote: {
       text: 'Everyone in the category showed me a demo. Bina shipped a system my estimators actually trust on real plan sets. That is a different conversation.',
-      attr: '— founder, Auto-QTO',
+      attr: 'Oded — founder, Auto-QTO',
     },
     team: {
       lead: 'Michael Fleicher',
@@ -132,7 +132,7 @@ export const CASE_STUDIES = {
     ],
     quote: {
       text: "We bought spatial-AI vendors before. This is the first one that admitted what they don't see and modelled around it.",
-      attr: '— head of underwriting, Lloyd Score pilot',
+      attr: 'Offer — CTO, Lloyd Score',
     },
     team: {
       lead: 'Michael Fleicher',
@@ -179,7 +179,7 @@ export const CASE_STUDIES = {
     ],
     quote: {
       text: "The reps stopped asking IT to remove it after week two. That's the metric I actually cared about.",
-      attr: '— ops director, Caseworker pilot',
+      attr: 'Johan — CEO, Caseworker',
     },
     team: {
       lead: 'Michael Fleicher',

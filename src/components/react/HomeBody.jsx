@@ -144,9 +144,9 @@ function HomeManifesto() {
   const isTablet = useMediaQuery(MQ.tablet);
   const allTenets = [
     { n: '01', t: 'Deadline is holy.', d: 'When we commit to a date, we hit it. Scope flexes, quality has a floor, but the deadline does not move.' },
-    { n: '03', t: 'AI assistants are tools, not authors.', d: 'We use them to move faster, not to ship code no human on our team understands. Every line is owned by an operator who can defend it.' },
-    { n: '05', t: 'Honest deprecation.', d: 'When a project should die, we tell you. We refund the rest of the engagement.' },
-    { n: '06', t: 'Built to leave.', d: 'Embedded engagements come with a written hand-off plan from day one.' },
+    { n: '02', t: 'AI assistants are tools, not authors.', d: 'We use them to move faster, not to ship code no human on our team understands. Every line is owned by an operator who can defend it.' },
+    { n: '03', t: 'Honest deprecation.', d: 'When a project should die, we tell you. We refund the rest of the engagement.' },
+    { n: '04', t: 'Built to leave.', d: 'Embedded engagements come with a written hand-off plan from day one.' },
   ];
   const tenets = isMobile ? allTenets.slice(0, 3) : allTenets;
   const hiddenCount = allTenets.length - tenets.length;
