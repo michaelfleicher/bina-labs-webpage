@@ -63,8 +63,20 @@ function HomeHero() {
         <span className="bl-cursor" style={{ color: BL.red }} />
       </h1>
 
+      <h2 className="bl-fade-up" style={{
+        marginTop: isMobile ? 20 : 'clamp(24px, 3vw, 36px)',
+        fontFamily: BL.serif, fontStyle: 'italic', fontWeight: 300,
+        fontSize: isMobile ? 18 : 'clamp(20px, 2.4vw, 28px)',
+        lineHeight: 1.35, letterSpacing: '-0.01em',
+        color: BL.inkMuted, maxWidth: '46ch',
+      }}>
+        AI consulting and engineering studio. We build production AI systems
+        for founders and engineering teams - vision, agents, RAG, on-prem.
+        Tel Aviv, Berlin, remote-first.
+      </h2>
+
       <div style={{
-        marginTop: isMobile ? 32 : 'clamp(40px, 6vw, 80px)',
+        marginTop: isMobile ? 28 : 'clamp(32px, 5vw, 56px)',
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr 1fr' : isTablet ? '1fr 1fr' : '1.4fr 1fr 1fr',
         gap: isMobile ? 12 : 24,

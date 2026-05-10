@@ -117,7 +117,13 @@ function WorkList({ activeFilter = 'all' }) {
             // no case studies match this filter
           </div>
         ) : (
-          filtered.map((w) => <WorkRow key={w.n} {...w} href={`/work/${w.slug}`} />)
+          filtered.map((w) => (
+            <WorkRow
+              key={w.n}
+              {...w}
+              href={hasCS(w) ? `/work/${w.slug}` : null}
+            />
+          ))
         )}
       </div>
       <div style={{ padding: 'clamp(40px, 8vw, 64px) clamp(20px, 4vw, 32px)', textAlign: 'center', borderBottom: `1px solid ${BL.inkLine}` }}>
@@ -131,9 +137,18 @@ function WorkRow({ n, client, tag, year, metric, desc, sector, href }) {
   const [h, setH] = React.useState(false);
   const isMobile = useMediaQuery(MQ.mobile);
   const isTablet = useMediaQuery(MQ.tablet);
+  const isLinked = !!href;
+  const hover = isLinked && h;
+  const Tag = isLinked ? 'a' : 'div';
+  const linkProps = isLinked
+    ? {
+        href,
+        onMouseEnter: () => setH(true),
+        onMouseLeave: () => setH(false),
+      }
+    : {};
   return (
-    <a href={href}
-      onMouseEnter={() => setH(true)} onMouseLeave={() => setH(false)}
+    <Tag {...linkProps}
       style={{
         display: 'grid',
         gridTemplateColumns: isMobile
@@ -149,8 +164,9 @@ function WorkRow({ n, client, tag, year, metric, desc, sector, href }) {
         alignItems: isMobile ? 'flex-start' : 'center',
         padding: 'clamp(24px, 4vw, 32px) clamp(20px, 4vw, 32px)',
         borderBottom: `1px solid ${BL.inkLine}`,
-        background: h ? 'rgba(157,255,77,0.04)' : 'transparent',
-        cursor: 'pointer',
+        background: hover ? 'rgba(157,255,77,0.04)' : 'transparent',
+        cursor: isLinked ? 'pointer' : 'default',
+        opacity: isLinked ? 1 : 0.62,
         gap: isMobile ? 12 : isTablet ? 18 : 24,
         transition: 'background .15s',
         textDecoration: 'none', color: 'inherit',
@@ -160,10 +176,13 @@ function WorkRow({ n, client, tag, year, metric, desc, sector, href }) {
         gridArea: isMobile || isTablet ? 'client' : 'auto',
         fontFamily: BL.sans, fontSize: 'clamp(22px, 4vw, 32px)',
         fontWeight: 400, letterSpacing: '-0.015em',
-        color: h ? BL.red : BL.inkText, transition: 'color .15s',
+        color: hover ? BL.red : BL.inkText, transition: 'color .15s',
       }}>{client}</div>
       <div style={{ gridArea: isMobile || isTablet ? 'desc' : 'auto' }}>
-        <div style={{ fontFamily: BL.mono, fontSize: 10, color: BL.inkMuted, marginBottom: 4 }}>{tag.toUpperCase()} · {year}</div>
+        <div style={{ fontFamily: BL.mono, fontSize: 10, color: BL.inkMuted, marginBottom: 4 }}>
+          {tag.toUpperCase()} · {year}
+          {!isLinked && <span style={{ marginLeft: 8, color: BL.inkDim }}>· on request</span>}
+        </div>
         <div style={{ fontFamily: BL.serif, fontSize: 'clamp(15px, 2.2vw, 18px)', fontStyle: 'italic', color: BL.inkText }}>{desc}</div>
       </div>
       <div style={{ gridArea: isMobile || isTablet ? 'meta' : 'auto', fontFamily: BL.mono, fontSize: 12, color: BL.inkMuted }}>{sector}</div>
@@ -172,10 +191,10 @@ function WorkRow({ n, client, tag, year, metric, desc, sector, href }) {
       </div>
       {!isMobile && !isTablet && (
         <div style={{
-          fontFamily: BL.mono, fontSize: 18, color: BL.inkText, textAlign: 'right',
-          transform: h ? 'translateX(8px)' : 'none', transition: 'transform .15s',
-        }}>→</div>
+          fontFamily: BL.mono, fontSize: 18, color: isLinked ? BL.inkText : BL.inkDim, textAlign: 'right',
+          transform: hover ? 'translateX(8px)' : 'none', transition: 'transform .15s',
+        }}>{isLinked ? '→' : '·'}</div>
       )}
-    </a>
+    </Tag>
   );
 }

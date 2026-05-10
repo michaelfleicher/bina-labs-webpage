@@ -23,10 +23,7 @@ Operating principles: deadlines are holy; AI assistants are tools, not authors; 
 - [Auto-QTO](https://bina-labs.com/work/auto-qto): Hybrid VLM extracting bills of materials from dense construction drawings (92% symbol recall)
 - [Lloyd Score](https://bina-labs.com/work/lloyd-score): Spatial AI quantifying near-miss risk for marine insurers (AIS-grade ghost-fleet simulations)
 - [Caseworker](https://bina-labs.com/work/caseworker): Embedded customer-experience copilot with smart sub-tree LLM, handwriting OCR, full CRM integration (-47% handle time)
-- [Field Atlas](https://bina-labs.com/work): Single source of truth for distributed field operations
-- [Telemetra](https://bina-labs.com/work): Natural-language flight analysis
-- [AskTable](https://bina-labs.com/work): Self-healing SQL agent
-- [Reachpoint](https://bina-labs.com/work): Real-time hand range-of-motion tracking
+- [All case studies](https://bina-labs.com/work): Full index of 17 selected engagements across vision, agents, data, and strategy - including Field Atlas (field-ops ETL), Telemetra (NL flight analysis), AskTable (self-healing SQL agent), Reachpoint (real-time hand ROM), Deskline, Forge Logistics, Priority Pilot, and more
 
 ## Services
 
