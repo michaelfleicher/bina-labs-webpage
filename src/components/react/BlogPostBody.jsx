@@ -26,6 +26,7 @@ function PostHero({ post }) {
     }
   };
   const date = formatDate(post.datePublished);
+  const updatedLabel = formatUpdatedLabel(post.datePublished, post.dateModified);
   return (
     <section style={{
       padding: 'clamp(40px, 7vw, 64px) clamp(20px, 4vw, 32px) clamp(32px, 5vw, 48px)',
@@ -85,6 +86,16 @@ function PostHero({ post }) {
         </span>
         <span style={{ color: BL.inkDim }}>{date}</span>
         {post.readTime && <span style={{ color: BL.inkDim }}>· {post.readTime}</span>}
+        {updatedLabel && (
+          <span style={{
+            fontFamily: BL.mono, fontSize: 11, color: BL.copper,
+            letterSpacing: '0.04em',
+            padding: '3px 8px',
+            border: `1px solid ${BL.copper}`,
+          }}>
+            Updated: {updatedLabel}
+          </span>
+        )}
       </div>
       {post.tags?.length > 0 && (
         <div style={{ marginTop: 24, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
@@ -495,4 +506,13 @@ function formatDate(iso) {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return iso;
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+function formatUpdatedLabel(publishedIso, modifiedIso) {
+  if (!publishedIso || !modifiedIso) return '';
+  const published = new Date(publishedIso);
+  const modified = new Date(modifiedIso);
+  if (Number.isNaN(published.getTime()) || Number.isNaN(modified.getTime())) return '';
+  if (modified.getTime() <= published.getTime()) return '';
+  return modified.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
 }

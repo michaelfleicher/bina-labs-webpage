@@ -26,6 +26,8 @@ export const WRITINGS = {
     description:
       'Marc Benioff promised one billion AI agents by 2025. Salesforce shipped roughly 3,000. The technology works. What failed is the assumption that you can install a digital coworker the way you install a printer. Here is what we see on the ground, across high-tech, finance, real estate, law, retail, and defense.',
     datePublished: '2026-02-10',
+    // dateModified: update when post is substantively refreshed (20%+ new content)
+    dateModified: '2026-02-10',
     readTime: '8 min read',
     tags: ['AI agents', 'Agentforce', 'enterprise AI', 'organizational change', 'B2B AI', 'deployment'],
     author: {
@@ -321,6 +323,7 @@ export const WRITINGS = {
     description:
       'A TikTok page selling AI-generated cookbooks pulled $1.6M in three months. The interesting question is not whether the cookbooks are real. It is whether your AI vendor is running the same playbook on you.',
     datePublished: '2025-10-18',
+    dateModified: '2025-10-18',
     readTime: '7 min read',
     tags: ['AI content', 'B2B AI', 'evals', 'honest deprecation', 'founder ops'],
     author: {
