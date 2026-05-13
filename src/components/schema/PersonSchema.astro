@@ -1,4 +1,6 @@
 ---
+import { personSocialLinks } from '../../data/social.js';
+
 interface Props {
   fullBio?: boolean;
 }
@@ -22,7 +24,9 @@ const schema: Record<string, unknown> = {
     name: 'Bina Labs',
     url: SITE,
   },
-  sameAs: ['https://www.linkedin.com/in/michaelfleicher'],
+  // Sourced from src/data/social.js so all `sameAs` URLs live in one place.
+  // Add verified profile URLs there - never inline new ones here.
+  sameAs: personSocialLinks,
   knowsAbout: [
     'Artificial Intelligence',
     'Applied Machine Learning',

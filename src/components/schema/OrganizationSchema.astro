@@ -1,5 +1,7 @@
 ---
-const orgSchema = {
+import { orgSocialLinks } from '../../data/social.js';
+
+const orgSchema: Record<string, unknown> = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Bina Labs',
@@ -17,5 +19,12 @@ const orgSchema = {
       'Engineer, data scientist, founder, two-time CTO. Building agentic systems and automations since 2017.',
   },
 };
+
+// Only emit `sameAs` when we have at least one verified external profile -
+// an empty array signals "we have no presence" to crawlers, which is worse
+// than omitting the field entirely. Add new URLs via src/data/social.js.
+if (orgSocialLinks.length > 0) {
+  orgSchema.sameAs = orgSocialLinks;
+}
 ---
 <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
