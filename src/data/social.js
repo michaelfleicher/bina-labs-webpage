@@ -21,6 +21,8 @@
 export const orgSocialLinks = [
   // Verified 2026-05-13: GitHub org "bina-Labs" returns 200 with the org page.
   'https://github.com/bina-labs',
+  // Wikidata Q-item for Bina Labs (created 2026-05-13).
+  'https://www.wikidata.org/wiki/Q139782974',
   // TODO: add verified company LinkedIn URL when the page is published
   //   (https://www.linkedin.com/company/<slug> - both bina-labs and binalabs
   //   currently 404).
@@ -34,6 +36,8 @@ export const personSocialLinks = [
   'https://www.linkedin.com/in/michaelfleicher',
   // Verified 2026-05-13: GitHub profile resolves to "michaelfleicher (Michael Fleicher)".
   'https://github.com/michaelfleicher',
+  // Wikidata Q-item for Michael Fleicher (created 2026-05-13).
+  'https://www.wikidata.org/wiki/Q139782987',
   // TODO: add verified X/Twitter handle when claimed
   //   (https://x.com/michaelfleicher currently hard-blocks bots with 403 - do
   //   not add until confirmed in a browser).
