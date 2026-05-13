@@ -49,7 +49,7 @@ function HomeHero() {
         {!isMobile && <span>· Tel Aviv · Berlin · remote-first</span>}
       </div>
 
-      <h1 className="bl-fade-up" style={{
+      <h1 className="bl-fade-up" aria-label="What is Bina Labs?" style={{
         fontFamily: BL.sans, fontWeight: 300,
         fontSize: isMobile ? BL.type.h1.mobile : BL.type.h1.desktop,
         lineHeight: 0.94, letterSpacing: '-0.045em',
@@ -63,7 +63,7 @@ function HomeHero() {
         <span className="bl-cursor" style={{ color: BL.red }} />
       </h1>
 
-      <h2 className="bl-fade-up" style={{
+      <h2 className="bl-fade-up" aria-label="What does Bina Labs do?" style={{
         marginTop: isMobile ? 20 : 'clamp(24px, 3vw, 36px)',
         fontFamily: BL.serif, fontStyle: 'italic', fontWeight: 300,
         fontSize: isMobile ? 18 : 'clamp(20px, 2.4vw, 28px)',
@@ -155,10 +155,10 @@ function HomeManifesto() {
   const isMobile = useMediaQuery(MQ.mobile);
   const isTablet = useMediaQuery(MQ.tablet);
   const allTenets = [
-    { n: '01', t: 'Deadline is holy.', d: 'When we commit to a date, we hit it. Scope flexes, quality has a floor, but the deadline does not move.' },
-    { n: '02', t: 'AI assistants are tools, not authors.', d: 'We use them to move faster, not to ship code no human on our team understands. Every line is owned by an operator who can defend it.' },
-    { n: '03', t: 'Honest deprecation.', d: 'When a project should die, we tell you. We refund the rest of the engagement.' },
-    { n: '04', t: 'Built to leave.', d: 'Embedded engagements come with a written hand-off plan from day one.' },
+    { n: '01', t: 'Deadline is holy.', q: 'Why is hitting the ship date non-negotiable at Bina Labs?', d: 'When we commit to a date, we hit it. Scope flexes, quality has a floor, but the deadline does not move.' },
+    { n: '02', t: 'AI assistants are tools, not authors.', q: 'How does Bina Labs use AI coding assistants?', d: 'We use them to move faster, not to ship code no human on our team understands. Every line is owned by an operator who can defend it.' },
+    { n: '03', t: 'Honest deprecation.', q: 'What happens when a Bina Labs project should not ship?', d: 'When a project should die, we tell you. We refund the rest of the engagement.' },
+    { n: '04', t: 'Built to leave.', q: 'Why is every Bina Labs engagement designed to end?', d: 'Embedded engagements come with a written hand-off plan from day one.' },
   ];
   const tenets = isMobile ? allTenets.slice(0, 3) : allTenets;
   const hiddenCount = allTenets.length - tenets.length;
@@ -169,7 +169,7 @@ function HomeManifesto() {
       borderBottom: `1px solid ${BL.inkLine}`,
     }}>
       <BLEyebrow>// 02_manifesto · last edited 2026-04-12 by creative_agent@bina-labs.com</BLEyebrow>
-      <h2 style={{
+      <h2 aria-label="Why don't strategy decks ship AI to production?" style={{
         marginTop: 32,
         fontFamily: BL.sans, fontWeight: 300,
         fontSize: 'clamp(48px, 11vw, 108px)',
@@ -178,6 +178,17 @@ function HomeManifesto() {
         Decks don't<br />
         run in <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.red, fontWeight: 300 }}>production</span>.
       </h2>
+      <p style={{
+        fontFamily: BL.mono,
+        fontSize: 13,
+        lineHeight: 1.55,
+        color: BL.inkMuted,
+        marginTop: 20,
+        maxWidth: '62ch',
+      }}>
+        <span style={{ color: BL.copper, fontWeight: 500 }}>Why don't strategy decks ship AI to production?</span>{' '}
+        Decks describe ambition; production AI needs evals, retrieval pipelines, on-prem cost budgets, and someone willing to debug at 2 a.m. Bina Labs builds the system, hands you the runbook, and leaves on day 90 with your team owning the code.
+      </p>
       <div style={{
         display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)`,
         marginTop: 'clamp(48px, 8vw, 80px)', borderTop: `1px solid ${BL.inkLine}`,
@@ -195,7 +206,7 @@ function HomeManifesto() {
               display: 'flex', flexDirection: 'column', gap: 16, minHeight: isMobile ? 'auto' : 280,
             }}>
               <div style={{ fontFamily: BL.mono, fontSize: 11, color: BL.red }}>[{p.n}]</div>
-              <div style={{ fontFamily: BL.serif, fontSize: 'clamp(22px, 3.5vw, 30px)', lineHeight: 1.1, color: BL.inkText, fontWeight: 400 }}>{p.t}</div>
+              <div aria-label={p.q} style={{ fontFamily: BL.serif, fontSize: 'clamp(22px, 3.5vw, 30px)', lineHeight: 1.1, color: BL.inkText, fontWeight: 400 }}>{p.t}</div>
               <div style={{ fontFamily: BL.mono, fontSize: 13, lineHeight: 1.55, color: BL.inkMuted }}>{p.d}</div>
             </div>
           );
@@ -295,10 +306,10 @@ function HomeWork() {
 
 function HomeServices() {
   const services = [
-    { n: 'svc.01', name: 'AI Strategy', tags: ['roadmap', 'evals', 'org-design'], desc: '4-week intensives. Where to bet, where to wait, what to ignore.' },
-    { n: 'svc.02', name: 'AI / Software Engineering', tags: ['full-stack', 'rag', 'agents', 'on-prem'], desc: 'Embedded squads that ship product and the AI plumbing underneath it.' },
-    { n: 'svc.03', name: 'Lectures & Workshops', tags: ['r&d', 'c-suite', 'hands-on', 'briefings'], desc: 'Tailored sessions for R&D teams and executives. What is real, what is one paper away, what is marketing.' },
-    { n: 'svc.04', name: 'Research', tags: ['frontier', 'papers', 'prototypes'], desc: 'Applied research with frontier teams. Sometimes a paper. Occasionally a product.' },
+    { n: 'svc.01', name: 'AI Strategy', q: 'What does a Bina Labs AI Strategy engagement deliver?', tags: ['roadmap', 'evals', 'org-design'], desc: '4-week intensives. Where to bet, where to wait, what to ignore.' },
+    { n: 'svc.02', name: 'AI / Software Engineering', q: 'How does embedded AI engineering with Bina Labs work?', tags: ['full-stack', 'rag', 'agents', 'on-prem'], desc: 'Embedded squads that ship product and the AI plumbing underneath it.' },
+    { n: 'svc.03', name: 'Lectures & Workshops', q: 'What do Bina Labs lectures and workshops cover?', tags: ['r&d', 'c-suite', 'hands-on', 'briefings'], desc: 'Tailored sessions for R&D teams and executives. What is real, what is one paper away, what is marketing.' },
+    { n: 'svc.04', name: 'Research', q: 'What kind of research does Bina Labs take on?', tags: ['frontier', 'papers', 'prototypes'], desc: 'Applied research with frontier teams. Sometimes a paper. Occasionally a product.' },
   ];
 
   const isMobile = useMediaQuery(MQ.mobile);
@@ -308,15 +319,27 @@ function HomeServices() {
       borderBottom: `1px solid ${BL.inkLine}`, background: BL.inkSoft,
     }}>
       <BLEyebrow>// 04_services</BLEyebrow>
-      <h2 style={{
+      <h2 aria-label="How can you engage Bina Labs?" style={{
         marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
         fontSize: 'clamp(48px, 10vw, 96px)',
         lineHeight: 1, letterSpacing: '-0.04em',
-        marginBottom: 'clamp(40px, 6vw, 64px)', color: BL.inkText,
+        color: BL.inkText,
       }}>
         Four ways<br />
         we <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.red, fontWeight: 300 }}>engage</span>.
       </h2>
+      <p style={{
+        fontFamily: BL.mono,
+        fontSize: 13,
+        lineHeight: 1.55,
+        color: BL.inkMuted,
+        marginTop: 20,
+        marginBottom: 'clamp(40px, 6vw, 64px)',
+        maxWidth: '62ch',
+      }}>
+        <span style={{ color: BL.copper, fontWeight: 500 }}>How can you engage Bina Labs?</span>{' '}
+        Four formats with transparent USD pricing: AI Strategy as a fixed-scope sprint from $10k (2 to 6 weeks), AI/Software Engineering as an embedded squad from $20k a month (3 to 12 months), Fractional CTO from $7k a month, and Research retainers on custom terms. Every engagement comes with a written hand-off plan and an honest-deprecation guarantee.
+      </p>
       <div style={{
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
@@ -338,7 +361,7 @@ function HomeServices() {
             }}>
               <span>{s.n}</span><span>↗</span>
             </div>
-            <div style={{
+            <div aria-label={s.q} style={{
               fontFamily: BL.sans,
               fontSize: isMobile ? 26 : 'clamp(28px, 5vw, 44px)',
               fontWeight: 300, letterSpacing: '-0.025em', color: BL.inkText,

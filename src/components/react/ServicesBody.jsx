@@ -25,7 +25,7 @@ function ServicesHero() {
       borderBottom: `1px solid ${BL.inkLine}`,
     }}>
       <BLEyebrow>// services · what we do</BLEyebrow>
-      <h1 style={{
+      <h1 aria-label="How does Bina Labs work with clients?" style={{
         marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
         fontSize: 'clamp(56px, 13vw, 144px)',
         lineHeight: 0.94, letterSpacing: '-0.045em', color: BL.inkText, maxWidth: '12ch',
@@ -48,6 +48,7 @@ function ServicesDetail() {
   const services = [
     {
       n: '01', name: 'AI Strategy',
+      q: 'What does an AI Strategy engagement with Bina Labs deliver?',
       tagline: 'Where to bet, where to wait, what to ignore.',
       outcome: 'A defensible thesis your CFO will sign.',
       desc: 'A short, opinionated engagement that ends in a roadmap your CFO will sign. We interview your team, audit your stack, run an evals workshop, and deliver a written thesis on what to build, what to buy, what to kill.',
@@ -56,6 +57,7 @@ function ServicesDetail() {
     },
     {
       n: '02', name: 'AI / Software Engineering',
+      q: 'How does embedded AI engineering with Bina Labs work?',
       tagline: 'Production code. The plumbing and the magic.',
       outcome: 'A system your team can own on day one of hand-off.',
       desc: "Full-stack squads who embed inside your team, write production code on day one, and leave behind a system your engineers can own. We build the product surface and the AI infrastructure underneath - the RAG, the evals, the agent runtime, the observability, the on-prem deployment. No agencies, no offshoring, no lingering past the value cliff.",
@@ -64,6 +66,7 @@ function ServicesDetail() {
     },
     {
       n: '03', name: 'Lectures & Workshops',
+      q: 'What do Bina Labs lectures and workshops cover?',
       tagline: 'Calibrate your team. Two days, no slides about hype.',
       outcome: 'A team that can argue about AI without flinching.',
       desc: 'Tailored sessions for R&D teams, executive offsites, and boards. We teach what is real, what is one paper away, and what is marketing. Hands-on labs for engineers; sharp, opinionated briefings for C-levels. Every session ends with a written takeaway your team can act on the next morning.',
@@ -72,6 +75,7 @@ function ServicesDetail() {
     },
     {
       n: '04', name: 'Research',
+      q: 'What kind of research engagements does Bina Labs take on?',
       tagline: 'Applied research with frontier teams.',
       outcome: 'A thesis we are willing to defend in public.',
       desc: 'We take research engagements with labs, universities and frontier-model companies. The work occasionally produces a paper, sometimes a prototype, and rarely a product - but always a thesis we are willing to defend in public.',
@@ -89,7 +93,7 @@ function ServicesDetail() {
   );
 }
 
-function ServiceDetailRow({ n, name, tagline, outcome, desc, deliverables, best, flip }) {
+function ServiceDetailRow({ n, name, q, tagline, outcome, desc, deliverables, best, flip }) {
   const isTablet = useMediaQuery(MQ.tablet);
   const stack = isTablet;
   return (
@@ -102,7 +106,7 @@ function ServiceDetailRow({ n, name, tagline, outcome, desc, deliverables, best,
     }}>
       <div style={{ order: !stack && flip ? 2 : 1 }}>
         <div style={{ fontFamily: BL.mono, fontSize: 11, color: BL.red, marginBottom: 24 }}>[{n}] · service</div>
-        <h2 style={{
+        <h2 aria-label={q} style={{
           fontFamily: BL.sans, fontWeight: 300,
           fontSize: 'clamp(40px, 8vw, 88px)',
           lineHeight: 0.95, letterSpacing: '-0.035em', color: BL.inkText, marginBottom: 16,
@@ -165,14 +169,25 @@ function ServicesProcess() {
       borderBottom: `1px solid ${BL.inkLine}`, background: BL.inkSoft,
     }}>
       <BLEyebrow>// how we work</BLEyebrow>
-      <h2 style={{
+      <h2 aria-label="How does a Bina Labs engagement run from first call to handoff?" style={{
         marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
         fontSize: 'clamp(40px, 8vw, 80px)',
         letterSpacing: '-0.035em', color: BL.inkText, lineHeight: 1,
-        marginBottom: 'clamp(40px, 6vw, 64px)',
       }}>
         From hello to <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.red, fontWeight: 300 }}>handoff</span>.
       </h2>
+      <p style={{
+        fontFamily: BL.mono,
+        fontSize: 13,
+        lineHeight: 1.55,
+        color: BL.inkMuted,
+        marginTop: 20,
+        marginBottom: 'clamp(40px, 6vw, 64px)',
+        maxWidth: '62ch',
+      }}>
+        <span style={{ color: BL.copper, fontWeight: 500 }}>How does a Bina Labs engagement run from first call to handoff?</span>{' '}
+        Five stages: a 30-minute intro call, a 2-page scoping memo with timeline and kill date, a working week-1 prototype in your environment, bi-weekly iterate-or-kill reviews with refund-the-rest if it should die, and a final hand-off with runbook, recorded walkthrough, and 30 days of free office hours. Embedded engagements typically run 6 to 9 months.
+      </p>
       <div style={{
         display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)`,
         gap: 0, borderTop: `1px solid ${BL.inkLine}`,
@@ -215,14 +230,25 @@ function ServicesEngagementModels() {
       borderBottom: `1px solid ${BL.inkLine}`,
     }}>
       <BLEyebrow>// engagement models</BLEyebrow>
-      <h2 style={{
+      <h2 aria-label="How do you buy a Bina Labs engagement?" style={{
         marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
         fontSize: 'clamp(40px, 8vw, 80px)',
         letterSpacing: '-0.035em', color: BL.inkText, lineHeight: 1,
-        marginBottom: 'clamp(40px, 6vw, 64px)',
       }}>
         How to <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.copper, fontWeight: 300 }}>buy</span> us.
       </h2>
+      <p style={{
+        fontFamily: BL.mono,
+        fontSize: 13,
+        lineHeight: 1.55,
+        color: BL.inkMuted,
+        marginTop: 20,
+        marginBottom: 'clamp(40px, 6vw, 64px)',
+        maxWidth: '62ch',
+      }}>
+        <span style={{ color: BL.copper, fontWeight: 500 }}>How do you buy a Bina Labs engagement?</span>{' '}
+        Email intelligence@bina-labs.com with what you are trying to do in three to five sentences. Bina Labs responds within two business days with either a scoping call or a polite no. No procurement portals, no SOW templates from 2014 - just a one-page agreement and an invoice in USD.
+      </p>
       <div style={{
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : isTablet ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
