@@ -15,6 +15,7 @@ interface BlogPost {
   description?: string;
   tagline?: string;
   datePublished?: string;
+  dateModified?: string;
   tags?: string[];
   author?: PostAuthor;
   cover?: PostCover;
@@ -23,9 +24,10 @@ interface BlogPost {
 
 interface Props {
   post: BlogPost;
+  dateModified?: string;
 }
 
-const { post } = Astro.props;
+const { post, dateModified: dateModifiedProp } = Astro.props;
 const SITE = 'https://bina-labs.com';
 const url = `${SITE}/writing/${post.slug}`;
 const image = post.ogImage ?? post.cover?.src ?? '/og-default.png';
@@ -63,7 +65,8 @@ const schema: Record<string, unknown> = {
 
 if (post.datePublished) {
   schema.datePublished = post.datePublished;
-  schema.dateModified = post.datePublished;
+  const effectiveModified = dateModifiedProp ?? post.dateModified ?? post.datePublished;
+  schema.dateModified = effectiveModified;
 }
 if (post.tags?.length) schema.keywords = post.tags.join(', ');
 ---

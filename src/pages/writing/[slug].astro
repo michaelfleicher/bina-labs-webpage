@@ -31,7 +31,7 @@ const breadcrumbs = [
   canonical={canonical}
   ogImage={ogImage}
   ogType="article">
-  <BlogPostingSchema slot="head" post={post} />
+  <BlogPostingSchema slot="head" post={post} dateModified={post.dateModified} />
   <BreadcrumbSchema slot="head" items={breadcrumbs} />
   <PersonSchema slot="head" />
   <BlogPostBody post={post} client:load />
