@@ -44,7 +44,7 @@ function CSHero({ data }) {
         ← back to work
       </a>
       <BLEyebrow>{data.eyebrow}</BLEyebrow>
-      <h1 style={{
+      <h1 aria-label={`What did Bina Labs build for ${data.client}?`} style={{
         marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
         fontSize: 'clamp(48px, 13vw, 168px)',
         lineHeight: 0.92, letterSpacing: '-0.045em', color: BL.inkText,
@@ -167,7 +167,7 @@ function CSStack({ data }) {
       borderBottom: `1px solid ${BL.inkLine}`, background: BL.inkSoft,
     }}>
       <BLEyebrow>// what we built</BLEyebrow>
-      <h2 style={{
+      <h2 aria-label={`What did Bina Labs build into the ${data.client} system?`} style={{
         marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
         fontSize: 'clamp(40px, 8vw, 80px)',
         letterSpacing: '-0.035em', lineHeight: 1, color: BL.inkText,
@@ -208,7 +208,7 @@ function CSOutcomes({ data }) {
       borderBottom: `1px solid ${BL.inkLine}`,
     }}>
       <BLEyebrow>// outcomes</BLEyebrow>
-      <h2 style={{
+      <h2 aria-label="What are the measurable outcomes of this engagement?" style={{
         marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
         fontSize: 'clamp(40px, 8vw, 80px)',
         letterSpacing: '-0.035em', color: BL.inkText,

@@ -8,36 +8,43 @@ const TENETS = [
   {
     n: '01',
     t: 'Deadline is holy.',
+    q: 'Why is hitting the ship date non-negotiable at Bina Labs?',
     body: 'When we commit to a date, we hit it. Scope flexes, quality has a floor, but the deadline does not move. We plan backwards from it on day one and we tell you in week one if the date is at risk - not in week eleven. A missed ship date is a broken trust, and trust is the only compounding asset we have. If we ever say a deadline is firm, treat it as firm. If it is not, we will say that too.',
   },
   {
     n: '02',
     t: 'Decks do not run in production.',
+    q: 'Why does Bina Labs refuse to spend months on slide decks before shipping code?',
     body: 'The most expensive thing in AI is a slide deck. The second most expensive is a six-month vendor selection. We were built to ship code by Friday - not because Friday is special, but because the gap between a deck and a deploy is where most consultancies live, and most clients die.',
   },
   {
     n: '03',
     t: 'AI assistants are tools, not authors.',
+    q: 'How does Bina Labs use AI coding assistants responsibly?',
     body: 'We use AI coding assistants every day - and we use them with discipline. Smart: scoped prompts, narrow context windows, the right model for the task. Secured: sandboxed runs, no client secrets in third-party context, every dependency audited, every diff reviewed by a human who can defend each line. Fast: small commits, tight loops, generated code earns its keep in minutes, not sprints. Verified: nothing ships without tests, evals, and a reviewer who understands what changed and why. The assistant accelerates the engineer. It does not replace the judgment.',
   },
   {
     n: '04',
     t: 'A working prototype before a written contract.',
+    q: 'Why does every Bina Labs engagement start with a prototype instead of a contract?',
     body: 'We will not write a 40-page SOW before we know the shape of the problem. Every engagement begins with a 4-week paid pilot that produces working code in your environment. If we are wrong about what is possible, the pilot is where we learn it - not in month seven of a fixed-bid.',
   },
   {
     n: '05',
     t: 'Honest deprecation is part of the contract.',
+    q: 'What happens when a Bina Labs project should not ship?',
     body: "When a project should die - because the model can't do it, the data isn't there, or the org isn't ready - we say so. We refund the unused portion of the engagement. We have done this four times. Each time we got a better client out of it.",
   },
   {
     n: '06',
     t: 'We are built to leave.',
+    q: 'Why is every Bina Labs engagement designed to end?',
     body: 'Embedded engagements come with a written hand-off plan from day one. We staff your team alongside ours. We document for the engineer who will inherit this in six months. The goal is not retention; the goal is for you to call us back in two years for a different problem.',
   },
   {
     n: '07',
     t: 'Evals are 80% of the job.',
+    q: 'Why does Bina Labs treat evaluations as most of the work in an AI project?',
     body: 'Most AI projects fail because nobody agreed on what success means. Before we write the agent, we write the eval. Before we run the eval, we run the workshop. Before we run the workshop, we get the people in the room who know the answer to be honest about it.',
   },
 ];
@@ -61,7 +68,7 @@ function ManifestoSection() {
       padding: 'clamp(48px, 7vw, 64px) clamp(20px, 4vw, 32px) clamp(64px, 10vw, 96px)',
     }}>
       <BLEyebrow>// manifesto · v3.2 · last edited 2026-04-12 by zara@bina-labs.com</BLEyebrow>
-      <h1 style={{
+      <h1 aria-label="What does Bina Labs believe about AI in production?" style={{
         marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
         fontSize: 'clamp(56px, 14vw, 168px)',
         lineHeight: 0.92, letterSpacing: '-0.045em', color: BL.inkText, maxWidth: '14ch',
@@ -75,6 +82,17 @@ function ManifestoSection() {
         color: BL.inkText, maxWidth: '52ch', fontWeight: 300, fontStyle: 'italic',
       }}>
         Not values. Values are what people put on a wall when they want you to behave. These are the operating constraints we will close a deal over.
+      </p>
+      <p style={{
+        fontFamily: BL.mono,
+        fontSize: 13,
+        lineHeight: 1.55,
+        color: BL.inkMuted,
+        marginTop: 20,
+        maxWidth: '62ch',
+      }}>
+        <span style={{ color: BL.copper, fontWeight: 500 }}>What does Bina Labs believe about AI in production?</span>{' '}
+        Seven operating tenets shaped by years of shipping AI to real users: hit the deadline, ship code before slides, treat AI assistants as tools and not authors, prototype before contract, deprecate honestly and refund the rest, design every engagement to end, and write the eval before the agent.
       </p>
       <div style={{ marginTop: 'clamp(56px, 10vw, 96px)', borderTop: `1px solid ${BL.inkLine}` }}>
         {TENETS.map((t) => (
@@ -96,7 +114,7 @@ function ManifestoSection() {
             alignItems: 'flex-start',
           }}>
             <div style={{ gridArea: isMobile || isTablet ? 'num' : 'auto', fontFamily: BL.mono, fontSize: 12, color: BL.red, paddingTop: isMobile ? 8 : 16 }}>[{t.n}]</div>
-            <div style={{
+            <div aria-label={t.q} style={{
               gridArea: isMobile || isTablet ? 'title' : 'auto',
               fontFamily: BL.serif, fontSize: 'clamp(24px, 4.5vw, 40px)',
               fontWeight: 400, lineHeight: 1.1, color: BL.inkText, letterSpacing: '-0.015em',

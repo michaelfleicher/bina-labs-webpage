@@ -52,7 +52,7 @@ function WorkHero() {
       borderBottom: `1px solid ${BL.inkLine}`,
     }}>
       <BLEyebrow>// work · selected case studies · 17 / 34 public</BLEyebrow>
-      <h1 style={{
+      <h1 aria-label="What has Bina Labs built for clients?" style={{
         marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
         fontSize: 'clamp(56px, 13vw, 144px)',
         lineHeight: 0.94, letterSpacing: '-0.045em', color: BL.inkText, maxWidth: '12ch',
@@ -66,6 +66,17 @@ function WorkHero() {
         color: BL.inkText, maxWidth: '54ch', fontWeight: 300,
       }}>
         Every engagement below ended in production code, a measurable outcome, or both. The unsuccessful ones are filed under "honest deprecation" and we'll talk you through them on a call.
+      </p>
+      <p style={{
+        fontFamily: BL.mono,
+        fontSize: 13,
+        lineHeight: 1.55,
+        color: BL.inkMuted,
+        marginTop: 20,
+        maxWidth: '62ch',
+      }}>
+        <span style={{ color: BL.copper, fontWeight: 500 }}>What kinds of AI systems has Bina Labs shipped to production?</span>{' '}
+        Seventeen public engagements spanning vision and VLM (match-cut detection, construction drawing extraction), AI agents (CX copilots, IT-ticket bots, logistics tendering), data and LLM systems (talk-to-data, marine-insurance risk scoring), and strategy advisory. Four are documented as full case studies; engagements typically run 6 to 9 months and the shipped systems are owned and operated by the client teams.
       </p>
     </section>
   );

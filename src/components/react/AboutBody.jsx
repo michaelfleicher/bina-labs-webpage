@@ -14,17 +14,17 @@ const RECEIPTS = [
 ];
 
 const PRINCIPLES = [
-  { n: '01', t: 'Deadline is holy', d: 'We commit to a date and we hit it. Scope flexes, quality has a floor, the date does not move.' },
-  { n: '04', t: 'Prototype before contract', d: 'Every engagement starts with a 4-week paid pilot - working code in your environment before a 40-page SOW.' },
-  { n: '05', t: 'Refund the rest', d: "When a project should die, we say so and refund the unused portion. We've done it four times." },
-  { n: '06', t: 'Built to leave', d: 'Hand-off plan from day one. Documented, deployable, owned by your team. We are not the integration tax forever.' },
+  { n: '01', t: 'Deadline is holy', q: 'Why is hitting the ship date non-negotiable at Bina Labs?', d: 'We commit to a date and we hit it. Scope flexes, quality has a floor, the date does not move.' },
+  { n: '04', t: 'Prototype before contract', q: 'Why does Bina Labs build a prototype before signing a long contract?', d: 'Every engagement starts with a 4-week paid pilot - working code in your environment before a 40-page SOW.' },
+  { n: '05', t: 'Refund the rest', q: 'What happens when a Bina Labs project should be killed?', d: "When a project should die, we say so and refund the unused portion. We've done it four times." },
+  { n: '06', t: 'Built to leave', q: 'Why is every Bina Labs engagement designed to end?', d: 'Hand-off plan from day one. Documented, deployable, owned by your team. We are not the integration tax forever.' },
 ];
 
 const ROLES = [
-  { t: 'Senior AI Engineer', loc: 'Remote · contract', notes: 'agents, RAG, evals' },
-  { t: 'Product Designer (UI/UX)', loc: 'Remote · contract', notes: 'AI-native interfaces' },
-  { t: 'Applied Researcher', loc: 'Remote · part-time', notes: 'long-context, retrieval' },
-  { t: 'Full-Stack Engineer', loc: 'Remote · contract', notes: 'TS, Python, infra' },
+  { t: 'Senior AI Engineer', q: 'What does the Senior AI Engineer role at Bina Labs involve?', loc: 'Remote · contract', notes: 'agents, RAG, evals' },
+  { t: 'Product Designer (UI/UX)', q: 'What does the Product Designer role at Bina Labs involve?', loc: 'Remote · contract', notes: 'AI-native interfaces' },
+  { t: 'Applied Researcher', q: 'What does the Applied Researcher role at Bina Labs involve?', loc: 'Remote · part-time', notes: 'long-context, retrieval' },
+  { t: 'Full-Stack Engineer', q: 'What does the Full-Stack Engineer role at Bina Labs involve?', loc: 'Remote · contract', notes: 'TS, Python, infra' },
 ];
 
 export default function AboutBody({ faqs }) {
@@ -68,7 +68,7 @@ function OperatorHero() {
         marginTop: 40, alignItems: 'start',
       }}>
         <div>
-          <h1 style={{
+          <h1 aria-label="Who runs Bina Labs?" style={{
             fontFamily: BL.sans, fontWeight: 300,
             fontSize: 'clamp(52px, 12vw, 132px)',
             lineHeight: 0.94,
@@ -148,7 +148,7 @@ function OperatorReceipts() {
       }}>
         <div>
           <BLEyebrow>// receipts</BLEyebrow>
-          <h2 style={{
+          <h2 aria-label="Where has Michael Fleicher worked before Bina Labs?" style={{
             marginTop: 24, fontFamily: BL.sans, fontWeight: 300,
             fontSize: 'clamp(36px, 6vw, 56px)',
             letterSpacing: '-0.03em', color: BL.inkText, lineHeight: 1,
@@ -217,7 +217,7 @@ function OperatorHowWeWork() {
       }}>
         <div>
           <BLEyebrow>// how we work</BLEyebrow>
-          <h2 style={{
+          <h2 aria-label="How does a Bina Labs engagement actually run day-to-day?" style={{
             marginTop: 24, fontFamily: BL.sans, fontWeight: 300,
             fontSize: 'clamp(40px, 7vw, 72px)',
             letterSpacing: '-0.035em', color: BL.inkText, lineHeight: 1,
@@ -274,7 +274,7 @@ function OperatorHiring() {
       }}>
         <div>
           <BLEyebrow>// bench · {ROLES.length} open roles</BLEyebrow>
-          <h2 style={{
+          <h2 aria-label="Who is Bina Labs hiring?" style={{
             marginTop: 24, fontFamily: BL.sans, fontWeight: 300,
             fontSize: 'clamp(40px, 7vw, 72px)',
             letterSpacing: '-0.035em', color: BL.inkText, lineHeight: 1,
@@ -313,7 +313,7 @@ function OperatorHiring() {
             onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(157,255,77,0.04)'}
             onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}>
             <div style={{ gridArea: isMobile || isTablet ? 'num' : 'auto', fontFamily: BL.mono, fontSize: 12, color: BL.inkDim }}>0{i + 1}</div>
-            <div style={{ gridArea: isMobile || isTablet ? 'title' : 'auto', fontFamily: BL.sans, fontSize: 'clamp(20px, 3.4vw, 26px)', fontWeight: 300, color: BL.inkText, letterSpacing: '-0.015em' }}>{r.t}</div>
+            <div aria-label={r.q} style={{ gridArea: isMobile || isTablet ? 'title' : 'auto', fontFamily: BL.sans, fontSize: 'clamp(20px, 3.4vw, 26px)', fontWeight: 300, color: BL.inkText, letterSpacing: '-0.015em' }}>{r.t}</div>
             <div style={{ gridArea: isMobile || isTablet ? 'loc' : 'auto', fontFamily: BL.mono, fontSize: 12, color: BL.inkMuted, marginTop: isMobile ? 4 : 0 }}>{r.loc}</div>
             <div style={{ gridArea: isMobile || isTablet ? 'notes' : 'auto', fontFamily: BL.serif, fontSize: 16, fontStyle: 'italic', color: BL.copper }}>{r.notes}</div>
             <div style={{ gridArea: isMobile || isTablet ? 'arrow' : 'auto', fontFamily: BL.mono, fontSize: 16, color: BL.inkText, textAlign: 'right' }}>→</div>
@@ -559,7 +559,7 @@ function OperatorPrinciples() {
       borderBottom: `1px solid ${BL.inkLine}`,
     }}>
       <BLEyebrow>// how we operate</BLEyebrow>
-      <h2 style={{
+      <h2 aria-label="What principles does Bina Labs operate by?" style={{
         marginTop: 24, fontFamily: BL.sans, fontWeight: 300,
         fontSize: 'clamp(40px, 7vw, 72px)',
         letterSpacing: '-0.035em', color: BL.inkText, lineHeight: 1,
@@ -581,7 +581,7 @@ function OperatorPrinciples() {
               borderBottom: `1px solid ${BL.inkLine}`,
             }}>
               <div style={{ fontFamily: BL.mono, fontSize: 11, color: BL.red }}>[{x.n}]</div>
-              <div style={{ fontFamily: BL.serif, fontSize: 'clamp(20px, 3vw, 26px)', color: BL.inkText, marginTop: 16, fontWeight: 400, letterSpacing: '-0.01em' }}>{x.t}</div>
+              <div aria-label={x.q} style={{ fontFamily: BL.serif, fontSize: 'clamp(20px, 3vw, 26px)', color: BL.inkText, marginTop: 16, fontWeight: 400, letterSpacing: '-0.01em' }}>{x.t}</div>
               <div style={{ fontFamily: BL.mono, fontSize: 13, color: BL.inkMuted, marginTop: 14, lineHeight: 1.55 }}>{x.d}</div>
             </div>
           );
