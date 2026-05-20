@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "sources": {
+    "linkedin": {
+      "profile": "https://www.linkedin.com/in/michaelfleicher",
+      "lastSyncAt": "2026-05-13T18:55:00.000Z",
+      "posts": {},
+      "excluded": [
+        "urn:li:activity:6667269255089811456",
+        "urn:li:activity:7036723132929380352",
+        "urn:li:activity:6665923276105220096",
+        "urn:li:activity:6972122517213720576",
+        "urn:li:activity:7073295110301466624",
+        "urn:li:activity:7347991542902456320",
+        "urn:li:activity:6669091687702245376",
+        "urn:li:activity:6724971625436983296",
+        "urn:li:activity:7384123320142733312",
+        "urn:li:activity:6646058772215267328",
+        "urn:li:activity:6666849237524992001",
+        "urn:li:activity:7370327462687182848",
+        "urn:li:activity:6699995806352605184",
+        "urn:li:activity:7369253067675967488",
+        "urn:li:activity:6868853849726173184",
+        "urn:li:activity:6841683063932518400",
+        "urn:li:activity:6667822548153180160",
+        "urn:li:activity:6973677690709057536",
+        "urn:li:activity:6723966639693541376",
+        "urn:li:activity:6701798882965258240",
+        "urn:li:activity:6865609618274435072",
+        "urn:li:activity:6411306924133937152",
+        "urn:li:activity:7026479414209044480",
+        "urn:li:activity:6868220021911392256",
+        "urn:li:activity:6955889739577085952",
+        "urn:li:activity:6668771574541250560",
+        "urn:li:activity:6666582943395381248",
+        "urn:li:activity:6665921134204194816",
+        "urn:li:activity:7348218124007014400",
+        "urn:li:activity:7418188144501669888",
+        "urn:li:activity:7418536383646097408",
+        "urn:li:activity:6709839330526941184",
+        "urn:li:activity:7333397653143064577",
+        "urn:li:activity:6836382568653447168",
+        "urn:li:activity:7350392753542823936",
+        "urn:li:activity:7406579237949841408",
+        "urn:li:activity:7349078697003397121",
+        "urn:li:activity:7348584216915279872",
+        "urn:li:activity:7377933838129213440"
+      ]
+    }
+  }
+}
