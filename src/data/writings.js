@@ -17,6 +17,8 @@
 export const WRITINGS = {
   'salesforce-ai-agents-99-percent-gap-organizational-readiness': {
     slug: 'salesforce-ai-agents-99-percent-gap-organizational-readiness',
+    metaDescription:
+      'Salesforce promised a billion AI agents and shipped roughly 3,000. The 99.9% gap is not a tech problem - it is organizational readiness, not the model.',
     title: 'Salesforce promised 1 billion AI agents. They sold 3,000. The 99.9% gap is not a tech problem.',
     headline: 'Salesforce promised 1 billion AI agents. They sold 3,000.',
     headlineAccent: 'The 99.9% gap is not a tech problem.',
@@ -314,6 +316,8 @@ export const WRITINGS = {
   },
   'gladbites-ai-content-machine-and-the-b2b-mirror': {
     slug: 'gladbites-ai-content-machine-and-the-b2b-mirror',
+    metaDescription:
+      'A TikTok page selling AI-generated cookbooks pulled $1.6M in three months. The real question: is your AI vendor running the same playbook on you?',
     title: 'GladBites made $1.6M in 90 days with no kitchen. The B2B version is already in your inbox.',
     headline: 'GladBites made $1.6M in 90 days with no kitchen.',
     headlineAccent: 'The B2B version is already in your inbox.',
@@ -573,6 +577,8 @@ export const WRITINGS = {
   },
   'google-workspace-studio-killed-my-automation-business': {
     slug: 'google-workspace-studio-killed-my-automation-business',
+    metaDescription:
+      'Google Workspace Studio drops the price of AI-augmented automations to near zero. What changed, three to ship today, and why I am giving the playbook away.',
     title: 'Google just commoditized half of my services business. I am teaching my clients how to do it themselves.',
     headline: 'Google just commoditized half of my services business.',
     headlineAccent: 'I am teaching my clients how to do it themselves.',
@@ -728,6 +734,8 @@ export const WRITINGS = {
   },
   'nyx-ai-agent-that-must-fund-its-own-tokens': {
     slug: 'nyx-ai-agent-that-must-fund-its-own-tokens',
+    metaDescription:
+      'Nyx is an AI agent with a live token that must trade, build, and hire to fund its own inference. Is it real? The honest take on a self-funding agent.',
     title: 'Nyx: an AI agent that has to earn its own tokens or die. Breakthrough or hype?',
     headline: 'An AI agent that has to fund its own tokens.',
     headlineAccent: 'Fail to earn, and it dies forever.',
@@ -880,6 +888,8 @@ export const WRITINGS = {
   },
   'agentic-ai-not-just-chat-with-gpt': {
     slug: 'agentic-ai-not-just-chat-with-gpt',
+    metaDescription:
+      'An LLM answers when you ask. An agent is the same model with eyes, hands, and tools - APIs, SQL, files, email. The plain distinction, and why it matters.',
     title: 'Agentic AI is not a smarter chat. It is a coworker with hands.',
     headline: 'Agentic AI is not a smarter chat.',
     headlineAccent: 'It is a coworker with hands.',
@@ -1093,6 +1103,8 @@ export const WRITINGS = {
   },
   'prompt-engineering-its-not-you-its-the-prompt': {
     slug: 'prompt-engineering-its-not-you-its-the-prompt',
+    metaDescription:
+      'Most people prompt ChatGPT like they prompt Google, then call it dumb. It is a Waze for words: the more specific the address, the better the route.',
     title: 'It\'s not you, it\'s the prompt. Why most people use ChatGPT like Google - and get back garbage.',
     headline: 'It\'s not you, it\'s the prompt.',
     headlineAccent: 'Most people use ChatGPT like Google. That\'s the bug.',
@@ -1323,6 +1335,8 @@ export const WRITINGS = {
   },
   'ai-buzzwords-llms-agents-vibe-coding-retrieval-explained': {
     slug: 'ai-buzzwords-llms-agents-vibe-coding-retrieval-explained',
+    metaDescription:
+      'A plain-English glossary of five AI terms non-engineers keep hearing: LLMs, Agents, Vibe Coding, Retrieval, and Solo Founders. For managers and creators.',
     title: 'Five AI buzzwords decoded for non-engineers: LLMs, Agents, Vibe Coding, Retrieval, Solo Founders.',
     headline: 'Five AI buzzwords decoded for non-engineers.',
     headlineAccent: 'LLMs, Agents, Vibe Coding, Retrieval, Solo Founders.',

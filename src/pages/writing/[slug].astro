@@ -15,7 +15,7 @@ export function getStaticPaths() {
 
 const { post } = Astro.props;
 const title = `${post.title} - Bina Labs`;
-const description = post.description ?? post.tagline ?? '';
+const description = post.metaDescription ?? post.description ?? post.tagline ?? '';
 const canonical = `/writing/${post.slug}`;
 const ogImage = post.ogImage ?? post.cover?.src ?? '/og-default.png';
 
