@@ -5,12 +5,20 @@ import { useMediaQuery } from '../../system/useMediaQuery.js';
 import { BLNav, BLFooter, BLEyebrow } from '../Chrome.jsx';
 import FAQSection from './FAQSection.jsx';
 import michaelImg from '../../assets/michael.png?url';
+import ronenImg from '../../assets/ronen.png?url';
 
 const RECEIPTS = [
   { y: '2× ex-CTO', d: 'MedTech · Insurance · AI SaaS', tag: 'leadership' },
   { y: 'Engineer', d: 'Semiconductors · production systems', tag: 'craft' },
   { y: 'Data scientist', d: 'Entertainment · applied ML', tag: 'craft' },
   { y: 'Founder', d: 'Bina Labs · Storywise', tag: 'ventures' },
+];
+
+const RONEN_RECEIPTS = [
+  { y: '20+ yrs', d: 'AI · Deep Learning · innovation management', tag: 'craft' },
+  { y: 'EU funding', d: 'Horizon Europe · EIC · Eurostars · BIRD · IIA', tag: 'ventures' },
+  { y: 'Advisor', d: 'Deep Tech · Cyber · Digital Health · Climate · FinTech', tag: 'craft' },
+  { y: 'Strategy', d: 'commercialization · due diligence · consortia', tag: 'leadership' },
 ];
 
 const PRINCIPLES = [
@@ -36,7 +44,7 @@ export default function AboutBody({ faqs }) {
       <OperatorHowWeWork />
       <OperatorHiring />
       <OperatorPrinciples />
-      <FAQSection faqs={faqs} eyebrow="// faq · about" headline="More about Michael, more about us" headlineAccent="more about us" />
+      <FAQSection faqs={faqs} eyebrow="// faq · about" headline="More about the principals, more about us" headlineAccent="more about us" />
       <BLFooter />
     </div>
   );
@@ -53,69 +61,56 @@ function BenchBlurb() {
 }
 
 function OperatorHero() {
-  const isTablet = useMediaQuery(MQ.tablet);
   return (
-    <section id="michael" style={{
+    <section style={{
       padding: 'clamp(56px, 9vw, 88px) clamp(20px, 4vw, 32px) clamp(48px, 8vw, 72px)',
       borderBottom: `1px solid ${BL.inkLine}`,
-      scrollMarginTop: 'var(--bl-nav-h, 0px)',
     }}>
-      <BLEyebrow>// about · the operator</BLEyebrow>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: isTablet ? '1fr' : '1.4fr 1fr',
-        gap: isTablet ? 32 : 64,
-        marginTop: 40, alignItems: 'start',
+      <BLEyebrow>// about · the operators</BLEyebrow>
+      <h1 aria-label="Who runs Bina Labs?" style={{
+        marginTop: 40,
+        fontFamily: BL.sans, fontWeight: 300,
+        fontSize: 'clamp(52px, 12vw, 132px)',
+        lineHeight: 0.94,
+        letterSpacing: '-0.045em', color: BL.inkText, maxWidth: '14ch',
       }}>
-        <div>
-          <h1 aria-label="Who runs Bina Labs?" style={{
-            fontFamily: BL.sans, fontWeight: 300,
-            fontSize: 'clamp(52px, 12vw, 132px)',
-            lineHeight: 0.94,
-            letterSpacing: '-0.045em', color: BL.inkText, maxWidth: '14ch',
-          }}>
-            One operator.<br />
-            <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.red, fontWeight: 300 }}>Senior by default.</span>
-          </h1>
-          <p style={{
-            marginTop: 'clamp(24px, 4vw, 40px)',
-            fontFamily: BL.serif, fontSize: 'clamp(18px, 2.4vw, 24px)', lineHeight: 1.45,
-            color: BL.inkText, maxWidth: '52ch', fontWeight: 300,
-          }}>
-            Bina Labs is a consulting and development studio led by{' '}
-            <span style={{ color: BL.red }}>Michael Fleicher</span> - engineer,
-            data scientist, founder, two-time CTO. The person you meet is the
-            person who builds.
-          </p>
-        </div>
-        <div style={{ maxWidth: isTablet ? 360 : 'none' }}>
-          <PortraitFrame label="michael_fleicher.jpg" />
-          <div style={{ marginTop: 14, fontFamily: BL.mono, fontSize: 11, color: BL.inkDim, lineHeight: 1.6 }}>
-            Founder & Principal · Bina Labs<br />
-            Tel Aviv → Berlin → remote-first
-          </div>
-        </div>
-      </div>
+        One operator.<br />
+        <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.red, fontWeight: 300 }}>Senior by default.</span>
+      </h1>
+      <p style={{
+        marginTop: 'clamp(24px, 4vw, 40px)',
+        fontFamily: BL.serif, fontSize: 'clamp(18px, 2.4vw, 24px)', lineHeight: 1.45,
+        color: BL.inkText, maxWidth: '52ch', fontWeight: 300,
+      }}>
+        Bina Labs is two senior operators -{' '}
+        <span style={{ color: BL.red }}>Michael Fleicher</span> and{' '}
+        <span style={{ color: BL.copper }}>Ronen Chen</span>.
+        You work with one of them, directly, end to end. Different problem,
+        different operator - never a committee, never a junior. The person
+        you meet is the person who builds.
+      </p>
     </section>
   );
 }
 
-function PortraitFrame({ label }) {
+function PortraitFrame({ src = michaelImg, label = 'michael_fleicher.jpg', alt = 'Bina Labs principal - portrait', objectPosition = 'center 18%' }) {
+  const parts = label.replace(/\.[^.]+$/, '').split('_');
+  const handle = parts.length >= 2 ? `// ${parts[1]}_${parts[0][0]}` : `// ${parts[0]}`;
   return (
     <div style={{
-      aspectRatio: '4/5',
+      minHeight: 300,
       backgroundColor: BL.inkSoft,
       position: 'relative', border: `1px solid ${BL.inkLine}`,
-      overflow: 'hidden',
+      overflow: 'hidden', flex: 1,
     }}>
       <img
-        src={michaelImg}
-        alt="Michael Fleicher, principal and founder of Bina Labs - portrait"
+        src={src}
+        alt={alt}
         loading="lazy"
         decoding="async"
         style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%',
-          objectFit: 'cover', objectPosition: 'center 18%',
+          objectFit: 'cover', objectPosition: objectPosition,
           filter: 'grayscale(1) contrast(1.02)',
         }}
       />
@@ -127,8 +122,34 @@ function PortraitFrame({ label }) {
       }} />
       <div style={{ position: 'absolute', top: 12, left: 14, fontFamily: BL.mono, fontSize: 10, color: BL.bone, opacity: 0.85, mixBlendMode: 'difference' }}>{label}</div>
       <div style={{ position: 'absolute', top: 12, right: 14, width: 8, height: 8, background: BL.red }} />
-      <div style={{ position: 'absolute', bottom: 12, left: 14, fontFamily: BL.mono, fontSize: 10, color: BL.bone, opacity: 0.85, mixBlendMode: 'difference' }}>// fleicher_m</div>
+      <div style={{ position: 'absolute', bottom: 12, left: 14, fontFamily: BL.mono, fontSize: 10, color: BL.bone, opacity: 0.85, mixBlendMode: 'difference' }}>{handle}</div>
       <div style={{ position: 'absolute', bottom: 12, right: 14, fontFamily: BL.mono, fontSize: 10, color: BL.bone, opacity: 0.85, mixBlendMode: 'difference' }}>4:5</div>
+    </div>
+  );
+}
+
+function ReceiptsTable({ receipts, isMobile }) {
+  return (
+    <div style={{ marginTop: 40, borderTop: `1px solid ${BL.inkLine}` }}>
+      {receipts.map((r, i) => (
+        <div key={i} style={{
+          display: 'grid',
+          gridTemplateColumns: isMobile ? '1fr auto' : '180px 1fr 100px',
+          padding: 'clamp(14px, 2vw, 20px) 0',
+          borderBottom: `1px solid ${BL.inkLine}`,
+          alignItems: 'baseline',
+          gap: isMobile ? 12 : 24,
+        }}>
+          <div style={{ fontFamily: BL.sans, fontSize: 'clamp(18px, 3vw, 22px)', color: BL.inkText, fontWeight: 400, letterSpacing: '-0.01em' }}>{r.y}</div>
+          {!isMobile && (
+            <div style={{ fontFamily: BL.serif, fontSize: 18, fontStyle: 'italic', color: BL.inkMuted, fontWeight: 300 }}>{r.d}</div>
+          )}
+          <div style={{ fontFamily: BL.mono, fontSize: 11, color: BL.copper, textAlign: 'right', letterSpacing: '0.04em' }}>[{r.tag}]</div>
+          {isMobile && (
+            <div style={{ gridColumn: '1 / -1', fontFamily: BL.serif, fontSize: 16, fontStyle: 'italic', color: BL.inkMuted, fontWeight: 300, marginTop: -4 }}>{r.d}</div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
@@ -141,50 +162,76 @@ function OperatorReceipts() {
       padding: 'clamp(56px, 10vw, 96px) clamp(20px, 4vw, 32px)',
       borderBottom: `1px solid ${BL.inkLine}`,
     }}>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: isTablet ? '1fr' : '1fr 1.6fr',
-        gap: isTablet ? 32 : 64, alignItems: 'start',
+      <BLEyebrow>// receipts</BLEyebrow>
+      <h2 aria-label="Where have the Bina Labs principals worked?" style={{
+        marginTop: 24, fontFamily: BL.sans, fontWeight: 300,
+        fontSize: 'clamp(36px, 6vw, 56px)',
+        letterSpacing: '-0.03em', color: BL.inkText, lineHeight: 1,
+        marginBottom: 'clamp(40px, 6vw, 64px)',
       }}>
-        <div>
-          <BLEyebrow>// receipts</BLEyebrow>
-          <h2 aria-label="Where has Michael Fleicher worked before Bina Labs?" style={{
-            marginTop: 24, fontFamily: BL.sans, fontWeight: 300,
-            fontSize: 'clamp(36px, 6vw, 56px)',
-            letterSpacing: '-0.03em', color: BL.inkText, lineHeight: 1,
-          }}>
-            Where we've <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.copper, fontWeight: 300 }}>been</span>.
-          </h2>
+        Where we've <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.copper, fontWeight: 300 }}>been</span>.
+      </h2>
+
+      <div id="michael" style={{
+        display: 'grid',
+        gridTemplateColumns: isTablet ? '1fr' : '280px 1fr',
+        gap: isTablet ? 32 : 64, alignItems: 'stretch',
+        scrollMarginTop: 'var(--bl-nav-h, 0px)',
+      }}>
+        <div style={{ display: 'flex', flexDirection: 'column', maxWidth: isTablet ? 280 : 'none' }}>
+          <PortraitFrame
+            src={michaelImg}
+            label="michael_fleicher.jpg"
+            alt="Michael Fleicher, principal of Bina Labs - portrait"
+            objectPosition="center 18%"
+          />
+          <div style={{ marginTop: 14, fontFamily: BL.mono, fontSize: 11, color: BL.inkDim, lineHeight: 1.6 }}>
+            Principal · Bina Labs<br />
+            Tel Aviv → Berlin → remote-first
+          </div>
         </div>
         <div>
           <p style={{ fontFamily: BL.serif, fontSize: 'clamp(17px, 2.4vw, 22px)', lineHeight: 1.55, color: BL.inkText, fontWeight: 300, maxWidth: '54ch' }}>
             Vast experience as a founder and as a two-time CTO, leading tech teams across AI SaaS Companies. Background is varied from MedTech, to Insurance, Entertainment and Semi-conductors industry. Hands-on, building product, agentic systems, and automations since 2017.
           </p>
-          <div style={{ marginTop: 40, borderTop: `1px solid ${BL.inkLine}` }}>
-            {RECEIPTS.map((r, i) => (
-              <div key={i} style={{
-                display: 'grid',
-                gridTemplateColumns: isMobile ? '1fr auto' : '180px 1fr 100px',
-                padding: 'clamp(14px, 2vw, 20px) 0',
-                borderBottom: `1px solid ${BL.inkLine}`,
-                alignItems: 'baseline',
-                gap: isMobile ? 12 : 24,
-              }}>
-                <div style={{ fontFamily: BL.sans, fontSize: 'clamp(18px, 3vw, 22px)', color: BL.inkText, fontWeight: 400, letterSpacing: '-0.01em' }}>{r.y}</div>
-                {!isMobile && (
-                  <div style={{ fontFamily: BL.serif, fontSize: 18, fontStyle: 'italic', color: BL.inkMuted, fontWeight: 300 }}>{r.d}</div>
-                )}
-                <div style={{ fontFamily: BL.mono, fontSize: 11, color: BL.copper, textAlign: 'right', letterSpacing: '0.04em' }}>[{r.tag}]</div>
-                {isMobile && (
-                  <div style={{ gridColumn: '1 / -1', fontFamily: BL.serif, fontSize: 16, fontStyle: 'italic', color: BL.inkMuted, fontWeight: 300, marginTop: -4 }}>{r.d}</div>
-                )}
-              </div>
-            ))}
-          </div>
+          <ReceiptsTable receipts={RECEIPTS} isMobile={isMobile} />
           <a href="https://www.linkedin.com/in/michaelfleicher" target="_blank" rel="noreferrer"
             className="bl-link-hover"
             style={{ display: 'inline-block', marginTop: 28, fontFamily: BL.mono, fontSize: 13, color: BL.red, letterSpacing: '0.04em' }}>
             linkedin.com/in/michaelfleicher →
+          </a>
+        </div>
+      </div>
+
+      <div id="ronen" style={{
+        display: 'grid',
+        gridTemplateColumns: isTablet ? '1fr' : '280px 1fr',
+        gap: isTablet ? 32 : 64, alignItems: 'stretch',
+        marginTop: 'clamp(56px, 8vw, 80px)', paddingTop: 'clamp(56px, 8vw, 80px)',
+        borderTop: `1px solid ${BL.inkLine}`,
+        scrollMarginTop: 'var(--bl-nav-h, 0px)',
+      }}>
+        <div style={{ display: 'flex', flexDirection: 'column', maxWidth: isTablet ? 280 : 'none' }}>
+          <PortraitFrame
+            src={ronenImg}
+            label="ronen_chen.jpg"
+            alt="Ronen Chen, principal of Bina Labs - portrait"
+            objectPosition="center 20%"
+          />
+          <div style={{ marginTop: 14, fontFamily: BL.mono, fontSize: 11, color: BL.inkDim, lineHeight: 1.6 }}>
+            Principal · Bina Labs<br />
+            Innovation & grant strategy
+          </div>
+        </div>
+        <div>
+          <p style={{ fontFamily: BL.serif, fontSize: 'clamp(17px, 2.4vw, 22px)', lineHeight: 1.55, color: BL.inkText, fontWeight: 300, maxWidth: '54ch' }}>
+            AI and deep-learning expert, innovation strategist, and funding advisor. 20+ years bridging advanced technology and commercial success, helping startups and research organizations secure competitive funding and turn breakthrough ideas into funded ventures.
+          </p>
+          <ReceiptsTable receipts={RONEN_RECEIPTS} isMobile={isMobile} />
+          <a href="https://www.linkedin.com/in/ronen-chen/" target="_blank" rel="noreferrer"
+            className="bl-link-hover"
+            style={{ display: 'inline-block', marginTop: 28, fontFamily: BL.mono, fontSize: 13, color: BL.red, letterSpacing: '0.04em' }}>
+            linkedin.com/in/ronen-chen →
           </a>
         </div>
       </div>

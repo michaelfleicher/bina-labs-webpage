@@ -310,6 +310,7 @@ function HomeServices() {
     { n: 'svc.02', name: 'AI / Software Engineering', q: 'How does embedded AI engineering with Bina Labs work?', tags: ['full-stack', 'rag', 'agents', 'on-prem'], desc: 'Embedded squads that ship product and the AI plumbing underneath it.' },
     { n: 'svc.03', name: 'Lectures & Workshops', q: 'What do Bina Labs lectures and workshops cover?', tags: ['r&d', 'c-suite', 'hands-on', 'briefings'], desc: 'Tailored sessions for R&D teams and executives. What is real, what is one paper away, what is marketing.' },
     { n: 'svc.04', name: 'Research', q: 'What kind of research does Bina Labs take on?', tags: ['frontier', 'papers', 'prototypes'], desc: 'Applied research with frontier teams. Sometimes a paper. Occasionally a product.' },
+    { n: 'svc.05', name: 'Innovation & Grant Strategy', q: 'What does a Bina Labs Innovation & Grant Strategy engagement deliver?', tags: ['funding', 'grants', 'strategy', 'due-diligence'], desc: 'Turn breakthrough tech into funded ventures. Competitive grants, business plans, and R&D roadmapping.' },
   ];
 
   const isMobile = useMediaQuery(MQ.mobile);
@@ -325,7 +326,7 @@ function HomeServices() {
         lineHeight: 1, letterSpacing: '-0.04em',
         color: BL.inkText,
       }}>
-        Four ways<br />
+        Five ways<br />
         we <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.red, fontWeight: 300 }}>engage</span>.
       </h2>
       <p style={{
@@ -338,7 +339,7 @@ function HomeServices() {
         maxWidth: '62ch',
       }}>
         <span style={{ color: BL.copper, fontWeight: 500 }}>How can you engage Bina Labs?</span>{' '}
-        Four formats with transparent USD pricing: AI Strategy as a fixed-scope sprint from $10k (2 to 6 weeks), AI/Software Engineering as an embedded squad from $20k a month (3 to 12 months), Fractional CTO from $7k a month, and Research retainers on custom terms. Every engagement comes with a written hand-off plan and an honest-deprecation guarantee.
+        Five formats with transparent USD pricing: AI Strategy as a fixed-scope sprint from $10k (2 to 6 weeks), AI/Software Engineering as an embedded squad from $20k a month (3 to 12 months), Fractional CTO from $7k a month, Innovation & Grant Strategy on custom terms, and Research retainers on custom terms. Every engagement comes with a written hand-off plan and an honest-deprecation guarantee.
       </p>
       <div style={{
         display: 'grid',

@@ -1,0 +1,56 @@
+---
+import { ronenSocialLinks } from '../../data/social.js';
+
+interface Props {
+  fullBio?: boolean;
+}
+
+const { fullBio = false } = Astro.props;
+
+const SITE = 'https://bina-labs.com';
+
+const schema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${SITE}/about#ronen`,
+  name: 'Ronen Chen',
+  givenName: 'Ronen',
+  familyName: 'Chen',
+  jobTitle: 'Principal',
+  url: `${SITE}/about`,
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Bina Labs',
+    url: SITE,
+  },
+  // Sourced from src/data/social.js so all `sameAs` URLs live in one place.
+  // Add verified profile URLs there - never inline new ones here.
+  sameAs: ronenSocialLinks,
+  knowsAbout: [
+    'Artificial Intelligence',
+    'Deep Learning',
+    'Machine Learning',
+    'Data Science',
+    'Innovation Management',
+    'Grant & Funding Strategy',
+    'Horizon Europe',
+    'EIC Accelerator',
+    'Technology Due Diligence',
+    'Commercialization Strategy',
+    'Deep Tech',
+    'International Partnerships',
+  ],
+  description:
+    'AI and deep-learning expert, innovation strategist, and funding advisor with 20+ years bridging advanced technology and commercial success. Helps startups, SMEs, and research organizations secure competitive funding and turn breakthrough ideas into funded, scalable ventures.',
+};
+
+if (fullBio) {
+  schema.hasOccupation = [
+    {
+      '@type': 'Occupation',
+      name: 'Principal, Bina Labs',
+    },
+  ];
+}
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

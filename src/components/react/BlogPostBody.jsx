@@ -77,7 +77,7 @@ function PostHero({ post }) {
         }}>
         <span>
           By <a
-            href="/about#michael"
+            href={`/about#${(post.author?.name ?? '') === 'Ronen Chen' ? 'ronen' : 'michael'}`}
             itemProp="url"
             className="bl-link-hover"
             style={{ color: BL.red, textDecoration: 'none' }}>

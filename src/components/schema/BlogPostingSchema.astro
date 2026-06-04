@@ -30,6 +30,12 @@ interface Props {
 const { post, dateModified: dateModifiedProp } = Astro.props;
 const SITE = 'https://bina-labs.com';
 const url = `${SITE}/writing/${post.slug}`;
+
+const authorLinkedIn: Record<string, string> = {
+  'Michael Fleicher': 'https://www.linkedin.com/in/michaelfleicher',
+  'Ronen Chen': 'https://www.linkedin.com/in/ronen-chen/',
+};
+const authorName = post.author?.name ?? 'Michael Fleicher';
 const image = post.ogImage ?? post.cover?.src ?? '/og-default.png';
 const absoluteImage = image.startsWith('http') ? image : `${SITE}${image}`;
 
@@ -46,11 +52,11 @@ const schema: Record<string, unknown> = {
   isAccessibleForFree: true,
   author: {
     '@type': 'Person',
-    '@id': `${SITE}/about#michael`,
-    name: post.author?.name ?? 'Michael Fleicher',
+    '@id': `${SITE}/about#${authorName === 'Ronen Chen' ? 'ronen' : 'michael'}`,
+    name: authorName,
     jobTitle: post.author?.role ?? 'Principal',
     url: `${SITE}/about`,
-    sameAs: ['https://www.linkedin.com/in/michaelfleicher'],
+    sameAs: [authorLinkedIn[authorName] ?? 'https://www.linkedin.com/in/michaelfleicher'],
   },
   publisher: {
     '@type': 'Organization',

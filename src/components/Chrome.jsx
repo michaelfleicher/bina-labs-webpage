@@ -191,7 +191,8 @@ export function BLFooter() {
       h: '// social',
       l: [
         { t: 'github', href: 'https://github.com/michaelfleicher', external: true },
-        { t: 'linkedin', href: 'https://www.linkedin.com/in/michaelfleicher', external: true },
+        { t: 'linkedin (michael)', href: 'https://www.linkedin.com/in/michaelfleicher', external: true },
+        { t: 'linkedin (ronen)', href: 'https://www.linkedin.com/in/ronen-chen/', external: true },
       ],
     },
     {

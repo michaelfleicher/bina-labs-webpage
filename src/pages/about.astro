@@ -2,13 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AboutBody from '../components/react/AboutBody.jsx';
 import PersonSchema from '../components/schema/PersonSchema.astro';
+import RonenPersonSchema from '../components/schema/RonenPersonSchema.astro';
 import FAQSchema from '../components/schema/FAQSchema.astro';
 import BreadcrumbSchema from '../components/schema/BreadcrumbSchema.astro';
 import { ABOUT_FAQS } from '../data/faqs.js';
 
-const title = 'About - Bina Labs · Michael Fleicher, Principal';
+const title = 'About - Bina Labs · Michael Fleicher & Ronen Chen, Principals';
 const description =
-  'Bina Labs is led by Michael Fleicher - engineer, data scientist, two-time CTO. A senior-by-default AI consulting and development studio. Tel Aviv, Berlin.';
+  'Bina Labs is led by Senior operators in AI engineering and innovation strategy. Senior-by-default consulting and development.';
 
 const breadcrumbs = [
   { name: 'Home', url: '/' },
@@ -17,6 +18,7 @@ const breadcrumbs = [
 ---
 <BaseLayout title={title} description={description} canonical="/about">
   <PersonSchema slot="head" fullBio />
+  <RonenPersonSchema slot="head" fullBio />
   <FAQSchema slot="head" faqs={ABOUT_FAQS} />
   <BreadcrumbSchema slot="head" items={breadcrumbs} />
   <AboutBody client:load faqs={ABOUT_FAQS} />

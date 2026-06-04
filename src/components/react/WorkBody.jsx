@@ -63,7 +63,7 @@ function WorkHero() {
       <p style={{
         marginTop: 'clamp(28px, 4vw, 40px)',
         fontFamily: BL.serif, fontSize: 'clamp(18px, 2.4vw, 24px)', lineHeight: 1.4,
-        color: BL.inkText, maxWidth: '54ch', fontWeight: 300,
+        color: BL.inkText, maxWidth: '72ch', fontWeight: 300,
       }}>
         Every engagement below ended in production code, a measurable outcome, or both. The unsuccessful ones are filed under "honest deprecation" and we'll talk you through them on a call.
       </p>
@@ -73,7 +73,7 @@ function WorkHero() {
         lineHeight: 1.55,
         color: BL.inkMuted,
         marginTop: 20,
-        maxWidth: '62ch',
+        maxWidth: '80ch',
       }}>
         <span style={{ color: BL.copper, fontWeight: 500 }}>What kinds of AI systems has Bina Labs shipped to production?</span>{' '}
         Seventeen public engagements spanning vision and VLM (match-cut detection, construction drawing extraction), AI agents (CX copilots, IT-ticket bots, logistics tendering), data and LLM systems (talk-to-data, marine-insurance risk scoring), and strategy advisory. Four are documented as full case studies; engagements typically run 6 to 9 months and the shipped systems are owned and operated by the client teams.
