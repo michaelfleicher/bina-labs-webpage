@@ -35,6 +35,12 @@ const { cs } = Astro.props;
 const SITE = 'https://bina-labs.com';
 const url = `${SITE}/work/${cs.slug}`;
 
+const authorLinkedIn: Record<string, string> = {
+  'Michael Fleicher': 'https://www.linkedin.com/in/michaelfleicher',
+  'Ronen Chen': 'https://www.linkedin.com/in/ronen-chen/',
+};
+const leadName = cs.team?.lead ?? 'Michael Fleicher';
+
 const sectorMeta = cs.meta?.find((m) => /sector/i.test(m.l));
 const durationMeta = cs.meta?.find((m) => /duration/i.test(m.l));
 
@@ -51,11 +57,11 @@ const schema: Record<string, unknown> = {
   about: cs.client,
   author: {
     '@type': 'Person',
-    '@id': `${SITE}/about#michael`,
-    name: cs.team?.lead ?? 'Michael Fleicher',
+    '@id': `${SITE}/about#${leadName === 'Ronen Chen' ? 'ronen' : 'michael'}`,
+    name: leadName,
     jobTitle: cs.team?.role ?? 'Principal',
     url: `${SITE}/about`,
-    sameAs: ['https://www.linkedin.com/in/michaelfleicher'],
+    sameAs: [authorLinkedIn[leadName] ?? 'https://www.linkedin.com/in/michaelfleicher'],
   },
   publisher: {
     '@type': 'Organization',

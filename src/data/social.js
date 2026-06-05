@@ -43,3 +43,8 @@ export const personSocialLinks = [
   //   not add until confirmed in a browser).
   // TODO: add verified personal site / Mastodon / Bluesky when available.
 ];
+
+export const ronenSocialLinks = [
+  // Verified 2026-06-04: LinkedIn profile is canonical and resolves in browser.
+  'https://www.linkedin.com/in/ronen-chen/',
+];

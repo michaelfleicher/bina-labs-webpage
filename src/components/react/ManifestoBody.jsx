@@ -140,7 +140,7 @@ function ManifestoSection() {
         justifyContent: 'space-between', alignItems: isMobile ? 'flex-start' : 'center',
         fontFamily: BL.mono, fontSize: 13, color: BL.inkMuted,
       }}>
-        <div>Signed by Michael Fleicher · 2025</div>
+        <div>Signed by Michael Fleicher & Ronen Chen · 2025</div>
         <BLPillLink primary href="/contact">Hold us to it →</BLPillLink>
       </div>
     </section>

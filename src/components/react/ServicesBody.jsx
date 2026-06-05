@@ -30,7 +30,7 @@ function ServicesHero() {
         fontSize: 'clamp(56px, 13vw, 144px)',
         lineHeight: 0.94, letterSpacing: '-0.045em', color: BL.inkText, maxWidth: '12ch',
       }}>
-        Four ways<br />
+        Five ways<br />
         we <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.red, fontWeight: 300 }}>engage</span>.
       </h1>
       <p style={{
@@ -81,6 +81,15 @@ function ServicesDetail() {
       desc: 'We take research engagements with labs, universities and frontier-model companies. The work occasionally produces a paper, sometimes a prototype, and rarely a product - but always a thesis we are willing to defend in public.',
       deliverables: ['Literature review', 'Reproductions & extensions', 'Prototype + writeup', 'Joint authorship (where appropriate)'],
       best: 'Frontier labs and curious operators who want to understand what is one paper away from being possible.',
+    },
+    {
+      n: '05', name: 'Innovation & Grant Strategy',
+      q: 'What does an Innovation & Grant Strategy engagement with Bina Labs deliver?',
+      tagline: 'Turn breakthrough tech into funded ventures.',
+      outcome: 'A funded roadmap and an investor-ready story.',
+      desc: 'We help startups, SMEs, and research organizations secure competitive funding and turn breakthrough technology into scalable ventures. Grant and funding strategy, proposal writing, business plans, technology due diligence, international partnerships, and R&D roadmapping.',
+      deliverables: ['Grant & funding strategy (Horizon Europe, EIC, Eurostars, BIRD, IIA)', 'Proposal writing & submission support', 'Business plans & commercialization strategy', 'Technology due diligence & evaluation', 'International partnerships & consortium building', 'R&D planning & technology roadmapping'],
+      best: 'Startups, SMEs, and research organizations seeking competitive funding and a credible path to market.',
     },
   ];
   return (

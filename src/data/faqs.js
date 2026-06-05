@@ -70,12 +70,20 @@ export const SERVICES_FAQS = [
     q: 'Can you deploy on-premises?',
     a: 'Yes. We have shipped on-prem inference for regulated industries including marine insurance, customer support, and construction. We size GPU footprints, license costs, and observability before the contract.',
   },
+  {
+    q: 'What is Innovation & Grant Strategy?',
+    a: 'A service line led by Ronen Chen that helps startups, SMEs, and research organizations secure competitive funding (Horizon Europe, EIC Accelerator, Eurostars, BIRD, Israel Innovation Authority), build credible business plans, and turn breakthrough technology into funded, scalable ventures.',
+  },
 ];
 
 export const ABOUT_FAQS = [
   {
     q: 'Who is Michael Fleicher?',
     a: 'Engineer, data scientist, founder, and two-time CTO. Background spans MedTech, insurance, semiconductors, and entertainment. Building agentic systems and automations since 2017. Founder and principal of Bina Labs; previously founded Storywise.',
+  },
+  {
+    q: 'Who is Ronen Chen?',
+    a: 'AI and deep-learning expert, innovation strategist, and funding advisor with 20+ years bridging advanced technology and commercial success. Helps startups, SMEs, and research organizations secure competitive funding (Horizon Europe, EIC Accelerator, Eurostars, BIRD Foundation, Israel Innovation Authority) and turn breakthrough ideas into funded, scalable ventures. Principal of Bina Labs.',
   },
   {
     q: 'Do you take fractional CTO engagements?',
@@ -121,7 +129,7 @@ export const MANIFESTO_FAQS = [
 export const CONTACT_FAQS = [
   {
     q: 'What is your response time?',
-    a: 'Within one business day, written, by Michael. No assistants, no auto-responders, no qualification gates. Office hours every Thursday 14 to 16 IST for direct conversations.',
+    a: 'Within one business day, a written reply - no assistants, no auto-responders, no qualification gates. Office hours every Thursday 14 to 16 IST.',
   },
   {
     q: 'What is a typical engagement size?',

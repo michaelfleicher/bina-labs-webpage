@@ -67,6 +67,7 @@ function CSByline({ team }) {
   const lead = team.lead ?? 'Michael Fleicher';
   const role = team.role ?? 'Principal';
   const members = (team.members ?? []).filter((m) => m && m !== lead);
+  const anchor = lead === 'Ronen Chen' ? 'ronen' : 'michael';
   return (
     <div
       itemScope
@@ -83,7 +84,7 @@ function CSByline({ team }) {
       }}>
       <span>
         By <a
-          href="/about#michael"
+          href={`/about#${anchor}`}
           itemProp="url"
           className="bl-link-hover"
           style={{ color: BL.red, textDecoration: 'none' }}>
