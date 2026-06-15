@@ -1,4 +1,5 @@
 # bina-labs.com
+https://www.bina-labs.com
 
 Marketing site for Bina Labs — architectural intelligence of tomorrow.
 
