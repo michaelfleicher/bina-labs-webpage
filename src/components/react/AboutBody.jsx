@@ -374,7 +374,7 @@ function OperatorHiring() {
   );
 }
 
-const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY;
 
 function ApplyModal({ role, onClose }) {
   const [form, setForm] = React.useState({ name: '', email: '', linkedin: '', note: '' });

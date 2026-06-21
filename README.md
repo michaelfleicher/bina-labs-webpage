@@ -45,15 +45,15 @@ The contact form (`#contact`) and the careers apply modal (`#about`) submit to
 2. Add `intelligence@bina-labs.com` as the destination address; verify it.
 3. Copy the access key shown on the dashboard.
 4. Locally: `cp .env.example .env.local` and paste the key into
-   `VITE_WEB3FORMS_KEY`.
-5. On the host (Vercel/Netlify/etc.): set `VITE_WEB3FORMS_KEY` as an
+   `PUBLIC_WEB3FORMS_KEY`.
+5. On the host (Vercel/Netlify/etc.): set `PUBLIC_WEB3FORMS_KEY` as an
    environment variable and redeploy.
 
 Without the key, both forms show a graceful fallback pointing users to email.
 
 ## Analytics (Google Analytics 4)
 
-Page views are sent to GA4 when `PUBLIC_GA_ID` (or the legacy `VITE_GA_ID`) is
+Page views are sent to GA4 when `PUBLIC_GA_ID` is
 configured. [src/layouts/BaseLayout.astro](src/layouts/BaseLayout.astro) imports
 [src/system/analytics.js](src/system/analytics.js) and wires `initAnalytics()`
 plus a `setupRouteTracking()` listener that fires `page_view` on initial load
@@ -66,8 +66,7 @@ and on every Astro `astro:after-swap` view-transition navigation.
    measurement** on - it captures scrolls, outbound clicks, and downloads for
    free.
 5. Copy the **Measurement ID** (format `G-XXXXXXXXXX`).
-6. Locally: paste it into `PUBLIC_GA_ID` in `.env.local` (legacy `VITE_GA_ID`
-   is also honored for backwards compatibility).
+6. Locally: paste it into `PUBLIC_GA_ID` in `.env.local`.
 7. On the host: set `PUBLIC_GA_ID` as an environment variable and redeploy.
 
 Without the ID, the GA script never loads (zero network/runtime cost). Custom

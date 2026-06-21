@@ -1,8 +1,9 @@
 // Lightweight Google Analytics 4 loader for Astro static + view-transitions.
-// Reads PUBLIC_GA_ID (Astro public env) or VITE_GA_ID (legacy) at build time.
+// Reads PUBLIC_GA_ID at build time. Astro only exposes PUBLIC_-prefixed env vars
+// to client code, so the ID must use that prefix.
 // If unset, every export is a no-op so local dev and previews stay clean.
 
-const GA_ID = import.meta.env.PUBLIC_GA_ID ?? import.meta.env.VITE_GA_ID;
+const GA_ID = import.meta.env.PUBLIC_GA_ID;
 let initialized = false;
 let routeTrackingBound = false;
 

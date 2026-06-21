@@ -20,7 +20,7 @@ const INITIAL_FORM = {
   budget: '$25k–$100k', message: '',
 };
 
-const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY;
 
 function ContactSection() {
   const [form, setForm] = React.useState(INITIAL_FORM);
