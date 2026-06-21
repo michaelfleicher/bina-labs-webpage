@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael Fleicher · Curriculum Vitae</title>
+    <meta name="description" content="Michael Fleicher - Senior software engineer, two-time CTO, founder. Available for freelance and fractional engagements through Bina Labs." />
+
+    <!-- Computer Modern (Latin Modern) web font for an authentic LaTeX look -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font/fonts.css" />
+
+    <style>
+      :root {
+        --serif: "Computer Modern Serif", "Latin Modern Roman", Georgia, "Times New Roman", serif;
+        --mono: "Computer Modern Typewriter", ui-monospace, "Courier New", monospace;
+        --ink: #000;
+        --rule: #000;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html, body {
+        background: #fff;
+        color: var(--ink);
+        font-family: var(--serif);
+        font-size: 11pt;
+        line-height: 1.34;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .page {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 56px 60px 72px;
+        background: #fff;
+      }
+
+      /* ---------- header ---------- */
+      header { text-align: center; margin-bottom: 22px; }
+      h1.name {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: 26pt;
+        letter-spacing: 0.01em;
+        line-height: 1.1;
+      }
+      .subtitle {
+        margin-top: 6px;
+        font-style: italic;
+        font-size: 11.5pt;
+      }
+      .contact {
+        margin-top: 10px;
+        font-size: 10pt;
+        line-height: 1.7;
+      }
+      .contact .sep { padding: 0 6px; }
+
+      /* ---------- section ---------- */
+      section { margin-top: 20px; }
+      h2.section-title {
+        font-family: var(--serif);
+        font-weight: 700;
+        font-size: 12.5pt;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding-bottom: 3px;
+        border-bottom: 1px solid var(--rule);
+        margin-bottom: 10px;
+      }
+
+      p.summary {
+        text-align: justify;
+        margin-bottom: 8px;
+      }
+      p.summary:last-child { margin-bottom: 0; }
+
+      /* ---------- entries ---------- */
+      .entry { margin-bottom: 13px; }
+      .entry:last-child { margin-bottom: 0; }
+      .entry-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+      }
+      .entry-title { font-weight: 700; }
+      .entry-org { font-style: italic; }
+      .entry-meta {
+        font-size: 10pt;
+        white-space: nowrap;
+        text-align: right;
+      }
+      .entry-loc { font-style: italic; }
+
+      ul.bullets {
+        list-style: none;
+        margin-top: 4px;
+        padding-left: 16px;
+      }
+      ul.bullets li {
+        position: relative;
+        text-align: justify;
+        margin-bottom: 2px;
+      }
+      ul.bullets li::before {
+        content: "\2022";
+        position: absolute;
+        left: -14px;
+      }
+
+      .sub-entry {
+        margin-top: 8px;
+        padding-left: 14px;
+      }
+      .sub-entry-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .sub-entry-title { font-weight: 700; font-style: italic; }
+      .sub-entry-tag { font-family: var(--mono); font-size: 9pt; }
+
+      /* ---------- skills ---------- */
+      .skill-row { margin-bottom: 5px; }
+      .skill-row:last-child { margin-bottom: 0; }
+      .skill-label { font-weight: 700; }
+
+      /* ---------- footer ---------- */
+      footer {
+        margin-top: 28px;
+        padding-top: 8px;
+        border-top: 1px solid var(--rule);
+        font-size: 9pt;
+        font-style: italic;
+        text-align: center;
+        color: #000;
+      }
+
+      /* ---------- print / pdf · A4 ---------- */
+      @media print {
+        @page { size: A4 portrait; margin: 18mm 16mm; }
+        html, body { font-size: 10.5pt; }
+        .page { max-width: 100%; margin: 0; padding: 0; }
+        .entry, .sub-entry, .skill-row, li { break-inside: avoid; page-break-inside: avoid; }
+        h2.section-title { break-after: avoid; page-break-after: avoid; }
+        a { color: #000 !important; text-decoration: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- header -->
+      <header>
+        <h1 class="name">Michael Fleicher</h1>
+        <div class="subtitle">Senior Software Engineer &middot; Two-time CTO &middot; Founder</div>
+        <div class="contact">
+          <a href="tel:+972526676906">+972 52-667-6906</a><span class="sep">&middot;</span>
+          Tel Aviv &middot; Remote
+          <br />
+          <a href="https://www.linkedin.com/in/MichaelFleicher/" target="_blank" rel="noreferrer">linkedin.com/in/MichaelFleicher</a><span class="sep">&middot;</span>
+          <a href="https://github.com/michaelfleicher" target="_blank" rel="noreferrer">github.com/michaelfleicher</a>
+        </div>
+      </header>
+
+      <!-- summary -->
+      <section>
+        <h2 class="section-title">Summary</h2>
+        <p class="summary">
+          Senior hands-on software engineer, two-time CTO, and founder available for freelance and fractional engagements. A decade shipping production systems across the stack - backend, data, full-stack web, and AI - for MedTech, Insurance, Entertainment, Semiconductors, and enterprise SaaS.
+        </p>
+        <p class="summary">
+          Companies hire me when they need one operator who can scope the problem, write the code, lead the team, and hand the system off - end-to-end, no integration tax. I lead with engineering fundamentals - clean architecture, evals, observability, real handoffs - and bring deep AI specialization (agentic systems, RAG, ML pipelines) when the project calls for it. Most engagements ship in days, not quarters; the median is 11 days, with an 84% repeat-client rate. Available for CTO-level advisory, system architecture, and hands-on build sprints.
+        </p>
+      </section>
+
+      <!-- experience -->
+      <section>
+        <h2 class="section-title">Experience</h2>
+
+        <!-- Bina Labs -->
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <span class="entry-title">Hands-on Consultant</span>,
+              <span class="entry-org">Bina Labs &middot; Freelance</span>
+            </div>
+            <div class="entry-meta">
+              Sep 2025 - Present<br />
+              <span class="entry-loc">Tel Aviv &middot; Remote</span>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li>Delivering production-grade AI and software systems - agents, RAG, evals, AI-native interfaces - for companies that need architectural intelligence, not prototypes.</li>
+          </ul>
+        </div>
+
+        <!-- Connected Insurance -->
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <span class="entry-title">Connected Insurance</span>,
+              <span class="entry-org">enterprise insurance &middot; data &amp; AI leadership</span>
+            </div>
+            <div class="entry-meta">Mar 2024 - Sep 2025</div>
+          </div>
+
+          <div class="sub-entry">
+            <div class="sub-entry-head">
+              <span class="sub-entry-title">Chief AI Officer</span>
+              <span class="sub-entry-tag">[promoted]</span>
+            </div>
+            <ul class="bullets">
+              <li>Designed and developed an enterprise-grade agentic system that autonomously discovers, profiles, and reasons across siloed databases (OLTP, DWH, data lakes, and beyond) - mapping schemas, understanding semantics, and bridging fragmented data estates without manual onboarding.</li>
+              <li>Enabled real-time answers to complex business questions that previously consumed a human analyst for a full day - or an entire week - collapsing analytical cycles into seconds while preserving auditability and accuracy.</li>
+              <li>Set the AI strategy and technical direction for the organization, translating business problems into deployable agentic workflows that scale across the enterprise.</li>
+            </ul>
+          </div>
+
+          <div class="sub-entry">
+            <div class="sub-entry-head">
+              <span class="sub-entry-title">Head of Data</span>
+              <span class="sub-entry-tag">[ic &rarr; leader]</span>
+            </div>
+            <ul class="bullets">
+              <li>Led the data organization end-to-end: architecture, pipelines, modeling, and analytics powering core insurance operations and decision-making.</li>
+              <li>Built the data foundation that later unlocked the agentic AI platform - clean models, governed warehouses, and instrumented telemetry across the business.</li>
+              <li>Partnered with executive stakeholders to turn raw operational data into measurable business outcomes; promoted to Chief AI Officer to lead the company's next AI-native chapter.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Storywise AI -->
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <span class="entry-title">CTO (Hands-on)</span>,
+              <span class="entry-org">Storywise AI</span>
+            </div>
+            <div class="entry-meta">
+              2022 - 2024<br />
+              <span class="entry-loc">Generative AI SaaS</span>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li>Technical expertise: Directed development of AI algorithms and backend architecture, transforming the product from idea, through MVP, into a market-ready platform.</li>
+            <li>Innovative product development: Led hands-on in crafting the flagship AI solutions, ensuring they are robust, scalable, and ahead of market trends.</li>
+            <li>Team leadership: Built and guided the tech team, instilling a culture of technical excellence and agile response to industry changes.</li>
+            <li>Strategic collaboration: Worked closely with stakeholders to align technical advancements with business objectives, leveraging engineering expertise to drive decision-making.</li>
+          </ul>
+        </div>
+
+        <!-- Etrog Systems -->
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <span class="entry-title">Head of R&amp;D, Algorithm Developer</span>,
+              <span class="entry-org">Etrog Systems</span>
+            </div>
+            <div class="entry-meta">
+              2021 - 2023<br />
+              <span class="entry-loc">MedTech &middot; wearables</span>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li>Led development and launch of a novel healthcare solution - wearable device + digital platforms - managing a team of 12 with international members.</li>
+            <li>Implemented Agile methodologies, enhancing efficiency and customer responsiveness.</li>
+            <li>Secured ISO 13485 certification and advanced toward FDA approval.</li>
+            <li>Oversaw a cross-functional team delivering high-quality products across various tech domains.</li>
+            <li>Proficiency in Python, algorithm design, and backend frameworks.</li>
+          </ul>
+        </div>
+
+        <!-- Mobile-lab -->
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <span class="entry-title">Researcher</span>,
+              <span class="entry-org">Mobile-lab &middot; Ariel University</span>
+            </div>
+            <div class="entry-meta">
+              2020 - 2022<br />
+              <span class="entry-loc">Autonomous vehicles &middot; RL</span>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li>Developed autonomous vehicles with passenger awareness using Reinforcement Learning.</li>
+            <li>Adapted OpenAI DQN and other deep learning research for specific driving challenges.</li>
+            <li>Designed and implemented neural network architectures (CNN, DNN) for production use.</li>
+          </ul>
+        </div>
+
+        <!-- Intel -->
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <span class="entry-title">Process Engineer</span>,
+              <span class="entry-org">Intel</span>
+            </div>
+            <div class="entry-meta">
+              2017 - 2021<br />
+              <span class="entry-loc">Semiconductors &middot; HVM</span>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li>Improved high-volume manufacturing processes through detailed analysis.</li>
+            <li>Led multiple teams in a managing-without-authority role.</li>
+            <li>Developed automated solutions yielding annual savings of $60M, enhancing efficiency and reducing labor costs.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- skills -->
+      <section>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skill-row">
+          <span class="skill-label">AI &amp; Agents:</span>
+          Agentic systems, AWS Bedrock, Azure AI Foundation, RAG pipelines, evals, LLM orchestration, prompt engineering, vector DBs (pgvector, Pinecone), fine-tuning, ML pipelines (CNN/DNN/RL).
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Backend &amp; Data:</span>
+          Python, JavaScript, Node.js, FastAPI, PostgreSQL, OLTP &amp; DWH design, ETL/ELT, BigQuery, Snowflake, Airflow, Kafka, Redis.
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Full-Stack &amp; UI:</span>
+          TypeScript, JavaScript, React, Next.js, Vite, Tailwind, REST &amp; GraphQL APIs, AI-native interfaces, design systems.
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Infrastructure &amp; Delivery:</span>
+          AWS, GCP, Azure, Docker, Kubernetes, CI/CD, GitHub Actions, observability, ISO 13485, agile delivery, hand-off &amp; docs.
+        </div>
+      </section>
+
+      <!-- publications -->
+      <section>
+        <h2 class="section-title">Selected Publications</h2>
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <span class="entry-org">Using Physiological Metrics to Improve Reinforcement Learning for Autonomous Vehicles.</span>
+            </div>
+            <div class="entry-meta">2022</div>
+          </div>
+          <ul class="bullets">
+            <li>IEEE Conference. IEEE Xplore, document 10098029. <a href="https://ieeexplore.ieee.org/document/10098029" target="_blank" rel="noreferrer">ieeexplore.ieee.org/document/10098029</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- education -->
+      <section>
+        <h2 class="section-title">Education</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <span class="entry-title">MSc, Computer Science</span>,
+              <span class="entry-org">Ariel University</span>
+            </div>
+            <div class="entry-meta">
+              2020 - 2022<br />
+              <span class="entry-loc">GPA 90 &middot; thesis included</span>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li>Awarded the ISTRC Excellence Prize.</li>
+            <li>Presented research at international conferences.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <span class="entry-title">BSc, Mechanical Engineering</span>,
+              <span class="entry-org">Tel Aviv University</span>
+            </div>
+            <div class="entry-meta">
+              2015 - 2019<br />
+              <span class="entry-loc">GPA 80</span>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li>Received the Ilan Ramon Award for an outstanding final project on an automated multidisciplinary industrial mechanism.</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        Michael Fleicher &middot; Curriculum Vitae &middot; 2026
+      </footer>
+    </div>
+  </body>
+</html>
