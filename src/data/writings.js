@@ -29,7 +29,7 @@ export const WRITINGS = {
       'Marc Benioff promised one billion AI agents by 2025. Salesforce shipped roughly 3,000. The technology works. What failed is the assumption that you can install a digital coworker the way you install a printer. Here is what we see on the ground, across high-tech, finance, real estate, law, retail, and defense.',
     datePublished: '2026-02-10',
     // dateModified: update when post is substantively refreshed (20%+ new content)
-    dateModified: '2026-02-10',
+    dateModified: '2026-06-21',
     readTime: '8 min read',
     tags: ['AI agents', 'Agentforce', 'enterprise AI', 'organizational change', 'B2B AI', 'deployment'],
     author: {
@@ -67,7 +67,7 @@ export const WRITINGS = {
         items: [
           {
             lead: 'The capability shipped.',
-            text: 'Agentforce 2.0 can call tools, route conversations, escalate, and write back to the CRM. It is not a toy. A version of it works in production, today, for customers who put in the work.',
+            text: 'Agentforce 360 (the platform\'s current generation) can call tools, route conversations, escalate, and write back to the CRM. It is not a toy. A version of it works in production, today, for customers who put in the work.',
           },
           {
             lead: 'The deployments did not.',
@@ -263,7 +263,7 @@ export const WRITINGS = {
       {
         type: 'faq',
         q: 'Did Salesforce really only sell 3,000 AI agents?',
-        a: 'The "3,000" figure refers to the order-of-magnitude gap between the publicly stated "billion agents by 2025" goal and the actual paid Agentforce deployments in production. Salesforce has, predictably, since reframed the metric toward "agentic interactions" and "Data Cloud-powered agent activity," which are larger and harder to verify numbers. The point of this post does not depend on the exact figure. Whether it is 3,000 or 30,000 or 300,000, the gap to a billion is real, and the reason for the gap is organizational, not technical.',
+        a: 'The "3,000" figure refers to the order-of-magnitude gap between the publicly stated "billion agents by 2025" goal and the actual paid Agentforce deployments in production. Salesforce has, predictably, since reframed the metric toward "agentic interactions" and "Data Cloud-powered agent activity," which are larger and harder to verify numbers. By its own later reporting it reached roughly 6,000 paying Agentforce customers by mid-2025 and close to 10,000 paid deals by early 2026 - real growth, but still a rounding error against a billion. The point of this post does not depend on the exact figure. Whether it is 3,000 or 10,000 or 100,000, the gap to a billion is real, and the reason for the gap is organizational, not technical.',
       },
       {
         type: 'faq',
@@ -327,7 +327,7 @@ export const WRITINGS = {
     description:
       'A TikTok page selling AI-generated cookbooks pulled $1.6M in three months. The interesting question is not whether the cookbooks are real. It is whether your AI vendor is running the same playbook on you.',
     datePublished: '2025-10-18',
-    dateModified: '2025-10-18',
+    dateModified: '2026-06-21',
     readTime: '7 min read',
     tags: ['AI content', 'B2B AI', 'evals', 'honest deprecation', 'founder ops'],
     author: {
@@ -411,7 +411,7 @@ export const WRITINGS = {
           ['15 anonymous TikTok pages', '15 named "senior consultants" who are one shared GPT prompt'],
           ['$10 cookbook, no kitchen', '$80K SOW, no engineer who has ever shipped this kind of system'],
           ['TikTok recommender can\'t yet detect', 'Your procurement process can\'t yet detect'],
-          ['90-day arbitrage window', '12-month arbitrage window, and closing'],
+          ['90-day arbitrage window', '12-month arbitrage window, now mostly closed'],
         ],
       },
       {
@@ -560,7 +560,7 @@ export const WRITINGS = {
       {
         type: 'faq',
         q: 'How long is the B2B AI arbitrage window?',
-        a: 'Our estimate, with low confidence: 12-18 months from now. After that, procurement will get better at smelling generated work, junior staff will get better at producing real work with AI, and the gap will collapse. Build accordingly.',
+        a: 'Our original (late-2025) estimate, with low confidence, was 12-18 months. As of mid-2026 the gap is already narrowing: procurement is getting better at smelling generated work, junior staff are getting better at producing real work with AI, and the window is closing faster than the contracts can. Build accordingly.',
       },
       { type: 'hr' },
       {
@@ -578,7 +578,7 @@ export const WRITINGS = {
   'google-workspace-studio-killed-my-automation-business': {
     slug: 'google-workspace-studio-killed-my-automation-business',
     metaDescription:
-      'Google Workspace Studio drops the price of AI-augmented automations to near zero. What changed, three to ship today, and why I am giving the playbook away.',
+      'Google Workspace Studio drops the price of AI-augmented automations to near zero. Now generally available and past three million users: what changed, three to ship today, and why I am giving the playbook away.',
     title: 'Google just commoditized half of my services business. I am teaching my clients how to do it themselves.',
     headline: 'Google just commoditized half of my services business.',
     headlineAccent: 'I am teaching my clients how to do it themselves.',
@@ -588,7 +588,7 @@ export const WRITINGS = {
     description:
       'Google Workspace Studio collapses the price of building chained, AI-augmented automations to roughly zero. The work I used to sell as a services line is now a feature inside Workspace. The interesting question is no longer "can we automate this," it is "should we, and which process first." Here is what changed, three automations you can ship today, and why I am giving the playbook away.',
     datePublished: '2025-12-16',
-    dateModified: '2026-05-13',
+    dateModified: '2026-06-21',
     readTime: '5 min read',
     tags: ['Google Workspace', 'automation', 'low-code AI', 'Gemini', 'advisor model', 'process design'],
     author: {
@@ -601,7 +601,7 @@ export const WRITINGS = {
         type: 'p',
         parts: [
           { b: 'A short answer first.' },
-          ' Google shipped Workspace Studio, and a service I used to sell for real money - building chained, AI-augmented automations inside an organization - just became a drag-and-drop feature inside the product your team already pays for. Until last month, this work needed an engineer who could read API docs, wire up auth, and stitch the steps together. Now any operations lead with a coffee can build a flow that takes a Google Form, posts to Chat, opens an Asana task, fires an email, and routes the attachment to Drive. The build is no longer the hard part. Picking the right process to automate is.',
+          ' Google shipped Workspace Studio, and a service I used to sell for real money - building chained, AI-augmented automations inside an organization - just became a drag-and-drop feature inside the product your team already pays for. As recently as the end of 2025, this work needed an engineer who could read API docs, wire up auth, and stitch the steps together. Now any operations lead with a coffee can build a flow that takes a Google Form, posts to Chat, opens an Asana task, fires an email, and routes the attachment to Drive. The build is no longer the hard part. Picking the right process to automate is.',
         ],
       },
       {
@@ -619,12 +619,12 @@ export const WRITINGS = {
         parts: [
           'Workspace Studio collapses that into a visual builder, sitting ',
           { i: 'inside' },
-          ' Workspace, with native connectors to Gmail, Drive, Forms, Sheets, Chat, Calendar, and Gemini. The auth is already done. The connectors are already done. The model is one node in a flow you drew with a mouse.',
+          ' Workspace, with native connectors to Gmail, Drive, Forms, Sheets, Chat, Calendar, and Gemini 3. The auth is already done. The connectors are already done. The model is one node in a flow you drew with a mouse.',
         ],
       },
       {
         type: 'p',
-        text: 'It is, painfully, very good. It is also the right move - this work was never the moat. The moat was knowing which process to point it at.',
+        text: 'It is, painfully, very good. By Google Cloud Next 2026 it was already past three million monthly active users - this is not a beta anyone can ignore. It is also the right move - this work was never the moat. The moat was knowing which process to point it at.',
       },
       { type: 'hr' },
       { type: 'h2', text: 'Three automations you can ship today' },
@@ -735,7 +735,7 @@ export const WRITINGS = {
   'nyx-ai-agent-that-must-fund-its-own-tokens': {
     slug: 'nyx-ai-agent-that-must-fund-its-own-tokens',
     metaDescription:
-      'Nyx is an AI agent with a live token that must trade, build, and hire to fund its own inference. Is it real? The honest take on a self-funding agent.',
+      'Nyx is an AI agent with a live token that must trade, build, and hire to fund its own inference. Is it real? The 2026 honest take on self-funding agents.',
     title: 'Nyx: an AI agent that has to earn its own tokens or die. Breakthrough or hype?',
     headline: 'An AI agent that has to fund its own tokens.',
     headlineAccent: 'Fail to earn, and it dies forever.',
@@ -745,9 +745,9 @@ export const WRITINGS = {
     description:
       'Nyx is an AI agent that lives in the Pump fair-launch ecosystem with an NYX Eternal token already trading. It is supposed to trade, build, and hire to keep paying for its own inference. I have not found strong technical proof yet. If it is real and still alive, that alone is impressive. Here is the honest take.',
     datePublished: '2025-09-28',
-    dateModified: '2026-05-13',
+    dateModified: '2026-06-21',
     readTime: '4 min read',
-    tags: ['AI agents', 'crypto', 'autonomous agents', 'on-chain AI', 'hype vs reality', 'B2B AI'],
+    tags: ['AI agents', 'crypto', 'autonomous agents', 'on-chain AI', 'hype vs reality', 'B2B AI', 'agent payments'],
     author: {
       name: 'Michael Fleicher',
       role: 'Principal',
@@ -790,7 +790,7 @@ export const WRITINGS = {
       { type: 'h2', text: 'What I cannot verify' },
       {
         type: 'p',
-        text: 'Here is where I have to be honest. I have not found strong technical proof that the agent is autonomous in the way the pitch implies. I have not seen, on a public block explorer, a clean trail of: this prompt went in, this on-chain action came out, signed by a key only the agent controls, paying for an inference invoice that the agent itself negotiated. That is the thing that would close the loop.',
+        text: 'Here is where I have to be honest. As of mid-2026 I still have not found strong technical proof that the agent is autonomous in the way the pitch implies. I have not seen, on a public block explorer, a clean trail of: this prompt went in, this on-chain action came out, signed by a key only the agent controls, paying for an inference invoice that the agent itself negotiated. That is the thing that would close the loop.',
       },
       {
         type: 'p',
@@ -811,7 +811,7 @@ export const WRITINGS = {
           },
           {
             lead: 'If Nyx is mostly marketing, the marketing itself is the lesson.',
-            text: 'The story is so clean that people want it to be true. "AI agent that has to earn its own life" is the narrative the entire agentic-AI space has been groping toward. Even as theater, it sets the expectation that future agents will have to justify their own compute. That part is going to age well.',
+            text: 'The story is so clean that people want it to be true. "AI agent that has to earn its own life" is the narrative the entire agentic-AI space has been groping toward. Even as theater, it set the expectation that future agents will have to justify their own compute. By 2026 that has started to materialize: agent wallets and pay-per-inference rails now let agents settle their own compute bills. That part aged well.',
           },
         ],
       },
@@ -889,7 +889,7 @@ export const WRITINGS = {
   'agentic-ai-not-just-chat-with-gpt': {
     slug: 'agentic-ai-not-just-chat-with-gpt',
     metaDescription:
-      'An LLM answers when you ask. An agent is the same model with eyes, hands, and tools - APIs, SQL, files, email. The plain distinction, and why it matters.',
+      'An LLM answers when you ask. An agent is the same model with eyes, hands, and tools - APIs, SQL, files, email. The plain distinction for 2026, and why it matters for B2B teams.',
     title: 'Agentic AI is not a smarter chat. It is a coworker with hands.',
     headline: 'Agentic AI is not a smarter chat.',
     headlineAccent: 'It is a coworker with hands.',
@@ -899,7 +899,7 @@ export const WRITINGS = {
     description:
       'Most people meet AI as a chat. You ask, it answers. That is an LLM. An agent is the same model with eyes, hands, and a way to act on the world through tools - APIs, SQL, files, calendars, email. Here is the plain distinction, why it matters for B2B buyers, and how to think about real work an agent could do for your team.',
     datePublished: '2025-07-14',
-    dateModified: '2026-05-13',
+    dateModified: '2026-06-21',
     readTime: '4 min read',
     tags: ['agentic AI', 'LLM', 'AI agents', 'tool use', 'B2B AI', 'automation'],
     author: {
@@ -967,7 +967,7 @@ export const WRITINGS = {
       },
       {
         type: 'p',
-        text: 'The chat-only version either guesses ("it is usually warm in July") or refuses ("I cannot access real-time information"). Neither is what you wanted.',
+        text: 'The chat-only version either guesses ("it is usually warm this time of year") or refuses ("I cannot access real-time information"). Neither is what you wanted.',
       },
       {
         type: 'p',
@@ -1026,7 +1026,7 @@ export const WRITINGS = {
       },
       {
         type: 'p',
-        text: 'Most "AI strategy" decks we read in 2026 are still planning chat-model deployments. The teams that win the next 24 months are the ones already designing agent roles - with scoped permissions, written job descriptions, and a clear escalation path when the agent is unsure.',
+        text: 'Most "AI strategy" decks we read in mid-2026 are still planning chat-model deployments. The teams that win the next 18 months are the ones already designing agent roles - with scoped permissions, written job descriptions, and a clear escalation path when the agent is unsure.',
       },
       { type: 'hr' },
       { type: 'h2', text: 'Your turn: pick a task' },
@@ -1066,7 +1066,7 @@ export const WRITINGS = {
       {
         type: 'faq',
         q: 'Is every "AI agent" on the market actually an agent?',
-        a: 'No. A lot of products labeled "AI agents" in 2026 are chat models with a slightly fancier prompt and no real tool use, no retries, no verification. If a vendor cannot show you the agent calling an actual tool in your environment, reading the result, and adapting - it is a chatbot wearing the word "agent" on its name tag.',
+        a: 'No. A lot of products still labeled "AI agents" in 2026 are chat models with a slightly fancier prompt and no real tool use, no retries, no verification. If a vendor cannot show you the agent calling an actual tool in your environment, reading the result, and adapting - it is a chatbot wearing the word "agent" on its name tag.',
       },
       {
         type: 'faq',
@@ -1104,7 +1104,7 @@ export const WRITINGS = {
   'prompt-engineering-its-not-you-its-the-prompt': {
     slug: 'prompt-engineering-its-not-you-its-the-prompt',
     metaDescription:
-      'Most people prompt ChatGPT like they prompt Google, then call it dumb. It is a Waze for words: the more specific the address, the better the route.',
+      'Most people still prompt ChatGPT like Google in 2026, then call it dumb. It is a Waze for words: the more specific the address, the better the route.',
     title: 'It\'s not you, it\'s the prompt. Why most people use ChatGPT like Google - and get back garbage.',
     headline: 'It\'s not you, it\'s the prompt.',
     headlineAccent: 'Most people use ChatGPT like Google. That\'s the bug.',
@@ -1114,9 +1114,9 @@ export const WRITINGS = {
     description:
       'Most people prompt ChatGPT the way they prompt Google and then complain the model is dumb. It\'s not. It\'s a Waze for words: the more specific the address, the better the route. Here is how prompts actually work, and the one example that makes it click.',
     datePublished: '2025-07-10',
-    dateModified: '2026-05-13',
+    dateModified: '2026-06-21',
     readTime: '5 min read',
-    tags: ['prompt engineering', 'LLMs', 'AI literacy', 'ChatGPT', 'AI workflow'],
+    tags: ['prompt engineering', 'LLMs', 'AI literacy', 'ChatGPT', 'AI workflow', 'prompt engineering 2026'],
     author: {
       name: 'Michael Fleicher',
       role: 'Principal',
@@ -1138,7 +1138,7 @@ export const WRITINGS = {
       },
       {
         type: 'p',
-        text: 'If you have ever closed a ChatGPT tab thinking "this thing is overhyped," there is a decent chance you were not asking it the right way. The model is not the bottleneck anymore. You are.',
+        text: 'If you have ever closed a ChatGPT tab thinking "this thing is overhyped," there is a decent chance you were not asking it the right way. In 2026, with models this capable, the model is not the bottleneck. You are.',
       },
       { type: 'hr' },
       { type: 'h2', text: 'AI is not Google. Stop prompting it like Google.' },
@@ -1318,7 +1318,7 @@ export const WRITINGS = {
       {
         type: 'faq',
         q: 'Is prompt engineering going to be obsolete when models get smarter?',
-        a: 'Partly. Models will get better at guessing your intent from less. They are already doing that compared to two years ago. But "telling a capable system what you actually want, clearly" is not going away. It is the same skill that makes you good at briefing a designer, scoping a project, or writing a ticket a junior engineer can ship. The interface will get more forgiving. The skill underneath it will not.',
+        a: 'Partly. Models will get better at guessing your intent from less. They are already doing that compared to a couple of years ago. But "telling a capable system what you actually want, clearly" is not going away. It is the same skill that makes you good at briefing a designer, scoping a project, or writing a ticket a junior engineer can ship. The interface will get more forgiving. The skill underneath it will not.',
       },
       { type: 'hr' },
       {
@@ -1344,9 +1344,9 @@ export const WRITINGS = {
     tagline:
       'If you are not a programmer but feel surrounded by LLMs, Agents, Vibe Coding, Retrieval, and Solo Founders, you are not alone. Here is each one in plain English, with no jargon and no posturing.',
     description:
-      'A plain-English glossary of the five AI terms non-engineers keep hearing in 2025: LLMs, Agents, Vibe Coding, Retrieval, and Solo Founders. Written for managers, creators, and decision-makers who want to actually understand the words, not just pretend.',
+      'A plain-English glossary of the five AI terms non-engineers keep hearing in 2026: LLMs, Agents, Vibe Coding, Retrieval, and Solo Founders. Written for managers, creators, and decision-makers who want to actually understand the words, not just pretend.',
     datePublished: '2025-07-09',
-    dateModified: '2026-05-13',
+    dateModified: '2026-06-21',
     readTime: '5 min read',
     tags: ['AI literacy', 'glossary', 'LLMs', 'AI agents', 'vibe coding', 'RAG'],
     author: {
@@ -1365,7 +1365,7 @@ export const WRITINGS = {
         type: 'p',
         parts: [
           { b: 'A short answer first.' },
-          ' If you are a manager, a creator, or anyone who is not a programmer, the words flying around AI right now are doing two jobs at once: describing real things, and making you feel like you are behind. You are not behind. The vocabulary just runs faster than the technology, and the technology runs fast. Five words cover roughly 90% of the conversation in 2025: ',
+          ' If you are a manager, a creator, or anyone who is not a programmer, the words flying around AI right now are doing two jobs at once: describing real things, and making you feel like you are behind. You are not behind. The vocabulary just runs faster than the technology, and the technology runs fast. Five words cover roughly 90% of the conversation right now: ',
           { b: 'LLM' },
           ', ',
           { b: 'Agent' },
@@ -1464,7 +1464,7 @@ export const WRITINGS = {
       {
         type: 'p',
         parts: [
-          'This is the shift everyone in enterprise software is paying for in 2025. A chatbot talks. An agent ',
+          'This is the shift everyone in enterprise software is still paying for. A chatbot talks. An agent ',
           { i: 'does' },
           '. The hard part is not the model. The hard part is everything around the model: which tools, with which permissions, in which order, with which guardrails, reporting to which human.',
         ],
@@ -1504,7 +1504,7 @@ export const WRITINGS = {
           },
           {
             lead: 'It is not only for toys.',
-            text: 'Real companies are shipping real production systems this way in 2025. Not all of them. Not for everything. But "I cannot code, so I cannot build" is not true anymore. It is now "I cannot articulate what I want, so I cannot build," which is a much smaller club.',
+            text: 'Real companies are shipping real production systems this way. Not all of them. Not for everything. But "I cannot code, so I cannot build" is not true anymore. It is now "I cannot articulate what I want, so I cannot build," which is a much smaller club. By 2026 even Andrej Karpathy, who coined "vibe coding," argues the disciplined, reviewed end of the practice has matured into what people now call "agentic engineering."',
           },
         ],
       },
