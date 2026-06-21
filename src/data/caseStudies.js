@@ -46,6 +46,8 @@ export const CASE_STUDIES = {
       members: ['Michael Fleicher', 'Vision team'],
     },
     datePublished: '2025-08-01',
+    // dateModified: bump when the case study is substantively revised.
+    dateModified: '2025-08-01',
   },
 
   'auto-qto': {
@@ -93,6 +95,7 @@ export const CASE_STUDIES = {
       members: ['Michael Fleicher', 'CV + VLM team'],
     },
     datePublished: '2025-09-15',
+    dateModified: '2025-09-15',
   },
 
   'lloyd-score': {
@@ -140,6 +143,7 @@ export const CASE_STUDIES = {
       members: ['Michael Fleicher', 'Spatial-AI team'],
     },
     datePublished: '2025-10-30',
+    dateModified: '2025-10-30',
   },
 
   'caseworker': {
@@ -187,6 +191,7 @@ export const CASE_STUDIES = {
       members: ['Michael Fleicher', 'Embedded team'],
     },
     datePublished: '2025-11-20',
+    dateModified: '2025-11-20',
   },
 };
 

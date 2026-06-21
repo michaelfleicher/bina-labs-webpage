@@ -8,9 +8,11 @@ export default function BlogPostBody({ post }) {
   return (
     <div className="bl-page" style={{ background: BL.ink, color: BL.inkText, fontFamily: BL.sans, minHeight: '100vh' }}>
       <BLNav current={`writing / ${post.slug}`} />
-      <PostHero post={post} />
-      <PostCover post={post} />
-      <PostBody post={post} />
+      <article>
+        <PostHero post={post} />
+        <PostCover post={post} />
+        <PostBody post={post} />
+      </article>
       <PostCTA />
       <PostRelated currentSlug={post.slug} />
       <BLFooter />
@@ -149,9 +151,9 @@ function PostBody({ post }) {
       padding: 'clamp(48px, 8vw, 96px) clamp(20px, 4vw, 32px)',
       borderBottom: `1px solid ${BL.inkLine}`,
     }}>
-      <article style={{ maxWidth: 760, margin: '0 auto' }}>
+      <div style={{ maxWidth: 760, margin: '0 auto' }}>
         {post.body.map((block, i) => <Block key={i} block={block} />)}
-      </article>
+      </div>
     </section>
   );
 }

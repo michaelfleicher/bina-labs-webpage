@@ -19,6 +19,13 @@ const schema: Record<string, unknown> = {
   jobTitle: 'Principal & Founder',
   url: `${SITE}/about`,
   email: 'michael@bina-labs.com',
+  image: {
+    '@type': 'ImageObject',
+    url: `${SITE}/michael.webp`,
+    caption: 'Michael Fleicher, Principal & Founder of Bina Labs',
+    width: 1000,
+    height: 1023,
+  },
   worksFor: {
     '@type': 'Organization',
     name: 'Bina Labs',

@@ -25,6 +25,7 @@ interface CaseStudy {
   outcomes?: CaseStudyOutcome[];
   team?: CaseStudyTeam;
   datePublished?: string;
+  dateModified?: string;
 }
 
 interface Props {
@@ -75,7 +76,10 @@ const schema: Record<string, unknown> = {
   },
 };
 
-if (cs.datePublished) schema.datePublished = cs.datePublished;
+if (cs.datePublished) {
+  schema.datePublished = cs.datePublished;
+  schema.dateModified = cs.dateModified ?? cs.datePublished;
+}
 if (sectorMeta) schema.genre = sectorMeta.v;
 if (durationMeta) schema.timeRequired = durationMeta.v;
 if (cs.outcomes?.length) {

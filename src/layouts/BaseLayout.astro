@@ -10,6 +10,7 @@ interface Props {
   ogImage?: string;
   ogType?: 'website' | 'article';
   noindex?: boolean;
+  author?: string;
 }
 
 const SITE_URL = 'https://bina-labs.com';
@@ -23,6 +24,7 @@ const {
   ogImage = DEFAULT_OG_IMAGE,
   ogType = 'website',
   noindex = false,
+  author = 'Bina Labs',
 } = Astro.props;
 
 const canonicalPath = canonical ?? Astro.url.pathname;
@@ -48,6 +50,7 @@ const robots = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content={author} />
     <link rel="canonical" href={canonicalUrl} />
     <meta name="robots" content={robots} />
 
@@ -67,7 +70,7 @@ const robots = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@300;400;500&family=Geist:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@300;400;500&family=Geist:wght@300;400;500&display=swap"
     />
 
     <OrganizationSchema />

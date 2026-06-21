@@ -18,6 +18,13 @@ const schema: Record<string, unknown> = {
   familyName: 'Chen',
   jobTitle: 'Principal',
   url: `${SITE}/about`,
+  image: {
+    '@type': 'ImageObject',
+    url: `${SITE}/ronen.webp`,
+    caption: 'Ronen Chen, Principal of Bina Labs',
+    width: 1000,
+    height: 1024,
+  },
   worksFor: {
     '@type': 'Organization',
     name: 'Bina Labs',

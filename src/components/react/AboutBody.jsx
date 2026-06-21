@@ -4,8 +4,9 @@ import { BL, MQ } from '../../system/bl.js';
 import { useMediaQuery } from '../../system/useMediaQuery.js';
 import { BLNav, BLFooter, BLEyebrow } from '../Chrome.jsx';
 import FAQSection from './FAQSection.jsx';
-import michaelImg from '../../assets/michael.png?url';
-import ronenImg from '../../assets/ronen.png?url';
+// Served from /public so the same URL is reusable in JSON-LD ImageObject schema.
+const michaelImg = '/michael.webp';
+const ronenImg = '/ronen.webp';
 
 const RECEIPTS = [
   { y: '2× ex-CTO', d: 'MedTech · Insurance · AI SaaS', tag: 'leadership' },

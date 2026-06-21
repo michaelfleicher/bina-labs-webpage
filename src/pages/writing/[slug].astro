@@ -18,6 +18,7 @@ const title = `${post.title} - Bina Labs`;
 const description = post.metaDescription ?? post.description ?? post.tagline ?? '';
 const canonical = `/writing/${post.slug}`;
 const ogImage = post.ogImage ?? post.cover?.src ?? '/og-default.png';
+const author = post.author?.name ?? 'Michael Fleicher';
 
 const breadcrumbs = [
   { name: 'Home', url: '/' },
@@ -30,7 +31,8 @@ const breadcrumbs = [
   description={description}
   canonical={canonical}
   ogImage={ogImage}
-  ogType="article">
+  ogType="article"
+  author={author}>
   <BlogPostingSchema slot="head" post={post} dateModified={post.dateModified} />
   <BreadcrumbSchema slot="head" items={breadcrumbs} />
   <PersonSchema slot="head" />

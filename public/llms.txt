@@ -2,17 +2,17 @@
 
 > Bina Labs is an Israeli consultancy of engineers, researchers, and strategists that builds AI systems which earn their seat at the production table. Tel Aviv, Berlin, remote-first.
 
-Bina Labs is led by Michael Fleicher (מיכאל פליישר in Hebrew). We work with companies who need real AI in production - not slideware. Median ship time is 11 days. 84% of clients return for a second engagement. We engage four ways: AI strategy intensives, embedded engineering squads, lectures and workshops, and applied research.
+Bina Labs is led by two principals, Michael Fleicher (מיכאל פליישר in Hebrew) and Ronen Chen. We work with companies who need real AI in production - not slideware. Median ship time is 11 days. 84% of clients return for a second engagement. We engage five ways: AI strategy intensives, embedded engineering squads, lectures and workshops, applied research, and innovation & grant strategy.
 
-The principal is Michael Fleicher - engineer, data scientist, founder, two-time CTO with backgrounds across MedTech, Insurance, Entertainment, and Semi-conductors. Building agentic systems and automations since 2017.
+Michael Fleicher is an engineer, data scientist, founder, and two-time CTO with backgrounds across MedTech, Insurance, Entertainment, and Semi-conductors. Building agentic systems and automations since 2017. Ronen Chen is an AI and deep-learning expert, innovation strategist, and funding advisor with 20+ years bridging advanced technology and commercial success - helping startups, SMEs, and research organizations secure competitive funding (Horizon Europe, EIC Accelerator, Eurostars, BIRD, Israel Innovation Authority).
 
 Operating principles: deadlines are holy; AI assistants are tools, not authors; honest deprecation (we tell clients when a project should die and refund the rest); built to leave (every embedded engagement comes with a written hand-off plan from day one).
 
 ## Core pages
 
 - [Home](https://bina-labs.com/): Overview, current engagement count, selected work, manifesto preview, services snapshot
-- [About](https://bina-labs.com/about): Michael Fleicher (principal), team bench, working model, hiring
-- [Services](https://bina-labs.com/services): Four engagement modes - AI Strategy, AI/Software Engineering, Lectures & Workshops, Research
+- [About](https://bina-labs.com/about): Michael Fleicher and Ronen Chen (principals), team bench, working model, hiring
+- [Services](https://bina-labs.com/services): Five engagement modes - AI Strategy, AI/Software Engineering, Lectures & Workshops, Research, Innovation & Grant Strategy
 - [Work](https://bina-labs.com/work): 17 case studies across vision, agents, data, embedded systems
 - [Manifesto](https://bina-labs.com/manifesto): Operating principles in full
 - [Contact](https://bina-labs.com/contact): Start a project, careers, intelligence@bina-labs.com
@@ -31,6 +31,7 @@ Operating principles: deadlines are holy; AI assistants are tools, not authors; 
 - [AI / Software Engineering](https://bina-labs.com/services): Embedded squads that ship product and the AI plumbing underneath - full-stack, RAG, agents, on-prem
 - [Lectures & Workshops](https://bina-labs.com/services): Tailored sessions for R&D teams and executives. What is real, what is one paper away, what is marketing
 - [Research](https://bina-labs.com/services): Applied research with frontier teams. Sometimes a paper. Occasionally a product
+- [Innovation & Grant Strategy](https://bina-labs.com/services): Securing competitive funding (Horizon Europe, EIC Accelerator, Eurostars, BIRD, Israel Innovation Authority), business plans, and turning breakthrough technology into funded, scalable ventures
 
 ## Optional
 

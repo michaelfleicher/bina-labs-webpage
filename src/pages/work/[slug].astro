@@ -21,6 +21,7 @@ const description = caseStudy.tagline;
 const canonical = `/work/${caseStudy.slug}`;
 
 const faqs = CASE_STUDY_FAQS[caseStudy.slug] ?? [];
+const author = caseStudy.team?.lead ?? 'Michael Fleicher';
 
 const breadcrumbs = [
   { name: 'Home', url: '/' },
@@ -28,7 +29,7 @@ const breadcrumbs = [
   { name: caseStudy.client, url: canonical },
 ];
 ---
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article">
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" author={author}>
   <CaseStudySchema slot="head" cs={caseStudy} />
   <BreadcrumbSchema slot="head" items={breadcrumbs} />
   <PersonSchema slot="head" />

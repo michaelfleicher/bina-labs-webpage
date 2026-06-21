@@ -23,9 +23,8 @@ export const orgSocialLinks = [
   'https://github.com/bina-labs',
   // Wikidata Q-item for Bina Labs (created 2026-05-13).
   'https://www.wikidata.org/wiki/Q139782974',
-  // TODO: add verified company LinkedIn URL when the page is published
-  //   (https://www.linkedin.com/company/<slug> - both bina-labs and binalabs
-  //   currently 404).
+  // Verified 2026-06-15: company LinkedIn page is live and canonical.
+  'https://www.linkedin.com/company/bina-labs/',
   // TODO: add verified X/Twitter handle when claimed.
   // TODO: add verified Crunchbase URL once the org page is live.
 ];

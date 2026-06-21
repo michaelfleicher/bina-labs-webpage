@@ -10,12 +10,14 @@ export default function CaseStudyBody({ caseStudy, faqs }) {
   return (
     <div className="bl-page" style={{ background: BL.ink, color: BL.inkText, fontFamily: BL.sans, minHeight: '100vh' }}>
       <BLNav current={`work / ${data.slug}`} />
-      <CSHero data={data} />
-      <CSMeta data={data} />
-      <CSBrief data={data} />
-      <CSStack data={data} />
-      <CSOutcomes data={data} />
-      <CSQuote data={data} />
+      <article>
+        <CSHero data={data} />
+        <CSMeta data={data} />
+        <CSBrief data={data} />
+        <CSStack data={data} />
+        <CSOutcomes data={data} />
+        <CSQuote data={data} />
+      </article>
       <FAQSection
         faqs={faqs}
         eyebrow={`// faq · ${data.client.toLowerCase()}`}
