@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Bina Labs - תבנית מסמך</title>
+<style>
+  /* ============================================================
+     Bina Labs - document template (proposals, quotes, one-pagers)
+     Print / save as PDF: A4, background graphics ON, margins "None".
+     The header + footer repeat on every page (thead/tfoot technique).
+     ============================================================ */
+
+  @page { size: A4; margin: 0; }
+
+  :root {
+    --ink:   #0a1628;
+    --lime:  #9dff4d;
+    --bone:  #e8f1f7;
+    --muted: #5a6b7d;
+    --rule:  rgba(10,22,40,0.10);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11.5pt;
+    line-height: 1.65;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* The page frame: thead repeats at the top of every page, tfoot at the bottom.
+     Note: Chrome pins the footer to the bottom of every page EXCEPT the last one,
+     where it follows the content. If the last page is short and you want the band
+     pinned there too, drop a <div class="fill"></div> at the end of the content. */
+  table.doc { width: 100%; border-collapse: collapse; }
+  table.doc > thead > tr > td,
+  table.doc > tfoot > tr > td { padding: 0; }
+  table.doc > tbody > tr > td { padding: 10mm 18mm 14mm; vertical-align: top; }
+
+  /* ---------------- HEADER ---------------- */
+  .doc-header { height: 30mm; position: relative; }
+  /* navy panel hugging the top-right corner (RTL mirror of a top-left lockup) */
+  .doc-header .brand-panel {
+    position: absolute;
+    top: 0; right: 0;
+    padding: 8mm 14mm 7mm 12mm;
+    background: var(--ink);
+    border-radius: 0 0 0 20mm;
+    direction: ltr; /* latin lockup - keeps the SVG <text> from mirroring */
+  }
+  /* 400x120 viewBox at 12mm tall = 40mm wide */
+  .doc-header .brand-panel svg { display: block; height: 12mm; width: 40mm; }
+
+  /* ---------------- FOOTER ---------------- */
+  .doc-footer {
+    height: 14mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12mm;
+    color: var(--bone);
+    background: linear-gradient(90deg, #0a1628 0%, #10314a 52%, #17506b 100%);
+    border-top: 2px solid var(--lime);
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.5px;
+  }
+  .doc-footer a { color: inherit; text-decoration: none; }
+  .doc-footer > span { white-space: nowrap; direction: ltr; }
+  .doc-footer .tagline { color: var(--lime); letter-spacing: 1.2px; }
+
+  /* ---------------- CONTENT ---------------- */
+  .doc-date {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 9pt;
+    color: var(--muted);
+    direction: ltr;
+    text-align: left;
+    margin-bottom: 10mm;
+  }
+
+  h1 { font-size: 22pt; letter-spacing: 2px; text-align: center; margin: 0 0 3mm; }
+  .subtitle {
+    text-align: center;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10pt;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+    margin: 0 0 9mm;
+  }
+
+  h2 {
+    font-size: 13pt;
+    margin: 9mm 0 3mm;
+    padding-bottom: 2mm;
+    border-bottom: 1px solid var(--rule);
+  }
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--lime);
+    margin-inline-end: 7px;
+    vertical-align: middle;
+  }
+
+  p  { margin: 0 0 4mm; }
+  ul { margin: 0 0 4mm; padding-inline-start: 6mm; }
+  li { margin-bottom: 1.8mm; }
+
+  .divider { height: 1px; background: var(--rule); margin: 8mm 0; border: 0; }
+
+  /* optional: pads out a short final page so the footer band lands at the bottom.
+     Trim the height until the document still ends on the page you want. */
+  .fill { height: 120mm; }
+
+  h1, h2 { break-after: avoid; }
+  li     { break-inside: avoid; }
+  .page-break { break-before: page; }
+
+  /* on-screen preview: show the sheet on a grey desk */
+  @media screen {
+    body { background: #eef2f5; }
+    table.doc { max-width: 210mm; margin: 8mm auto; background: #fff; box-shadow: 0 2px 18px rgba(10,22,40,.14); }
+  }
+</style>
+</head>
+<body>
+
+<table class="doc">
+
+  <!-- ============ HEADER (repeats on every page) ============ -->
+  <thead>
+    <tr><td>
+      <div class="doc-header">
+        <div class="brand-panel">
+          <svg viewBox="0 0 400 120" role="img" aria-label="Bina Labs">
+            <title>Bina Labs</title>
+            <rect x="0" y="20" width="80" height="80" rx="16" fill="#9dff4d"/>
+            <rect x="27" y="47" width="26" height="26" fill="#0a1628"/>
+            <text x="108" y="64"
+                  font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+                  font-size="42" font-weight="600" letter-spacing="3"
+                  fill="#e8f1f7">BINA LABS</text>
+            <text x="110" y="90"
+                  font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+                  font-size="12" font-weight="400" letter-spacing="3.4"
+                  fill="#e8f1f7" fill-opacity="0.62">ARCHITECTURAL INTELLIGENCE</text>
+          </svg>
+        </div>
+      </div>
+    </td></tr>
+  </thead>
+
+  <!-- ============ FOOTER (repeats on every page) ============ -->
+  <tfoot>
+    <tr><td>
+      <div class="doc-footer">
+        <span><a href="https://bina-labs.com">www.bina-labs.com</a></span>
+        <span class="tagline">architectural intelligence of tomorrow</span>
+        <span><a href="mailto:intelligence@bina-labs.com">intelligence@bina-labs.com</a></span>
+      </div>
+    </td></tr>
+  </tfoot>
+
+  <!-- ============ CONTENT - replace everything inside <tbody> ============ -->
+  <tbody>
+    <tr><td>
+
+      <div class="doc-date">06/08/2026</div>
+
+      <h1>כותרת המסמך</h1>
+      <p class="subtitle">תת-כותרת · נושא · נושא</p>
+
+      <p>
+        פסקת פתיחה קצרה שמסבירה מה המסמך הזה ולמי הוא מיועד. שתיים-שלוש שורות מספיקות -
+        המטרה היא שהקורא יבין תוך עשר שניות מה הוא מקבל.
+      </p>
+
+      <hr class="divider">
+
+      <h2>1. סעיף ראשון</h2>
+      <ul>
+        <li><strong>נקודה מודגשת:</strong> הסבר קצר בשורה אחת.</li>
+        <li><strong>נקודה נוספת:</strong> הסבר קצר בשורה אחת.</li>
+      </ul>
+
+      <h2>2. סעיף שני</h2>
+      <ul>
+        <li><strong>נקודה מודגשת:</strong> הסבר קצר בשורה אחת.</li>
+        <li><strong>נקודה נוספת:</strong> הסבר קצר בשורה אחת.</li>
+      </ul>
+
+      <div class="page-break"></div>
+
+      <h2>3. סעיף בעמוד חדש</h2>
+      <p>הכותרת והפוטר חוזרים אוטומטית בכל עמוד מודפס.</p>
+
+    </td></tr>
+  </tbody>
+
+</table>
+
+</body>
+</html>

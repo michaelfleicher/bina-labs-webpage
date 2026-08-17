@@ -1,0 +1,32 @@
+Bina Labs - bullet glyphs for Google Docs
+=========================================
+
+Format > Bullets & numbering > List options > More bullets
+
+Don't search by keyword - "square" returns hundreds of hits across categories and
+the picker is painful to filter. Instead type the HEX CODE into the search box on
+the right, without the "U+" prefix. It jumps straight to the one character.
+
+  Level 1   type  25aa   ->  ▪   then color it  #9dff4d   (the brand square)
+  Level 2   type  25e6   ->  ◦   then color it  #5a6b7d
+  Level 3   type  2013   ->  –   then color it  #5a6b7d
+
+If the search box ignores the code, use the drawing box instead - draw a filled
+square in it and the results filter down to a handful of shapes.
+
+Level 3 note: a plain hyphen "-" is a normal keyboard character, not a symbol, so
+it may not appear in the picker at all. Use en dash 2013 as above, or just pick the
+dash bullet from the preset list (the arrow next to the bulleted-list toolbar button)
+- one of the presets already nests square / circle / dash.
+
+Coloring the bullets only
+-------------------------
+Click any single bullet in the list. Docs selects EVERY bullet at that level and
+none of the text. Then: Text color > Custom > paste the hex.
+
+Brand colors
+------------
+ink   #0a1628
+lime  #9dff4d
+muted #5a6b7d
+bone  #e8f1f7
