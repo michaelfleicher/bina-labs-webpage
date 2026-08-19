@@ -23,6 +23,8 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
+      // /feedback is an unlisted client-only page: keep it out of the sitemap.
+      filter: (page) => !new URL(page).pathname.startsWith('/feedback'),
       serialize(item) {
         const path = new URL(item.url).pathname.replace(/\/$/, '') || '/';
         item.lastmod = (LASTMOD.get(path) ?? BUILD_DATE).toISOString();

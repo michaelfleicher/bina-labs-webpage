@@ -1,0 +1,24 @@
+---
+// Unlisted client feedback page. Not linked from anywhere on the site, excluded
+// from sitemap.xml (see astro.config.mjs) and marked noindex - shared by direct link only.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeedbackBody from '../components/react/FeedbackBody.jsx';
+
+const title = 'משוב לקוחות - Bina Labs';
+const description = 'טופס משוב אישי ללקוחות Bina Labs.';
+---
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="/feedback"
+  lang="he"
+  dir="rtl"
+  noindex
+>
+  <link
+    slot="head"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&family=Suez+One&display=swap"
+  />
+  <FeedbackBody client:load />
+</BaseLayout>

@@ -11,6 +11,8 @@ interface Props {
   ogType?: 'website' | 'article';
   noindex?: boolean;
   author?: string;
+  lang?: string;
+  dir?: 'ltr' | 'rtl';
 }
 
 const SITE_URL = 'https://bina-labs.com';
@@ -25,6 +27,8 @@ const {
   ogType = 'website',
   noindex = false,
   author = 'Bina Labs',
+  lang = 'en',
+  dir,
 } = Astro.props;
 
 const canonicalPath = canonical ?? Astro.url.pathname;
@@ -36,7 +40,7 @@ const absoluteOgImage = ogImage.startsWith('http')
 const robots = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang} dir={dir}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
