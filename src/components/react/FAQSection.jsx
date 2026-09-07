@@ -104,13 +104,12 @@ function FAQRow({ faq, index, isMobile }) {
           +
         </div>
       </button>
-      {open && (
-        <div
+      <div
           itemScope
           itemProp="acceptedAnswer"
           itemType="https://schema.org/Answer"
           style={{
-            display: 'grid',
+            display: open ? 'grid' : 'none',
             gridTemplateColumns: isMobile ? '36px 1fr 24px' : '60px 1fr 40px',
             gap: isMobile ? 12 : 24,
             marginTop: 16,
@@ -129,8 +128,7 @@ function FAQRow({ faq, index, isMobile }) {
             {faq.a}
           </p>
           <div />
-        </div>
-      )}
+      </div>
     </div>
   );
 }

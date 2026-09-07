@@ -99,7 +99,7 @@ export function BLNav({ current }) {
         )}
 
         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: isMobile ? 10 : 16, alignItems: 'center' }}>
-          {!isTablet && <span style={{ color: BL.inkDim }}>UTC {time}</span>}
+          {!isTablet && <span aria-hidden="true" data-nosnippet style={{ color: BL.inkDim }}>UTC {time}</span>}
           {!isTablet && (
             <a href="/contact" style={{
               color: BL.ink, background: BL.red,
@@ -157,7 +157,7 @@ export function BLNav({ current }) {
             ))}
           </div>
           <div style={{ marginTop: 'auto', padding: '20px', borderTop: `1px solid ${BL.inkLine}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontFamily: BL.mono, fontSize: 11, color: BL.inkDim }}>
-            <span>UTC {time}</span>
+            <span aria-hidden="true" data-nosnippet>UTC {time}</span>
             <a href="/contact" onClick={closeDrawer} style={{
               color: BL.ink, background: BL.red,
               padding: '14px 22px', cursor: 'pointer',
@@ -199,7 +199,7 @@ export function BLFooter() {
       h: '// company',
       l: [
         { t: 'about', href: '/about' },
-        { t: 'careers (4)', href: '/about' },
+        { t: 'careers (4)', href: '/about#careers' },
         { t: 'press', href: 'mailto:intelligence@bina-labs.com?subject=Press%20inquiry', external: true },
         { t: 'contact', href: '/contact' },
       ],
@@ -333,7 +333,7 @@ export function BLMarquee({ items, color }) {
         whiteSpace: 'nowrap', width: 'max-content',
       }}>
         {[...items, ...items, ...items].map((x, i) => (
-          <span key={i} style={{ display: 'inline-flex', gap: 12, alignItems: 'center' }}>
+          <span key={i} aria-hidden={i >= items.length ? 'true' : undefined} {...(i >= items.length ? { 'data-nosnippet': true } : {})} style={{ display: 'inline-flex', gap: 12, alignItems: 'center' }}>
             <span style={{ color: color || BL.red }}>⌬</span>
             <span style={{ color: BL.inkText }}>{x.split('—')[0].trim()}</span>
             <span>—</span>

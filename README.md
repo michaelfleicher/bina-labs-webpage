@@ -1,17 +1,12 @@
 # bina-labs.com
-https://www.bina-labs.com
+https://bina-labs.com
 
 Marketing site for Bina Labs — architectural intelligence of tomorrow.
 
-Built with **Astro 6 + React 18** (static-site generation). Migration in
-progress on the `astro-migration` branch from a Vite SPA to per-route static
-HTML so AI crawlers (ClaudeBot, PerplexityBot, GPTBot, Bytespider, CCBot) can
-read every page without executing JavaScript. See
-[plan-the-astro-nextjs-you-jazzy-dolphin.md](../../.claude/plans/plan-the-astro-nextjs-you-jazzy-dolphin.md)
-for the full migration plan.
+Built with **Astro 6 + React 18** and static-site generation. Every route outputs crawlable HTML; React adds interactive islands where needed.
 
 Pages: home, services, work (filterable), case-study (slug-driven), about,
-manifesto, writing (coming-soon banner), contact.
+manifesto, writing (with live articles), contact.
 
 The visual system (`src/system/bl.js`) mirrors the design handoff: navy ground,
 cyan-bone surface, lime + teal accents. Geist for sans display, Fraunces for
@@ -79,9 +74,7 @@ Static files served from the `public/` root and copied verbatim into `dist/`:
 
 - [public/robots.txt](public/robots.txt) - explicitly allows GPTBot, ClaudeBot,
   PerplexityBot, Google-Extended and other AI crawlers; points to the sitemap.
-- [public/sitemap.xml](public/sitemap.xml) - lists the home page plus the hash
-  routes (services, work, about, manifesto, contact, and the four featured case
-  studies).
+- `@astrojs/sitemap` in [astro.config.mjs](astro.config.mjs) generates `sitemap-index.xml` at build time from canonical Astro routes, with content-aware `lastmod` values and `/feedback` excluded.
 - [public/llms.txt](public/llms.txt) - Markdown summary read by Anthropic,
   OpenAI, and Perplexity crawlers. Format follows
   [llmstxt.org](https://llmstxt.org).
@@ -118,8 +111,7 @@ Static files served from the `public/` root and copied verbatim into `dist/`:
   `CONTACT_FAQS`, `CASE_STUDY_FAQS` per slug). Same source feeds the visible
   Q&A and the FAQPage JSON-LD.
 - [src/components/react/FAQSection.jsx](src/components/react/FAQSection.jsx) -
-  renders the visible accordion of Q&A inside each React body so the answers
-  land in the static HTML for AI crawlers, with microdata fallbacks
+  renders the visible accordion of Q&A inside each React body. Every answer is present in the static HTML before hydration, with microdata fallbacks
   (`itemprop="mainEntity"`, `itemprop="acceptedAnswer"`, `itemprop="text"`).
 - Case study `team` and `datePublished` metadata in
   [src/data/caseStudies.js](src/data/caseStudies.js) drive a "By Michael
