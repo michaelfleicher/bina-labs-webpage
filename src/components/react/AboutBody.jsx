@@ -308,7 +308,7 @@ function OperatorHiring() {
   const isMobile = useMediaQuery(MQ.mobile);
   const isTablet = useMediaQuery(MQ.tablet);
   return (
-    <section style={{
+    <section id="careers" style={{
       padding: 'clamp(56px, 10vw, 120px) clamp(20px, 4vw, 32px)',
       borderBottom: `1px solid ${BL.inkLine}`,
     }}>

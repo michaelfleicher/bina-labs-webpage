@@ -25,21 +25,21 @@ function ServicesHero() {
       borderBottom: `1px solid ${BL.inkLine}`,
     }}>
       <BLEyebrow>// services · what we do</BLEyebrow>
-      <h1 aria-label="How does Bina Labs work with clients?" style={{
+      <div aria-hidden="true" style={{
         marginTop: 32, fontFamily: BL.sans, fontWeight: 300,
         fontSize: 'clamp(56px, 13vw, 144px)',
         lineHeight: 0.94, letterSpacing: '-0.045em', color: BL.inkText, maxWidth: '12ch',
       }}>
         Five ways<br />
         we <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.red, fontWeight: 300 }}>engage</span>.
-      </h1>
-      <p style={{
+      </div>
+      <h1 style={{
         marginTop: 'clamp(32px, 5vw, 48px)',
         fontFamily: BL.serif, fontSize: 'clamp(18px, 2.6vw, 26px)', lineHeight: 1.4,
         color: BL.inkText, maxWidth: '54ch', fontWeight: 300,
       }}>
-        We don't sell deliverables; we sell outcomes. Every engagement is staffed by senior operators and ends in working software, a written hand-off, or a thesis we can defend.
-      </p>
+        Senior AI consulting and production engineering for companies with hard data, workflows, and infrastructure. From discovery and evals through deployment and full handoff.
+      </h1>
     </section>
   );
 }

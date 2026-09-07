@@ -20,14 +20,8 @@ export default function HomeBody({ faqs }) {
 }
 
 function HomeHero() {
-  const [count, setCount] = React.useState(0);
   const isMobile = useMediaQuery(MQ.mobile);
   const isTablet = useMediaQuery(MQ.tablet);
-  React.useEffect(() => {
-    let i = 0;
-    const id = setInterval(() => { i++; setCount(i); if (i >= 17) clearInterval(id); }, 60);
-    return () => clearInterval(id);
-  }, []);
   return (
     <section style={{
       padding: isMobile
@@ -45,11 +39,10 @@ function HomeHero() {
         flexWrap: 'wrap',
       }}>
         <span style={{ color: BL.red }}>● ONLINE</span>
-        <span><span style={{ color: BL.inkText }}>{count}</span> engagements shipped this year</span>
         {!isMobile && <span>· Tel Aviv · Berlin · remote-first</span>}
       </div>
 
-      <h1 className="bl-fade-up" aria-label="What is Bina Labs?" style={{
+      <div className="bl-fade-up" aria-hidden="true" style={{
         fontFamily: BL.sans, fontWeight: 300,
         fontSize: isMobile ? BL.type.h1.mobile : BL.type.h1.desktop,
         lineHeight: 0.94, letterSpacing: '-0.045em',
@@ -61,19 +54,17 @@ function HomeHero() {
           of tomorrow_
         </span>
         <span className="bl-cursor" style={{ color: BL.red }} />
-      </h1>
+      </div>
 
-      <h2 className="bl-fade-up" aria-label="What does Bina Labs do?" style={{
+      <h1 className="bl-fade-up" style={{
         marginTop: isMobile ? 20 : 'clamp(24px, 3vw, 36px)',
         fontFamily: BL.serif, fontStyle: 'italic', fontWeight: 300,
         fontSize: isMobile ? 18 : 'clamp(20px, 2.4vw, 28px)',
         lineHeight: 1.35, letterSpacing: '-0.01em',
         color: BL.inkMuted, maxWidth: '46ch',
       }}>
-        AI consulting and engineering studio. We build production AI systems
-        for founders and engineering teams - vision, agents, RAG, on-prem.
-        Tel Aviv, Berlin, remote-first.
-      </h2>
+        Senior production AI engineering for organizations. We design and deploy AI agents, enterprise RAG, computer vision, data copilots, and private on-prem systems.
+      </h1>
 
       <div style={{
         marginTop: isMobile ? 28 : 'clamp(32px, 5vw, 56px)',
