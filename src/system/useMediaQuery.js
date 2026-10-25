@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 
 export function useMediaQuery(query) {
-  const [matches, setMatches] = useState(() => {
-    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return false;
-    return window.matchMedia(query).matches;
-  });
+  // Start false on both server and client so hydration matches the static
+  // HTML; the effect below syncs to the real viewport right after mount.
+  const [matches, setMatches] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;

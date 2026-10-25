@@ -508,7 +508,7 @@ function formatDate(iso) {
   if (!iso) return '';
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return iso;
-  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 }
 
 function formatUpdatedLabel(publishedIso, modifiedIso) {
@@ -517,5 +517,5 @@ function formatUpdatedLabel(publishedIso, modifiedIso) {
   const modified = new Date(modifiedIso);
   if (Number.isNaN(published.getTime()) || Number.isNaN(modified.getTime())) return '';
   if (modified.getTime() <= published.getTime()) return '';
-  return modified.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+  return modified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', timeZone: 'UTC' });
 }

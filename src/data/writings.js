@@ -578,7 +578,7 @@ export const WRITINGS = {
   'google-workspace-studio-killed-my-automation-business': {
     slug: 'google-workspace-studio-killed-my-automation-business',
     metaDescription:
-      'Google Workspace Studio drops the price of AI-augmented automations to near zero. Now generally available and past three million users: what changed, three to ship today, and why I am giving the playbook away.',
+      'Google Workspace Studio makes AI automations nearly free. What changed, three automations to ship today, and why I am giving the playbook away.',
     title: 'Google just commoditized half of my services business. I am teaching my clients how to do it themselves.',
     headline: 'Google just commoditized half of my services business.',
     headlineAccent: 'I am teaching my clients how to do it themselves.',
@@ -889,7 +889,7 @@ export const WRITINGS = {
   'agentic-ai-not-just-chat-with-gpt': {
     slug: 'agentic-ai-not-just-chat-with-gpt',
     metaDescription:
-      'An LLM answers when you ask. An agent is the same model with eyes, hands, and tools - APIs, SQL, files, email. The plain distinction for 2026, and why it matters for B2B teams.',
+      'An LLM answers when you ask. An agent is the same model with tools - APIs, SQL, files, email. The plain 2026 distinction and why it matters for B2B.',
     title: 'Agentic AI is not a smarter chat. It is a coworker with hands.',
     headline: 'Agentic AI is not a smarter chat.',
     headlineAccent: 'It is a coworker with hands.',

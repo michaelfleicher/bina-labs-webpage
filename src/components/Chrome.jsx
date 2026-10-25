@@ -11,13 +11,16 @@ const NAV_ITEMS = [
 ];
 
 export function BLNav({ current }) {
-  const [t, setT] = React.useState(new Date());
+  // null until mount: the static HTML is built ahead of time, so rendering the
+  // clock during hydration would never match the server text.
+  const [t, setT] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   const isTablet = useMediaQuery(MQ.tablet);
   const isMobile = useMediaQuery(MQ.mobile);
   const navRef = React.useRef(null);
 
   React.useEffect(() => {
+    setT(new Date());
     const id = setInterval(() => setT(new Date()), 1000);
     return () => clearInterval(id);
   }, []);
@@ -39,7 +42,7 @@ export function BLNav({ current }) {
     return () => window.removeEventListener('resize', update);
   }, [isTablet, isMobile]);
 
-  const time = t.toISOString().split('T')[1].slice(0, 8);
+  const time = t ? t.toISOString().split('T')[1].slice(0, 8) : '--:--:--';
 
   React.useEffect(() => {
     if (!open) return;
