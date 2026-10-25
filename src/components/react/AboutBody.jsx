@@ -7,6 +7,7 @@ import FAQSection from './FAQSection.jsx';
 // Served from /public so the same URL is reusable in JSON-LD ImageObject schema.
 const michaelImg = '/michael.webp';
 const ronenImg = '/ronen.webp';
+const orImg = '/or.webp';
 
 const RECEIPTS = [
   { y: '2× ex-CTO', d: 'MedTech · Insurance · AI SaaS', tag: 'leadership' },
@@ -20,6 +21,53 @@ const RONEN_RECEIPTS = [
   { y: 'EU funding', d: 'Horizon Europe · EIC · Eurostars · BIRD · IIA', tag: 'ventures' },
   { y: 'Advisor', d: 'Deep Tech · Cyber · Digital Health · Climate · FinTech', tag: 'craft' },
   { y: 'Strategy', d: 'commercialization · due diligence · consortia', tag: 'leadership' },
+];
+
+const OR_RECEIPTS = [
+  { y: 'Vision & AOI', d: 'Juganu · Flo Optics · defect detection', tag: 'craft' },
+  { y: 'ML engineer', d: 'deep learning · anomaly detection · edge AI', tag: 'craft' },
+  { y: 'Automation', d: 'business workflows · web scraping · AI agents', tag: 'ventures' },
+  { y: 'Smart reports', d: 'data pipelines · dashboards · decision insights', tag: 'leadership' },
+];
+
+// One entry per principal. `id` is the /about#anchor that bylines link to.
+const PROFILES = [
+  {
+    id: 'michael',
+    img: michaelImg,
+    label: 'michael_fleicher.jpg',
+    alt: 'Michael Fleicher, principal of Bina Labs - portrait',
+    objectPosition: 'center 18%',
+    caption: 'Tel Aviv → Berlin → remote-first',
+    bio: 'Vast experience as a founder and as a two-time CTO, leading tech teams across AI SaaS Companies. Background is varied from MedTech, to Insurance, Entertainment and Semi-conductors industry. Hands-on, building product, agentic systems, and automations since 2017.',
+    receipts: RECEIPTS,
+    linkedin: 'https://www.linkedin.com/in/michaelfleicher',
+    linkedinLabel: 'linkedin.com/in/michaelfleicher',
+  },
+  {
+    id: 'ronen',
+    img: ronenImg,
+    label: 'ronen_chen.jpg',
+    alt: 'Ronen Chen, principal of Bina Labs - portrait',
+    objectPosition: 'center 20%',
+    caption: 'Innovation & grant strategy',
+    bio: 'AI and deep-learning expert, innovation strategist, and funding advisor. 20+ years bridging advanced technology and commercial success, helping startups and research organizations secure competitive funding and turn breakthrough ideas into funded ventures.',
+    receipts: RONEN_RECEIPTS,
+    linkedin: 'https://www.linkedin.com/in/ronen-chen/',
+    linkedinLabel: 'linkedin.com/in/ronen-chen',
+  },
+  {
+    id: 'or',
+    img: orImg,
+    label: 'or_zilberberg.jpg',
+    alt: 'Or Zilberberg, principal of Bina Labs - portrait',
+    objectPosition: 'center 20%',
+    caption: 'Vision, ML & automation',
+    bio: 'Machine-learning and computer-vision engineer with a background in edge AI (Juganu) and precision optics (Flo Optics), where he builds automated optical inspection. Beyond vision, he automates business operations end to end, from web scraping and data pipelines to smart reports that turn raw data into decisions. Hands-on, from first prototype to code running in production.',
+    receipts: OR_RECEIPTS,
+    linkedin: 'https://www.linkedin.com/in/or-zilberberg/',
+    linkedinLabel: 'linkedin.com/in/or-zilberberg',
+  },
 ];
 
 const PRINCIPLES = [
@@ -83,9 +131,10 @@ function OperatorHero() {
         fontFamily: BL.serif, fontSize: 'clamp(18px, 2.4vw, 24px)', lineHeight: 1.45,
         color: BL.inkText, maxWidth: '52ch', fontWeight: 300,
       }}>
-        Bina Labs is two senior operators -{' '}
-        <span style={{ color: BL.red }}>Michael Fleicher</span> and{' '}
-        <span style={{ color: BL.copper }}>Ronen Chen</span>.
+        Bina Labs is three senior operators -{' '}
+        <span style={{ color: BL.red }}>Michael Fleicher</span>,{' '}
+        <span style={{ color: BL.copper }}>Ronen Chen</span> and{' '}
+        <span style={{ color: BL.amber }}>Or Zilberberg</span>.
         You work with one of them, directly, end to end. Different problem,
         different operator - never a committee, never a junior. The person
         you meet is the person who builds.
@@ -173,70 +222,49 @@ function OperatorReceipts() {
         Where we've <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.copper, fontWeight: 300 }}>been</span>.
       </h2>
 
-      <div id="michael" style={{
-        display: 'grid',
-        gridTemplateColumns: isTablet ? '1fr' : '280px 1fr',
-        gap: isTablet ? 32 : 64, alignItems: 'stretch',
-        scrollMarginTop: 'var(--bl-nav-h, 0px)',
-      }}>
-        <div style={{ display: 'flex', flexDirection: 'column', maxWidth: isTablet ? 280 : 'none' }}>
-          <PortraitFrame
-            src={michaelImg}
-            label="michael_fleicher.jpg"
-            alt="Michael Fleicher, principal of Bina Labs - portrait"
-            objectPosition="center 18%"
-          />
-          <div style={{ marginTop: 14, fontFamily: BL.mono, fontSize: 11, color: BL.inkDim, lineHeight: 1.6 }}>
-            Principal · Bina Labs<br />
-            Tel Aviv → Berlin → remote-first
-          </div>
-        </div>
-        <div>
-          <p style={{ fontFamily: BL.serif, fontSize: 'clamp(17px, 2.4vw, 22px)', lineHeight: 1.55, color: BL.inkText, fontWeight: 300, maxWidth: '54ch' }}>
-            Vast experience as a founder and as a two-time CTO, leading tech teams across AI SaaS Companies. Background is varied from MedTech, to Insurance, Entertainment and Semi-conductors industry. Hands-on, building product, agentic systems, and automations since 2017.
-          </p>
-          <ReceiptsTable receipts={RECEIPTS} isMobile={isMobile} />
-          <a href="https://www.linkedin.com/in/michaelfleicher" target="_blank" rel="noreferrer"
-            className="bl-link-hover"
-            style={{ display: 'inline-block', marginTop: 28, fontFamily: BL.mono, fontSize: 13, color: BL.red, letterSpacing: '0.04em' }}>
-            linkedin.com/in/michaelfleicher →
-          </a>
-        </div>
-      </div>
+      {PROFILES.map((p, i) => (
+        <PrincipalProfile key={p.id} profile={p} first={i === 0} isMobile={isMobile} isTablet={isTablet} />
+      ))}
+    </section>
+  );
+}
 
-      <div id="ronen" style={{
-        display: 'grid',
-        gridTemplateColumns: isTablet ? '1fr' : '280px 1fr',
-        gap: isTablet ? 32 : 64, alignItems: 'stretch',
+function PrincipalProfile({ profile, first, isMobile, isTablet }) {
+  return (
+    <div id={profile.id} style={{
+      display: 'grid',
+      gridTemplateColumns: isTablet ? '1fr' : '280px 1fr',
+      gap: isTablet ? 32 : 64, alignItems: 'stretch',
+      ...(first ? {} : {
         marginTop: 'clamp(56px, 8vw, 80px)', paddingTop: 'clamp(56px, 8vw, 80px)',
         borderTop: `1px solid ${BL.inkLine}`,
-        scrollMarginTop: 'var(--bl-nav-h, 0px)',
-      }}>
-        <div style={{ display: 'flex', flexDirection: 'column', maxWidth: isTablet ? 280 : 'none' }}>
-          <PortraitFrame
-            src={ronenImg}
-            label="ronen_chen.jpg"
-            alt="Ronen Chen, principal of Bina Labs - portrait"
-            objectPosition="center 20%"
-          />
-          <div style={{ marginTop: 14, fontFamily: BL.mono, fontSize: 11, color: BL.inkDim, lineHeight: 1.6 }}>
-            Principal · Bina Labs<br />
-            Innovation & grant strategy
-          </div>
-        </div>
-        <div>
-          <p style={{ fontFamily: BL.serif, fontSize: 'clamp(17px, 2.4vw, 22px)', lineHeight: 1.55, color: BL.inkText, fontWeight: 300, maxWidth: '54ch' }}>
-            AI and deep-learning expert, innovation strategist, and funding advisor. 20+ years bridging advanced technology and commercial success, helping startups and research organizations secure competitive funding and turn breakthrough ideas into funded ventures.
-          </p>
-          <ReceiptsTable receipts={RONEN_RECEIPTS} isMobile={isMobile} />
-          <a href="https://www.linkedin.com/in/ronen-chen/" target="_blank" rel="noreferrer"
-            className="bl-link-hover"
-            style={{ display: 'inline-block', marginTop: 28, fontFamily: BL.mono, fontSize: 13, color: BL.red, letterSpacing: '0.04em' }}>
-            linkedin.com/in/ronen-chen →
-          </a>
+      }),
+      scrollMarginTop: 'var(--bl-nav-h, 0px)',
+    }}>
+      <div style={{ display: 'flex', flexDirection: 'column', maxWidth: isTablet ? 280 : 'none' }}>
+        <PortraitFrame
+          src={profile.img}
+          label={profile.label}
+          alt={profile.alt}
+          objectPosition={profile.objectPosition}
+        />
+        <div style={{ marginTop: 14, fontFamily: BL.mono, fontSize: 11, color: BL.inkDim, lineHeight: 1.6 }}>
+          Principal · Bina Labs<br />
+          {profile.caption}
         </div>
       </div>
-    </section>
+      <div>
+        <p style={{ fontFamily: BL.serif, fontSize: 'clamp(17px, 2.4vw, 22px)', lineHeight: 1.55, color: BL.inkText, fontWeight: 300, maxWidth: '54ch' }}>
+          {profile.bio}
+        </p>
+        <ReceiptsTable receipts={profile.receipts} isMobile={isMobile} />
+        <a href={profile.linkedin} target="_blank" rel="noreferrer"
+          className="bl-link-hover"
+          style={{ display: 'inline-block', marginTop: 28, fontFamily: BL.mono, fontSize: 13, color: BL.red, letterSpacing: '0.04em' }}>
+          {profile.linkedinLabel} →
+        </a>
+      </div>
+    </div>
   );
 }
 

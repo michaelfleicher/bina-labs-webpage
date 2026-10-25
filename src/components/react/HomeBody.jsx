@@ -311,6 +311,9 @@ function HomeServices() {
     { n: 'svc.03', name: 'Lectures & Workshops', q: 'What do Bina Labs lectures and workshops cover?', tags: ['r&d', 'c-suite', 'hands-on', 'briefings'], desc: 'Tailored sessions for R&D teams and executives. What is real, what is one paper away, what is marketing.' },
     { n: 'svc.04', name: 'Research', q: 'What kind of research does Bina Labs take on?', tags: ['frontier', 'papers', 'prototypes'], desc: 'Applied research with frontier teams. Sometimes a paper. Occasionally a product.' },
     { n: 'svc.05', name: 'Innovation & Grant Strategy', q: 'What does a Bina Labs Innovation & Grant Strategy engagement deliver?', tags: ['funding', 'grants', 'strategy', 'due-diligence'], desc: 'Turn breakthrough tech into funded ventures. Competitive grants, business plans, and R&D roadmapping.' },
+    { n: 'svc.06', name: 'Machine Vision & Automated Inspection', q: 'What does a Bina Labs Machine Vision & Automated Inspection engagement deliver?', tags: ['aoi', 'defect-detection', 'anomaly', 'edge'], desc: 'Cameras that catch what people miss. Replace manual visual QC on the production line.' },
+    { n: 'svc.07', name: 'Video Analytics & Tracking', q: 'What does a Bina Labs Video Analytics & Tracking engagement deliver?', tags: ['detection', 'tracking', 're-id', 'ocr'], desc: 'From hours of footage to the seconds that matter. Structured events: who, where, when.' },
+    { n: 'svc.08', name: 'Automation & Smart Reports', q: 'What does a Bina Labs Automation & Smart Reports engagement deliver?', tags: ['workflows', 'scraping', 'integrations', 'reports'], desc: 'Stop copy-pasting. Unattended workflows and reports that land ready to act on.' },
   ];
 
   const isMobile = useMediaQuery(MQ.mobile);
@@ -326,7 +329,7 @@ function HomeServices() {
         lineHeight: 1, letterSpacing: '-0.04em',
         color: BL.inkText,
       }}>
-        Five ways<br />
+        Eight ways<br />
         we <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.red, fontWeight: 300 }}>engage</span>.
       </h2>
       <p style={{
@@ -339,7 +342,7 @@ function HomeServices() {
         maxWidth: '62ch',
       }}>
         <span style={{ color: BL.copper, fontWeight: 500 }}>How can you engage Bina Labs?</span>{' '}
-        Five formats with transparent USD pricing: AI Strategy as a fixed-scope sprint from $10k (2 to 6 weeks), AI/Software Engineering as an embedded squad from $20k a month (3 to 12 months), Fractional CTO from $7k a month, Innovation & Grant Strategy on custom terms, and Research retainers on custom terms. Every engagement comes with a written hand-off plan and an honest-deprecation guarantee.
+        Eight service lines - AI Strategy, AI/Software Engineering, Lectures & Workshops, Research, Innovation & Grant Strategy, Machine Vision & Automated Inspection, Video Analytics & Tracking, and Automation & Smart Reports - with transparent USD pricing: fixed-scope sprints from $10k (2 to 6 weeks), embedded squads from $20k a month (3 to 12 months), Fractional CTO from $7k a month, and research and grant strategy on custom terms. Every engagement comes with a written hand-off plan and an honest-deprecation guarantee.
       </p>
       <div style={{
         display: 'grid',

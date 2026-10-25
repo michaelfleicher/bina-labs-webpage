@@ -160,7 +160,7 @@ function ContactSection() {
                 <Field label="company" v={form.org} onChange={(v) => upd('org', v)} placeholder="Pendulum AI" />
               </div>
               <Select label="shape of work" v={form.shape} onChange={(v) => upd('shape', v)}
-                opts={[['strategy', 'AI Strategy'], ['engineering', 'AI / Software Engineering'], ['workshop', 'Lectures & Workshops'], ['research', 'Research'], ['unsure', 'Not sure yet']]} />
+                opts={[['strategy', 'AI Strategy'], ['engineering', 'AI / Software Engineering'], ['vision', 'Machine Vision & Inspection'], ['video', 'Video Analytics & Tracking'], ['automation', 'Automation & Smart Reports'], ['workshop', 'Lectures & Workshops'], ['research', 'Research'], ['grants', 'Innovation & Grant Strategy'], ['unsure', 'Not sure yet']]} />
               <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 16 : 24 }}>
                 <Select label="stage" v={form.stage} onChange={(v) => upd('stage', v)}
                   opts={[['pre-seed', 'Pre-seed'], ['seed', 'Seed'], ['series-a', 'Series A'], ['series-b', 'Series B+'], ['public', 'Public / enterprise']]} />

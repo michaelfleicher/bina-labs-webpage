@@ -97,9 +97,14 @@ Static files served from the `public/` root and copied verbatim into `dist/`:
   Michael Fleicher Person JSON-LD with `sameAs` (LinkedIn) and `knowsAbout`.
   The `fullBio` prop expands the schema with `hasOccupation`, `alumniOf`, and
   `address` for the about page.
+- [src/components/schema/RonenPersonSchema.astro](src/components/schema/RonenPersonSchema.astro) and
+  [src/components/schema/OrPersonSchema.astro](src/components/schema/OrPersonSchema.astro) -
+  Person JSON-LD for the other two principals (Ronen Chen `#ronen`, Or
+  Zilberberg `#or`), rendered on the about page. Their `sameAs` URLs live in
+  [src/data/social.js](src/data/social.js).
 - [src/components/schema/ServiceSchema.astro](src/components/schema/ServiceSchema.astro) -
-  emits a `Service` JSON-LD per offering on the services page, each with an
-  `Offer` and `PriceSpecification` (USD).
+  emits a `Service` JSON-LD per offering (8 service lines) on the services
+  page; fixed-price ones carry an `Offer` and `PriceSpecification` (USD).
 - [src/components/schema/LocalBusinessSchema.astro](src/components/schema/LocalBusinessSchema.astro) -
   `ProfessionalService` JSON-LD on the contact page with Tel Aviv address,
   opening hours, and contact point.
@@ -122,9 +127,12 @@ Static files served from the `public/` root and copied verbatim into `dist/`:
   land in the static HTML for AI crawlers, with microdata fallbacks
   (`itemprop="mainEntity"`, `itemprop="acceptedAnswer"`, `itemprop="text"`).
 - Case study `team` and `datePublished` metadata in
-  [src/data/caseStudies.js](src/data/caseStudies.js) drive a "By Michael
-  Fleicher · Principal" byline below each case study hero, linking to
-  `/about#michael`.
+  [src/data/caseStudies.js](src/data/caseStudies.js) drive a "By <lead> ·
+  Principal" byline below each case study hero. Blog posts do the same from
+  `author.name`. [src/data/principals.js](src/data/principals.js) maps each
+  principal's name to their `/about#anchor` (`michael`, `ronen`, `or`) and
+  LinkedIn; bylines and author JSON-LD read from it, so crediting a post to
+  `Or Zilberberg` just works.
 
 Phase 5 (AEO content additions) is complete: every high-leverage route now
 ships an `FAQPage` JSON-LD with matching visible Q&A (home 9, services 7,
@@ -169,7 +177,9 @@ src/
     schema/
       OrganizationSchema.astro  # global Organization JSON-LD
       PersonSchema.astro        # Person (Michael Fleicher) - default + fullBio
-      ServiceSchema.astro       # Service x4 + Offer + PriceSpecification
+      RonenPersonSchema.astro   # Person (Ronen Chen)
+      OrPersonSchema.astro      # Person (Or Zilberberg)
+      ServiceSchema.astro       # Service x8 + Offer + PriceSpecification
       LocalBusinessSchema.astro # ProfessionalService for /contact
       ItemListSchema.astro      # ItemList of CreativeWork for /work
       FAQSchema.astro           # FAQPage JSON-LD from a faqs prop
@@ -188,11 +198,14 @@ src/
   data/
     caseStudies.js         # slug-keyed case study content (with team + datePublished)
     faqs.js                # FAQ banks (HOME_FAQS, SERVICES_FAQS, ABOUT_FAQS, etc.)
+    principals.js          # principal name -> /about anchor + LinkedIn (bylines, author schema)
+    social.js              # verified sameAs URLs per entity
   system/
     bl.js                  # design tokens (BL)
     analytics.js           # GA4 init + astro:after-swap page_view dispatch
   styles.css               # global resets, animations, link/cursor utilities
-  assets/michael.png       # principal portrait
+public/
+  michael.webp, ronen.webp, or.webp  # principal portraits (also used in Person JSON-LD)
 ```
 
 ## Routing

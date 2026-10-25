@@ -43,7 +43,7 @@ export const CASE_STUDIES = {
     team: {
       lead: 'Michael Fleicher',
       role: 'Principal',
-      members: ['Michael Fleicher', 'Vision team'],
+      members: ['Michael Fleicher', 'Or Zilberberg', 'Vision team'],
     },
     datePublished: '2025-08-01',
     // dateModified: bump when the case study is substantively revised.

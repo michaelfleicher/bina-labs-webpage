@@ -47,3 +47,9 @@ export const ronenSocialLinks = [
   // Verified 2026-06-04: LinkedIn profile is canonical and resolves in browser.
   'https://www.linkedin.com/in/ronen-chen/',
 ];
+
+export const orSocialLinks = [
+  // Provided by Or 2026-10-25. LinkedIn rejects HEAD with 405 but the profile
+  // is the one Or links from this site.
+  'https://www.linkedin.com/in/or-zilberberg/',
+];

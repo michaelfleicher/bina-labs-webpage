@@ -3,6 +3,7 @@ import { BL, MQ } from '../../system/bl.js';
 import { useMediaQuery } from '../../system/useMediaQuery.js';
 import { BLNav, BLFooter, BLEyebrow } from '../Chrome.jsx';
 import { CASE_STUDIES } from '../../data/caseStudies.js';
+import { PRINCIPALS, principalFor } from '../../data/principals.js';
 import FAQSection from './FAQSection.jsx';
 
 export default function CaseStudyBody({ caseStudy, faqs }) {
@@ -69,7 +70,7 @@ function CSByline({ team }) {
   const lead = team.lead ?? 'Michael Fleicher';
   const role = team.role ?? 'Principal';
   const members = (team.members ?? []).filter((m) => m && m !== lead);
-  const anchor = lead === 'Ronen Chen' ? 'ronen' : 'michael';
+  const anchor = principalFor(lead).anchor;
   return (
     <div
       itemScope
@@ -95,7 +96,15 @@ function CSByline({ team }) {
       </span>
       {members.length > 0 && (
         <span style={{ color: BL.inkDim }}>
-          led with {members.join(' · ')}
+          led with {members.map((m, i) => (
+            <React.Fragment key={m}>
+              {i > 0 && ' · '}
+              {PRINCIPALS[m] ? (
+                <a href={`/about#${PRINCIPALS[m].anchor}`} className="bl-link-hover"
+                  style={{ color: BL.inkMuted, textDecoration: 'none' }}>{m}</a>
+              ) : m}
+            </React.Fragment>
+          ))}
         </span>
       )}
     </div>

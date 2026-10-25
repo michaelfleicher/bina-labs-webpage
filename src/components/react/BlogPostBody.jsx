@@ -3,6 +3,7 @@ import { BL, MQ } from '../../system/bl.js';
 import { useMediaQuery } from '../../system/useMediaQuery.js';
 import { BLNav, BLFooter, BLEyebrow, BLPillLink } from '../Chrome.jsx';
 import { WRITING_LIST } from '../../data/writings.js';
+import { principalFor } from '../../data/principals.js';
 
 export default function BlogPostBody({ post }) {
   return (
@@ -79,7 +80,7 @@ function PostHero({ post }) {
         }}>
         <span>
           By <a
-            href={`/about#${(post.author?.name ?? '') === 'Ronen Chen' ? 'ronen' : 'michael'}`}
+            href={`/about#${principalFor(post.author?.name).anchor}`}
             itemProp="url"
             className="bl-link-hover"
             style={{ color: BL.red, textDecoration: 'none' }}>

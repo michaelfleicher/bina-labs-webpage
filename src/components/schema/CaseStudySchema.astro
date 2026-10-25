@@ -1,4 +1,6 @@
 ---
+import { PRINCIPALS, principalFor } from '../../data/principals.js';
+
 interface CaseStudyMeta {
   l: string;
   v: string;
@@ -36,11 +38,8 @@ const { cs } = Astro.props;
 const SITE = 'https://bina-labs.com';
 const url = `${SITE}/work/${cs.slug}`;
 
-const authorLinkedIn: Record<string, string> = {
-  'Michael Fleicher': 'https://www.linkedin.com/in/michaelfleicher',
-  'Ronen Chen': 'https://www.linkedin.com/in/ronen-chen/',
-};
 const leadName = cs.team?.lead ?? 'Michael Fleicher';
+const principal = principalFor(leadName);
 
 const sectorMeta = cs.meta?.find((m) => /sector/i.test(m.l));
 const durationMeta = cs.meta?.find((m) => /duration/i.test(m.l));
@@ -58,11 +57,11 @@ const schema: Record<string, unknown> = {
   about: cs.client,
   author: {
     '@type': 'Person',
-    '@id': `${SITE}/about#${leadName === 'Ronen Chen' ? 'ronen' : 'michael'}`,
+    '@id': `${SITE}/about#${principal.anchor}`,
     name: leadName,
     jobTitle: cs.team?.role ?? 'Principal',
     url: `${SITE}/about`,
-    sameAs: [authorLinkedIn[leadName] ?? 'https://www.linkedin.com/in/michaelfleicher'],
+    sameAs: [principal.linkedin],
   },
   publisher: {
     '@type': 'Organization',
@@ -88,6 +87,7 @@ if (cs.outcomes?.length) {
 if (cs.team?.members?.length) {
   schema.contributor = cs.team.members.map((m) => ({
     '@type': /\bteam\b|squad/i.test(m) ? 'Organization' : 'Person',
+    ...(PRINCIPALS[m] ? { '@id': `${SITE}/about#${PRINCIPALS[m].anchor}` } : {}),
     name: m,
   }));
 }

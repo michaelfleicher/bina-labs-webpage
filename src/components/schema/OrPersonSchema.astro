@@ -1,0 +1,65 @@
+---
+import { orSocialLinks } from '../../data/social.js';
+
+interface Props {
+  fullBio?: boolean;
+}
+
+const { fullBio = false } = Astro.props;
+
+const SITE = 'https://bina-labs.com';
+
+const schema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${SITE}/about#or`,
+  name: 'Or Zilberberg',
+  givenName: 'Or',
+  familyName: 'Zilberberg',
+  jobTitle: 'Principal',
+  url: `${SITE}/about`,
+  image: {
+    '@type': 'ImageObject',
+    url: `${SITE}/or.webp`,
+    caption: 'Or Zilberberg, Principal of Bina Labs',
+    width: 1000,
+    height: 1250,
+  },
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Bina Labs',
+    url: SITE,
+  },
+  // Sourced from src/data/social.js so all `sameAs` URLs live in one place.
+  // Add verified profile URLs there - never inline new ones here.
+  sameAs: orSocialLinks,
+  knowsAbout: [
+    'Computer Vision',
+    'Machine Learning',
+    'Deep Learning',
+    'Automated Optical Inspection',
+    'Defect Detection',
+    'Anomaly Detection',
+    'Edge AI',
+    'Video Analytics',
+    'Multi-Object Tracking',
+    'GPU Optimization',
+    'Business Process Automation',
+    'Web Scraping',
+    'Data Pipelines',
+    'Business Intelligence Reporting',
+  ],
+  description:
+    'Machine-learning and computer-vision engineer with a background in edge AI (Juganu) and precision optics (Flo Optics), building automated optical inspection. Also automates business operations end to end, from web scraping and data pipelines to smart reports.',
+};
+
+if (fullBio) {
+  schema.hasOccupation = [
+    {
+      '@type': 'Occupation',
+      name: 'Principal, Bina Labs',
+    },
+  ];
+}
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

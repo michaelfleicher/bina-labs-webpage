@@ -30,7 +30,7 @@ function ServicesHero() {
         fontSize: 'clamp(56px, 13vw, 144px)',
         lineHeight: 0.94, letterSpacing: '-0.045em', color: BL.inkText, maxWidth: '12ch',
       }}>
-        Five ways<br />
+        Eight ways<br />
         we <span style={{ fontFamily: BL.serif, fontStyle: 'italic', color: BL.red, fontWeight: 300 }}>engage</span>.
       </h1>
       <p style={{
@@ -63,6 +63,10 @@ function ServicesDetail() {
       desc: "Full-stack squads who embed inside your team, write production code on day one, and leave behind a system your engineers can own. We build the product surface and the AI infrastructure underneath - the RAG, the evals, the agent runtime, the observability, the on-prem deployment. No agencies, no offshoring, no lingering past the value cliff.",
       deliverables: ['Product features & internal platforms', 'Retrieval pipelines & agent runtime', 'Eval harness + dashboards', 'On-prem inference & cost budgets', 'Hand-off runbook & training'],
       best: 'Teams with a working prototype - or none at all - who need senior velocity for a defined window without permanent headcount.',
+      addon: {
+        name: 'Performance & GPU Sizing',
+        desc: 'Make an existing CV / ML pipeline faster without touching its accuracy (profiling, GPU and CUDA optimization, output proven identical to before), and size the hardware before buying it: which GPU or edge box actually hits your throughput, latency and VRAM targets.',
+      },
     },
     {
       n: '03', name: 'Lectures & Workshops',
@@ -72,6 +76,10 @@ function ServicesDetail() {
       desc: 'Tailored sessions for R&D teams, executive offsites, and boards. We teach what is real, what is one paper away, and what is marketing. Hands-on labs for engineers; sharp, opinionated briefings for C-levels. Every session ends with a written takeaway your team can act on the next morning.',
       deliverables: ['Custom curriculum from your stack', 'Hands-on labs (engineers)', 'Executive briefings (C-suite)', 'Live evals on your own data', 'Written takeaway memo'],
       best: 'R&D leaders, CTOs, and boards who need their organisation to share a vocabulary before the next planning cycle.',
+      addon: {
+        name: 'AI-Assisted Engineering',
+        desc: 'Hands-on workshops that teach dev teams to work productively with AI coding agents such as Claude Code: workflows, review discipline, and where they break. Tools, not authors.',
+      },
     },
     {
       n: '04', name: 'Research',
@@ -91,6 +99,33 @@ function ServicesDetail() {
       deliverables: ['Grant & funding strategy (Horizon Europe, EIC, Eurostars, BIRD, IIA)', 'Proposal writing & submission support', 'Business plans & commercialization strategy', 'Technology due diligence & evaluation', 'International partnerships & consortium building', 'R&D planning & technology roadmapping'],
       best: 'Startups, SMEs, and research organizations seeking competitive funding and a credible path to market.',
     },
+    {
+      n: '06', name: 'Machine Vision & Automated Inspection',
+      q: 'What does a Machine Vision & Automated Inspection engagement with Bina Labs deliver?',
+      tagline: 'Cameras that catch what people miss.',
+      outcome: 'An inspection station that flags defects on the line, with measured accuracy you can show an auditor.',
+      desc: 'We retrofit production lines with camera, lighting and software that replace manual visual and dimensional QC: defect detection, anomaly detection, measurement and sorting. We start with a feasibility study on your own parts, build a pilot on the line, and hand over a system your engineers can retrain and maintain.',
+      deliverables: ['Feasibility study on your real samples (go / no-go)', 'Camera, optics & lighting spec', 'Detection / anomaly-detection models + classic image processing', 'Line integration (PLC / reject signal) and an operator UI', 'Accuracy report (false-reject / escape rates) + hand-off runbook'],
+      best: 'Manufacturers in precision machining, plastics, optics, electronics and food who still rely on manual inspection or sampling.',
+    },
+    {
+      n: '07', name: 'Video Analytics & Tracking',
+      q: 'What does a Video Analytics & Tracking engagement with Bina Labs deliver?',
+      tagline: 'From hours of footage to the seconds that matter.',
+      outcome: 'A pipeline that turns raw video into structured events: who, where, when.',
+      desc: "Detection, multi-object tracking, re-identification and OCR on long, high-resolution video, whether it's sports, security, retail or traffic. We built the player-tracking engine behind Match Cuts (90 minutes of 4K panoramic football to per-player highlights).",
+      deliverables: ['Detection + tracking + Re-ID pipeline', 'Event extraction (proximity, possession, dwell time, counts)', 'Labeling strategy & ground-truth evaluation (HOTA / precision / recall)', 'Batch or real-time deployment on your GPUs or cloud'],
+      best: "Sports-tech, media, smart-city and security teams sitting on video they can't search.",
+    },
+    {
+      n: '08', name: 'Automation & Smart Reports',
+      q: 'What does an Automation & Smart Reports engagement with Bina Labs deliver?',
+      tagline: 'Stop copy-pasting. Let the data come to you.',
+      outcome: 'Workflows that run on their own, and reports that land ready to act on.',
+      desc: 'We automate the repetitive work around your business: collecting data from websites and internal systems, cleaning and joining it, and turning it into reports and alerts people actually read. Everything runs unattended, with logging and alerts for when something breaks.',
+      deliverables: ['Process audit: what to automate first', 'Web scraping & data-collection pipelines', 'Integrations (CRM, email, spreadsheets, APIs)', 'Smart reports & dashboards with AI-written summaries', 'Monitoring + hand-off runbook'],
+      best: 'Operations-heavy companies whose teams spend hours a week moving data between systems by hand.',
+    },
   ];
   return (
     <section style={{
@@ -102,7 +137,7 @@ function ServicesDetail() {
   );
 }
 
-function ServiceDetailRow({ n, name, q, tagline, outcome, desc, deliverables, best, flip }) {
+function ServiceDetailRow({ n, name, q, tagline, outcome, desc, deliverables, best, addon, flip }) {
   const isTablet = useMediaQuery(MQ.tablet);
   const stack = isTablet;
   return (
@@ -130,6 +165,13 @@ function ServiceDetailRow({ n, name, q, tagline, outcome, desc, deliverables, be
           </div>
         </div>
         <p style={{ fontFamily: BL.sans, fontSize: 16, lineHeight: 1.6, color: BL.inkMuted, maxWidth: '54ch' }}>{desc}</p>
+        {addon && (
+          <div style={{ marginTop: 28, paddingTop: 16, borderTop: `1px solid ${BL.inkLine}`, maxWidth: '54ch' }}>
+            <span style={{ fontFamily: BL.mono, color: BL.inkDim, fontSize: 10, letterSpacing: '0.08em', textTransform: 'uppercase' }}>+ add-on</span>
+            <div style={{ fontFamily: BL.serif, fontSize: 'clamp(18px, 2.4vw, 22px)', fontStyle: 'italic', color: BL.copper, fontWeight: 300, marginTop: 8 }}>{addon.name}</div>
+            <p style={{ fontFamily: BL.sans, fontSize: 15, lineHeight: 1.6, color: BL.inkMuted, marginTop: 8 }}>{addon.desc}</p>
+          </div>
+        )}
       </div>
       <div style={{
         order: !stack && flip ? 1 : 2,

@@ -48,7 +48,7 @@ export const SERVICES_FAQS = [
   },
   {
     q: 'What scopes do you take on?',
-    a: 'Vision systems, agentic copilots, retrieval and RAG, on-prem inference, applied research, and AI strategy intensives. We do not take SaaS implementation work, ad-tech, or anything we cannot ship in production with our name on it.',
+    a: 'Vision systems and automated optical inspection, video analytics, agentic copilots, retrieval and RAG, business automation and smart reports, on-prem inference, applied research, AI strategy intensives, and innovation and grant strategy. We do not take SaaS implementation work, ad-tech, or anything we cannot ship in production with our name on it.',
   },
   {
     q: 'What is in a 4-week pilot?',
@@ -74,6 +74,10 @@ export const SERVICES_FAQS = [
     q: 'What is Innovation & Grant Strategy?',
     a: 'A service line led by Ronen Chen that helps startups, SMEs, and research organizations secure competitive funding (Horizon Europe, EIC Accelerator, Eurostars, BIRD, Israel Innovation Authority), build credible business plans, and turn breakthrough technology into funded, scalable ventures.',
   },
+  {
+    q: 'What is Machine Vision & Automated Inspection?',
+    a: 'A service line led by Or Zilberberg that replaces manual visual and dimensional QC on production lines with camera, lighting, and software: defect detection, anomaly detection, measurement, and sorting. It starts with a feasibility study on your own parts, moves to a pilot on the line, and ends with a system your engineers can retrain and maintain. Or also leads Video Analytics & Tracking and Automation & Smart Reports.',
+  },
 ];
 
 export const ABOUT_FAQS = [
@@ -84,6 +88,10 @@ export const ABOUT_FAQS = [
   {
     q: 'Who is Ronen Chen?',
     a: 'AI and deep-learning expert, innovation strategist, and funding advisor with 20+ years bridging advanced technology and commercial success. Helps startups, SMEs, and research organizations secure competitive funding (Horizon Europe, EIC Accelerator, Eurostars, BIRD Foundation, Israel Innovation Authority) and turn breakthrough ideas into funded, scalable ventures. Principal of Bina Labs.',
+  },
+  {
+    q: 'Who is Or Zilberberg?',
+    a: 'Machine-learning and computer-vision engineer with a background in edge AI (Juganu) and precision optics (Flo Optics), where he builds automated optical inspection for manufacturing. He also automates business operations end to end, from web scraping and data pipelines to smart reports that turn raw data into decisions. Principal of Bina Labs.',
   },
   {
     q: 'Do you take fractional CTO engagements?',
@@ -255,7 +263,7 @@ export const CASE_STUDY_FAQS = {
 
 // Author / team metadata per case study. Surface as a "led by" line.
 export const CASE_STUDY_TEAMS = {
-  'match-cuts': ['Michael Fleicher', 'Vision team'],
+  'match-cuts': ['Michael Fleicher', 'Or Zilberberg', 'Vision team'],
   'auto-qto': ['Michael Fleicher', 'CV + VLM team'],
   'lloyd-score': ['Michael Fleicher', 'Spatial-AI team'],
   'caseworker': ['Michael Fleicher', 'Embedded team'],

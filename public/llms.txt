@@ -2,17 +2,17 @@
 
 > Bina Labs is an Israeli consultancy of engineers, researchers, and strategists that builds AI systems which earn their seat at the production table. Tel Aviv, Berlin, remote-first.
 
-Bina Labs is led by two principals, Michael Fleicher (מיכאל פליישר in Hebrew) and Ronen Chen. We work with companies who need real AI in production - not slideware. Median ship time is 11 days. 84% of clients return for a second engagement. We engage five ways: AI strategy intensives, embedded engineering squads, lectures and workshops, applied research, and innovation & grant strategy.
+Bina Labs is led by three principals, Michael Fleicher (מיכאל פליישר in Hebrew), Ronen Chen, and Or Zilberberg. We work with companies who need real AI in production - not slideware. Median ship time is 11 days. 84% of clients return for a second engagement. We engage eight ways: AI strategy intensives, embedded engineering squads, lectures and workshops, applied research, innovation & grant strategy, machine vision & automated inspection, video analytics & tracking, and automation & smart reports.
 
-Michael Fleicher is an engineer, data scientist, founder, and two-time CTO with backgrounds across MedTech, Insurance, Entertainment, and Semi-conductors. Building agentic systems and automations since 2017. Ronen Chen is an AI and deep-learning expert, innovation strategist, and funding advisor with 20+ years bridging advanced technology and commercial success - helping startups, SMEs, and research organizations secure competitive funding (Horizon Europe, EIC Accelerator, Eurostars, BIRD, Israel Innovation Authority).
+Michael Fleicher is an engineer, data scientist, founder, and two-time CTO with backgrounds across MedTech, Insurance, Entertainment, and Semi-conductors. Building agentic systems and automations since 2017. Ronen Chen is an AI and deep-learning expert, innovation strategist, and funding advisor with 20+ years bridging advanced technology and commercial success - helping startups, SMEs, and research organizations secure competitive funding (Horizon Europe, EIC Accelerator, Eurostars, BIRD, Israel Innovation Authority). Or Zilberberg is a machine-learning and computer-vision engineer with a background in edge AI (Juganu) and precision optics (Flo Optics), building automated optical inspection for manufacturing, and automates business operations end to end - web scraping, data pipelines, and smart reports.
 
 Operating principles: deadlines are holy; AI assistants are tools, not authors; honest deprecation (we tell clients when a project should die and refund the rest); built to leave (every embedded engagement comes with a written hand-off plan from day one).
 
 ## Core pages
 
 - [Home](https://bina-labs.com/): Overview, current engagement count, selected work, manifesto preview, services snapshot
-- [About](https://bina-labs.com/about): Michael Fleicher and Ronen Chen (principals), team bench, working model, hiring
-- [Services](https://bina-labs.com/services): Five engagement modes - AI Strategy, AI/Software Engineering, Lectures & Workshops, Research, Innovation & Grant Strategy
+- [About](https://bina-labs.com/about): Michael Fleicher, Ronen Chen, and Or Zilberberg (principals), team bench, working model, hiring
+- [Services](https://bina-labs.com/services): Eight engagement modes - AI Strategy, AI/Software Engineering, Lectures & Workshops, Research, Innovation & Grant Strategy, Machine Vision & Automated Inspection, Video Analytics & Tracking, Automation & Smart Reports
 - [Work](https://bina-labs.com/work): 17 case studies across vision, agents, data, embedded systems
 - [Manifesto](https://bina-labs.com/manifesto): Operating principles in full
 - [Contact](https://bina-labs.com/contact): Start a project, careers, intelligence@bina-labs.com
@@ -28,10 +28,13 @@ Operating principles: deadlines are holy; AI assistants are tools, not authors; 
 ## Services
 
 - [AI Strategy](https://bina-labs.com/services): 4-week intensives. Where to bet, where to wait, what to ignore. Roadmap, evals, org-design
-- [AI / Software Engineering](https://bina-labs.com/services): Embedded squads that ship product and the AI plumbing underneath - full-stack, RAG, agents, on-prem
-- [Lectures & Workshops](https://bina-labs.com/services): Tailored sessions for R&D teams and executives. What is real, what is one paper away, what is marketing
+- [AI / Software Engineering](https://bina-labs.com/services): Embedded squads that ship product and the AI plumbing underneath - full-stack, RAG, agents, on-prem. Add-on: performance & GPU sizing for existing CV / ML pipelines
+- [Lectures & Workshops](https://bina-labs.com/services): Tailored sessions for R&D teams and executives. What is real, what is one paper away, what is marketing. Add-on: AI-assisted engineering workshops on working with AI coding agents
 - [Research](https://bina-labs.com/services): Applied research with frontier teams. Sometimes a paper. Occasionally a product
 - [Innovation & Grant Strategy](https://bina-labs.com/services): Securing competitive funding (Horizon Europe, EIC Accelerator, Eurostars, BIRD, Israel Innovation Authority), business plans, and turning breakthrough technology into funded, scalable ventures
+- [Machine Vision & Automated Inspection](https://bina-labs.com/services): Camera, optics, and models that replace manual visual and dimensional QC on production lines - defect detection, anomaly detection, measurement, sorting
+- [Video Analytics & Tracking](https://bina-labs.com/services): Detection, multi-object tracking, re-identification, and OCR on long high-resolution video - sports, security, retail, traffic
+- [Automation & Smart Reports](https://bina-labs.com/services): Unattended business workflows - web scraping, data pipelines, CRM and API integrations, smart reports with AI-written summaries
 
 ## Optional
 

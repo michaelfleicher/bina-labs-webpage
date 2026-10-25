@@ -193,6 +193,7 @@ export function BLFooter() {
         { t: 'github', href: 'https://github.com/michaelfleicher', external: true },
         { t: 'linkedin (michael)', href: 'https://www.linkedin.com/in/michaelfleicher', external: true },
         { t: 'linkedin (ronen)', href: 'https://www.linkedin.com/in/ronen-chen/', external: true },
+        { t: 'linkedin (or)', href: 'https://www.linkedin.com/in/or-zilberberg/', external: true },
       ],
     },
     {
