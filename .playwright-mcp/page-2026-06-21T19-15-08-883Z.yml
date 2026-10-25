@@ -1,0 +1,400 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "BINA LABS" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e8]: BINA LABS
+      - generic [ref=e9]: "::"
+      - generic [ref=e10]: home
+    - generic [ref=e11]:
+      - link "~/work" [ref=e12] [cursor=pointer]:
+        - /url: /work
+      - link "~/services" [ref=e13] [cursor=pointer]:
+        - /url: /services
+      - link "~/manifesto" [ref=e14] [cursor=pointer]:
+        - /url: /manifesto
+      - link "~/writing" [ref=e15] [cursor=pointer]:
+        - /url: /writing
+      - link "~/about" [ref=e16] [cursor=pointer]:
+        - /url: /about
+    - generic [ref=e17]:
+      - generic [ref=e18]: UTC 19:15:08
+      - link "./connect.sh" [ref=e19] [cursor=pointer]:
+        - /url: /contact
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]: ● ONLINE
+      - generic [ref=e23]: 4 engagements shipped this year
+      - generic [ref=e24]: · Tel Aviv · Berlin · remote-first
+    - heading "What is Bina Labs?" [level=1] [ref=e25]:
+      - text: Architectural
+      - text: intelligence
+      - text: of tomorrow_
+      - generic [ref=e26]: ▊
+    - heading "What does Bina Labs do?" [level=2] [ref=e27]: AI consulting and engineering studio. We build production AI systems for founders and engineering teams - vision, agents, RAG, on-prem. Tel Aviv, Berlin, remote-first.
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]: $ cat what-we-do.txt
+        - generic [ref=e31]: → A consultancy of engineers,
+        - generic [ref=e32]: → researchers and strategists.
+        - generic [ref=e33]: → We build AI systems that earn
+        - generic [ref=e34]: → their seat at the production table.
+        - generic [ref=e35]:
+          - text: $
+          - generic [ref=e36]: ▊
+      - generic [ref=e37]:
+        - generic [ref=e38]: "[01]"
+        - generic [ref=e39]: median ship time
+        - generic [ref=e40]: 11days
+      - generic [ref=e41]:
+        - generic [ref=e42]: "[02]"
+        - generic [ref=e43]: repeat client rate
+        - generic [ref=e44]: 84%
+    - generic [ref=e45]:
+      - link "Start a project →" [ref=e46] [cursor=pointer]:
+        - /url: /contact
+      - link "See our work" [ref=e47] [cursor=pointer]:
+        - /url: /work
+  - generic [ref=e49]:
+    - generic [ref=e50]:
+      - generic [ref=e51]: ⌬
+      - generic [ref=e52]: Match Cuts
+      - generic [ref=e53]: —
+      - generic [ref=e54]: 90 min → 3 min highlights
+    - generic [ref=e55]:
+      - generic [ref=e56]: ⌬
+      - generic [ref=e57]: Field Atlas
+      - generic [ref=e58]: —
+      - generic [ref=e59]: single source of truth
+    - generic [ref=e60]:
+      - generic [ref=e61]: ⌬
+      - generic [ref=e62]: Telemetra
+      - generic [ref=e63]: —
+      - generic [ref=e64]: NL flight analysis
+    - generic [ref=e65]:
+      - generic [ref=e66]: ⌬
+      - generic [ref=e67]: Auto-QTO
+      - generic [ref=e68]: —
+      - generic [ref=e69]: 92% symbol recall
+    - generic [ref=e70]:
+      - generic [ref=e71]: ⌬
+      - generic [ref=e72]: Lloyd Score
+      - generic [ref=e73]: —
+      - generic [ref=e74]: AIS-grade safety scoring
+    - generic [ref=e75]:
+      - generic [ref=e76]: ⌬
+      - generic [ref=e77]: AskTable
+      - generic [ref=e78]: —
+      - generic [ref=e79]: self-healing SQL
+    - generic [ref=e80]:
+      - generic [ref=e81]: ⌬
+      - generic [ref=e82]: Caseworker
+      - generic [ref=e83]: —
+      - generic [ref=e84]: −47% handle time
+    - generic [ref=e85]:
+      - generic [ref=e86]: ⌬
+      - generic [ref=e87]: Reachpoint
+      - generic [ref=e88]: —
+      - generic [ref=e89]: real-time hand ROM
+    - generic [ref=e90]:
+      - generic [ref=e91]: ⌬
+      - generic [ref=e92]: Match Cuts
+      - generic [ref=e93]: —
+      - generic [ref=e94]: 90 min → 3 min highlights
+    - generic [ref=e95]:
+      - generic [ref=e96]: ⌬
+      - generic [ref=e97]: Field Atlas
+      - generic [ref=e98]: —
+      - generic [ref=e99]: single source of truth
+    - generic [ref=e100]:
+      - generic [ref=e101]: ⌬
+      - generic [ref=e102]: Telemetra
+      - generic [ref=e103]: —
+      - generic [ref=e104]: NL flight analysis
+    - generic [ref=e105]:
+      - generic [ref=e106]: ⌬
+      - generic [ref=e107]: Auto-QTO
+      - generic [ref=e108]: —
+      - generic [ref=e109]: 92% symbol recall
+    - generic [ref=e110]:
+      - generic [ref=e111]: ⌬
+      - generic [ref=e112]: Lloyd Score
+      - generic [ref=e113]: —
+      - generic [ref=e114]: AIS-grade safety scoring
+    - generic [ref=e115]:
+      - generic [ref=e116]: ⌬
+      - generic [ref=e117]: AskTable
+      - generic [ref=e118]: —
+      - generic [ref=e119]: self-healing SQL
+    - generic [ref=e120]:
+      - generic [ref=e121]: ⌬
+      - generic [ref=e122]: Caseworker
+      - generic [ref=e123]: —
+      - generic [ref=e124]: −47% handle time
+    - generic [ref=e125]:
+      - generic [ref=e126]: ⌬
+      - generic [ref=e127]: Reachpoint
+      - generic [ref=e128]: —
+      - generic [ref=e129]: real-time hand ROM
+    - generic [ref=e130]:
+      - generic [ref=e131]: ⌬
+      - generic [ref=e132]: Match Cuts
+      - generic [ref=e133]: —
+      - generic [ref=e134]: 90 min → 3 min highlights
+    - generic [ref=e135]:
+      - generic [ref=e136]: ⌬
+      - generic [ref=e137]: Field Atlas
+      - generic [ref=e138]: —
+      - generic [ref=e139]: single source of truth
+    - generic [ref=e140]:
+      - generic [ref=e141]: ⌬
+      - generic [ref=e142]: Telemetra
+      - generic [ref=e143]: —
+      - generic [ref=e144]: NL flight analysis
+    - generic [ref=e145]:
+      - generic [ref=e146]: ⌬
+      - generic [ref=e147]: Auto-QTO
+      - generic [ref=e148]: —
+      - generic [ref=e149]: 92% symbol recall
+    - generic [ref=e150]:
+      - generic [ref=e151]: ⌬
+      - generic [ref=e152]: Lloyd Score
+      - generic [ref=e153]: —
+      - generic [ref=e154]: AIS-grade safety scoring
+    - generic [ref=e155]:
+      - generic [ref=e156]: ⌬
+      - generic [ref=e157]: AskTable
+      - generic [ref=e158]: —
+      - generic [ref=e159]: self-healing SQL
+    - generic [ref=e160]:
+      - generic [ref=e161]: ⌬
+      - generic [ref=e162]: Caseworker
+      - generic [ref=e163]: —
+      - generic [ref=e164]: −47% handle time
+    - generic [ref=e165]:
+      - generic [ref=e166]: ⌬
+      - generic [ref=e167]: Reachpoint
+      - generic [ref=e168]: —
+      - generic [ref=e169]: real-time hand ROM
+  - generic [ref=e170]:
+    - generic [ref=e171]: // 02_manifesto · last edited 2026-04-12 by creative_agent@bina-labs.com
+    - heading "Why don't strategy decks ship AI to production?" [level=2] [ref=e172]:
+      - text: Decks don't
+      - text: run in production.
+    - paragraph [ref=e173]: Why don't strategy decks ship AI to production? Decks describe ambition; production AI needs evals, retrieval pipelines, on-prem cost budgets, and someone willing to debug at 2 a.m. Bina Labs builds the system, hands you the runbook, and leaves on day 90 with your team owning the code.
+    - generic [ref=e174]:
+      - generic [ref=e175]:
+        - generic [ref=e176]: "[01]"
+        - generic "Why is hitting the ship date non-negotiable at Bina Labs?" [ref=e177]: Deadline is holy.
+        - generic [ref=e178]: When we commit to a date, we hit it. Scope flexes, quality has a floor, but the deadline does not move.
+      - generic [ref=e179]:
+        - generic [ref=e180]: "[02]"
+        - generic "How does Bina Labs use AI coding assistants?" [ref=e181]: AI assistants are tools, not authors.
+        - generic [ref=e182]: We use them to move faster, not to ship code no human on our team understands. Every line is owned by an operator who can defend it.
+      - generic [ref=e183]:
+        - generic [ref=e184]: "[03]"
+        - generic "What happens when a Bina Labs project should not ship?" [ref=e185]: Honest deprecation.
+        - generic [ref=e186]: When a project should die, we tell you. We refund the rest of the engagement.
+      - generic [ref=e187]:
+        - generic [ref=e188]: "[04]"
+        - generic "Why is every Bina Labs engagement designed to end?" [ref=e189]: Built to leave.
+        - generic [ref=e190]: Embedded engagements come with a written hand-off plan from day one.
+    - link "Read the full manifesto →" [ref=e191] [cursor=pointer]:
+      - /url: /manifesto
+  - generic [ref=e192]:
+    - generic [ref=e193]:
+      - generic [ref=e194]: // 03_selected_work
+      - link "all 17 →" [ref=e195] [cursor=pointer]:
+        - /url: /work
+    - generic [ref=e196]:
+      - link "/01 MATCH CUTS VISION · VLM · 6MO Auto-edited highlight reels from full football matches. 90→33 min, per player →" [ref=e197] [cursor=pointer]:
+        - /url: /work/match-cuts
+        - generic [ref=e198]: /01
+        - generic [ref=e199]: MATCH CUTS
+        - generic [ref=e200]:
+          - generic [ref=e201]: VISION · VLM · 6MO
+          - generic [ref=e202]: Auto-edited highlight reels from full football matches.
+        - generic [ref=e203]:
+          - generic [ref=e204]: 90→33
+          - generic [ref=e205]: min, per player
+        - generic [ref=e206]: →
+      - link "/02 AUTO-QTO VISION · VLM · 8MO Hybrid VLM extracting BOMs from dense construction drawings. 92% symbol recall →" [ref=e207] [cursor=pointer]:
+        - /url: /work/auto-qto
+        - generic [ref=e208]: /02
+        - generic [ref=e209]: AUTO-QTO
+        - generic [ref=e210]:
+          - generic [ref=e211]: VISION · VLM · 8MO
+          - generic [ref=e212]: Hybrid VLM extracting BOMs from dense construction drawings.
+        - generic [ref=e213]:
+          - generic [ref=e214]: 92%
+          - generic [ref=e215]: symbol recall
+        - generic [ref=e216]: →
+      - link "/03 LLOYD SCORE DATA · LLM · 9MO Spatial AI that quantifies near-miss risk for marine insurers. AIS ghost-fleet sims →" [ref=e217] [cursor=pointer]:
+        - /url: /work/lloyd-score
+        - generic [ref=e218]: /03
+        - generic [ref=e219]: LLOYD SCORE
+        - generic [ref=e220]:
+          - generic [ref=e221]: DATA · LLM · 9MO
+          - generic [ref=e222]: Spatial AI that quantifies near-miss risk for marine insurers.
+        - generic [ref=e223]:
+          - generic [ref=e224]: AIS
+          - generic [ref=e225]: ghost-fleet sims
+        - generic [ref=e226]: →
+      - 'link "/04 CASEWORKER AGENTS · EMBEDDED · 7MO CX copilot: smart sub-tree LLM, handwriting OCR, full CRM. −47% handle time →" [ref=e227] [cursor=pointer]':
+        - /url: /work/caseworker
+        - generic [ref=e228]: /04
+        - generic [ref=e229]: CASEWORKER
+        - generic [ref=e230]:
+          - generic [ref=e231]: AGENTS · EMBEDDED · 7MO
+          - generic [ref=e232]: "CX copilot: smart sub-tree LLM, handwriting OCR, full CRM."
+        - generic [ref=e233]:
+          - generic [ref=e234]: −47%
+          - generic [ref=e235]: handle time
+        - generic [ref=e236]: →
+  - generic [ref=e237]:
+    - generic [ref=e238]: // 04_services
+    - heading "How can you engage Bina Labs?" [level=2] [ref=e239]:
+      - text: Five ways
+      - text: we engage.
+    - paragraph [ref=e240]: "How can you engage Bina Labs? Five formats with transparent USD pricing: AI Strategy as a fixed-scope sprint from $10k (2 to 6 weeks), AI/Software Engineering as an embedded squad from $20k a month (3 to 12 months), Fractional CTO from $7k a month, Innovation & Grant Strategy on custom terms, and Research retainers on custom terms. Every engagement comes with a written hand-off plan and an honest-deprecation guarantee."
+    - generic [ref=e241]:
+      - link "svc.01 ↗ What does a Bina Labs AI Strategy engagement deliver? 4-week intensives. Where to bet, where to wait, what to ignore. roadmap evals org-design" [ref=e242] [cursor=pointer]:
+        - /url: /services
+        - generic [ref=e243]:
+          - generic [ref=e244]: svc.01
+          - generic [ref=e245]: ↗
+        - generic "What does a Bina Labs AI Strategy engagement deliver?" [ref=e246]: AI Strategy
+        - generic [ref=e247]: 4-week intensives. Where to bet, where to wait, what to ignore.
+        - generic [ref=e248]:
+          - generic [ref=e249]: roadmap
+          - generic [ref=e250]: evals
+          - generic [ref=e251]: org-design
+      - link "svc.02 ↗ How does embedded AI engineering with Bina Labs work? Embedded squads that ship product and the AI plumbing underneath it. full-stack rag agents on-prem" [ref=e252] [cursor=pointer]:
+        - /url: /services
+        - generic [ref=e253]:
+          - generic [ref=e254]: svc.02
+          - generic [ref=e255]: ↗
+        - generic "How does embedded AI engineering with Bina Labs work?" [ref=e256]: AI / Software Engineering
+        - generic [ref=e257]: Embedded squads that ship product and the AI plumbing underneath it.
+        - generic [ref=e258]:
+          - generic [ref=e259]: full-stack
+          - generic [ref=e260]: rag
+          - generic [ref=e261]: agents
+          - generic [ref=e262]: on-prem
+      - link "svc.03 ↗ What do Bina Labs lectures and workshops cover? Tailored sessions for R&D teams and executives. What is real, what is one paper away, what is marketing. r&d c-suite hands-on briefings" [ref=e263] [cursor=pointer]:
+        - /url: /services
+        - generic [ref=e264]:
+          - generic [ref=e265]: svc.03
+          - generic [ref=e266]: ↗
+        - generic "What do Bina Labs lectures and workshops cover?" [ref=e267]: Lectures & Workshops
+        - generic [ref=e268]: Tailored sessions for R&D teams and executives. What is real, what is one paper away, what is marketing.
+        - generic [ref=e269]:
+          - generic [ref=e270]: r&d
+          - generic [ref=e271]: c-suite
+          - generic [ref=e272]: hands-on
+          - generic [ref=e273]: briefings
+      - link "svc.04 ↗ What kind of research does Bina Labs take on? Applied research with frontier teams. Sometimes a paper. Occasionally a product. frontier papers prototypes" [ref=e274] [cursor=pointer]:
+        - /url: /services
+        - generic [ref=e275]:
+          - generic [ref=e276]: svc.04
+          - generic [ref=e277]: ↗
+        - generic "What kind of research does Bina Labs take on?" [ref=e278]: Research
+        - generic [ref=e279]: Applied research with frontier teams. Sometimes a paper. Occasionally a product.
+        - generic [ref=e280]:
+          - generic [ref=e281]: frontier
+          - generic [ref=e282]: papers
+          - generic [ref=e283]: prototypes
+      - link "svc.05 ↗ What does a Bina Labs Innovation & Grant Strategy engagement deliver? Turn breakthrough tech into funded ventures. Competitive grants, business plans, and R&D roadmapping. funding grants strategy due-diligence" [ref=e284] [cursor=pointer]:
+        - /url: /services
+        - generic [ref=e285]:
+          - generic [ref=e286]: svc.05
+          - generic [ref=e287]: ↗
+        - generic "What does a Bina Labs Innovation & Grant Strategy engagement deliver?" [ref=e288]: Innovation & Grant Strategy
+        - generic [ref=e289]: Turn breakthrough tech into funded ventures. Competitive grants, business plans, and R&D roadmapping.
+        - generic [ref=e290]:
+          - generic [ref=e291]: funding
+          - generic [ref=e292]: grants
+          - generic [ref=e293]: strategy
+          - generic [ref=e294]: due-diligence
+  - generic [ref=e295]:
+    - generic [ref=e296]: // 05_faq
+    - heading "Questions, answered." [level=2] [ref=e297]
+    - generic [ref=e298]:
+      - generic [ref=e299]:
+        - button "[01] What is Bina Labs?" [expanded] [ref=e300] [cursor=pointer]:
+          - generic [ref=e301]: "[01]"
+          - heading "What is Bina Labs?" [level=3] [ref=e302]
+          - generic [ref=e303]: +
+        - paragraph [ref=e306]: Bina Labs is a senior-by-default consultancy that builds AI systems for production. We embed with founder and engineering teams, write working code in week one, and hand off a system the client owns. Headquartered in Tel Aviv, with people in Berlin and remote-first delivery.
+      - button "[02] How long do typical engagements take?" [ref=e309] [cursor=pointer]:
+        - generic [ref=e310]: "[02]"
+        - heading "How long do typical engagements take?" [level=3] [ref=e311]
+        - generic [ref=e312]: +
+      - button "[03] What is your repeat-client rate?" [ref=e314] [cursor=pointer]:
+        - generic [ref=e315]: "[03]"
+        - heading "What is your repeat-client rate?" [level=3] [ref=e316]
+        - generic [ref=e317]: +
+      - button "[04] Do you let AI write your code?" [ref=e319] [cursor=pointer]:
+        - generic [ref=e320]: "[04]"
+        - heading "Do you let AI write your code?" [level=3] [ref=e321]
+        - generic [ref=e322]: +
+      - button "[05] How much does production AI cost?" [ref=e324] [cursor=pointer]:
+        - generic [ref=e325]: "[05]"
+        - heading "How much does production AI cost?" [level=3] [ref=e326]
+        - generic [ref=e327]: +
+      - button "[06] Where are you based?" [ref=e329] [cursor=pointer]:
+        - generic [ref=e330]: "[06]"
+        - heading "Where are you based?" [level=3] [ref=e331]
+        - generic [ref=e332]: +
+      - button "[07] Do you work remotely?" [ref=e334] [cursor=pointer]:
+        - generic [ref=e335]: "[07]"
+        - heading "Do you work remotely?" [level=3] [ref=e336]
+        - generic [ref=e337]: +
+      - button "[08] What is a 4-week pilot?" [ref=e339] [cursor=pointer]:
+        - generic [ref=e340]: "[08]"
+        - heading "What is a 4-week pilot?" [level=3] [ref=e341]
+        - generic [ref=e342]: +
+      - button "[09] Can I see your past work?" [ref=e344] [cursor=pointer]:
+        - generic [ref=e345]: "[09]"
+        - heading "Can I see your past work?" [level=3] [ref=e346]
+        - generic [ref=e347]: +
+  - contentinfo [ref=e348]:
+    - heading "Have a real problem? Let's build." [level=2] [ref=e349]:
+      - text: Have a real problem?
+      - text: Let's build.
+    - generic [ref=e350]:
+      - generic [ref=e351]:
+        - link "intelligence@bina-labs.com" [ref=e352] [cursor=pointer]:
+          - /url: mailto:intelligence@bina-labs.com
+        - generic [ref=e353]: 30 Melchet St - Tel Aviv, Israel, 6523417
+      - generic [ref=e354]:
+        - generic [ref=e355]: // pages
+        - link "work" [ref=e356] [cursor=pointer]:
+          - /url: /work
+        - link "services" [ref=e357] [cursor=pointer]:
+          - /url: /services
+        - link "manifesto" [ref=e358] [cursor=pointer]:
+          - /url: /manifesto
+        - link "writing" [ref=e359] [cursor=pointer]:
+          - /url: /writing
+      - generic [ref=e360]:
+        - generic [ref=e361]: // social
+        - link "github" [ref=e362] [cursor=pointer]:
+          - /url: https://github.com/michaelfleicher
+        - link "linkedin (michael)" [ref=e363] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/michaelfleicher
+        - link "linkedin (ronen)" [ref=e364] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/ronen-chen/
+      - generic [ref=e365]:
+        - generic [ref=e366]: // company
+        - link "about" [ref=e367] [cursor=pointer]:
+          - /url: /about
+        - link "careers (4)" [ref=e368] [cursor=pointer]:
+          - /url: /about
+        - link "press" [ref=e369] [cursor=pointer]:
+          - /url: mailto:intelligence@bina-labs.com?subject=Press%20inquiry
+        - link "contact" [ref=e370] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e371]:
+      - generic [ref=e372]: © 2026 bina-labs.com - architectural intelligence of tomorrow
+      - generic [ref=e373]: ● systems nominal
